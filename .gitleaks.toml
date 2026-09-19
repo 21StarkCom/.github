@@ -4,10 +4,11 @@
 # governance Terraform and then owned by the repo; here it was written by
 # hand, because the caller beside it has to be too — see the header of
 # .github/workflows/secret-scan-self.yml. Either way, the rules and every
-# allowlist entry below are this repo's to own and edit in a normal PR. (The
-# workflows next to it are not: .github/workflows/secret-scan.yml is the
-# REUSABLE scan the whole fleet pins by SHA, so a change there lands on every
-# repo at once.)
+# allowlist entry below are this repo's to own and edit in a normal PR. (So are
+# both workflows next to it — this repo is their home, not a consumer of them.
+# But .github/workflows/secret-scan.yml is the REUSABLE scan the whole fleet
+# pins by SHA, so editing it is never routine: the change reaches every repo
+# that bumps to the new pin.)
 #
 # CI scans only the incoming commits (the PR diff range, or the pushed range on
 # the default branch), so a finding in old history does not fail a PR unless
