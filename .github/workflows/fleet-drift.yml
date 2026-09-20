@@ -1,0 +1,74 @@
+# Does the org landing page still describe the real org?
+#
+# The page drifted to nine repos behind reality before anyone counted
+# (STARK-8036): the tables summed correctly to 58 and the org held 68, so the
+# page was internally consistent and wrong. Nothing on a PR could have caught
+# that, because the drift does not arrive in a PR — it arrives when a repo is
+# created in some other repo's ticket. Hence the schedule; the PR trigger only
+# stops an edit from re-introducing it.
+#
+# WHY THIS NEEDS A PAT
+#
+# Sixty-five of the sixty-eight repos are private. The default GITHUB_TOKEN is
+# scoped to this repo and lists only another org's PUBLIC repos, so under it the
+# org enumerates as three and every check here passes for the wrong reason —
+# silently, which is worse than failing. CATALOG_READ_TOKEN is the fine-grained
+# org-read PAT (metadata:read across the org) already used for the fleet catalog
+# sync; it is the same secret and rotates with it.
+#
+# Without that secret the job SKIPS and says so, rather than running blind. A
+# green check on three repos would assert something this workflow cannot know.
+
+name: fleet-drift
+
+on:
+  pull_request:
+    paths:
+      - fleet/**
+      - profile/README.md
+      - scripts/fleet-check.sh
+      - .lycheeignore
+      - .github/workflows/fleet-drift.yml
+  # Weekly, because the org changes when this repo does not.
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fleet-drift-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  fleet-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check the page against the org
+        env:
+          GH_TOKEN: ${{ secrets.CATALOG_READ_TOKEN }}
+        run: |
+          set -eo pipefail
+          # shellcheck disable=SC2016  # the backticks below are Markdown fences
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning title=fleet-drift skipped::CATALOG_READ_TOKEN is not set on this repo. The default token cannot see the 65 private repos, so the check would pass on a 3-repo org and prove nothing. Wire the secret to switch this on."
+            {
+              echo '### fleet-drift skipped'
+              echo
+              echo 'No `CATALOG_READ_TOKEN`. This check needs org-wide `metadata:read`;'
+              echo 'the default `GITHUB_TOKEN` sees only public repos and would pass blind.'
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # The report is plain text; fence it so the summary keeps its lines.
+          # pipefail (set above, and the Actions default) stops `tee` from
+          # swallowing the script's exit code, and the drift report is the part
+          # worth reading, so close the fence before failing the job.
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          status=0
+          bash scripts/fleet-check.sh | tee -a "$GITHUB_STEP_SUMMARY" || status=$?
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          exit $status
