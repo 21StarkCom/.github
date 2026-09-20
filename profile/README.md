@@ -44,7 +44,7 @@ The public face of the fleet — the rest is private by default.
 
 <sub>By language: **26** Go · **15** TypeScript · **8** Python · **5** Terraform (HCL) · **3** Swift · **+6** others</sub>
 
-<sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. They are listed, with reasons, in [not in the fleet](https://github.com/21StarkCom/.github/blob/main/fleet/exclusions.md).</sub>
+<sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. Every index above links that list, with a reason for each.</sub>
 
 ---
 
