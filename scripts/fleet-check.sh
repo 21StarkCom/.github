@@ -202,35 +202,56 @@ while IFS= read -r n; do headlines+=("$n"); done \
 if [[ ${#headlines[@]} -ne 2 ]]; then
   fail "expected 2 '<n> repositories' figures in profile/README.md, found ${#headlines[@]}"
 fi
-for n in "${headlines[@]}"; do
-  if [[ $n == "$page_total" ]]; then ok "headline says $n repositories"
-  else fail "profile/README.md says $n repositories, the tables hold $page_total rows"; fi
-done
+# Guarded, because bash 3.2 (macOS /bin/bash, this script's stated floor) treats
+# "${arr[@]}" on an EMPTY array as an unbound variable under `set -u` and aborts
+# the whole script there — losing checks 11 and 12 and the FAIL summary, in the
+# one case that matters: the headline figures having been deleted outright.
+if [[ ${#headlines[@]} -gt 0 ]]; then
+  for n in "${headlines[@]}"; do
+    if [[ $n == "$page_total" ]]; then ok "headline says $n repositories"
+    else fail "profile/README.md says $n repositories, the tables hold $page_total rows"; fi
+  done
+fi
 
 # --- 11. the by-language footer reconciles ------------------------------------
 echo
 echo "the by-language footer reconciles"
-footer=$(grep -F 'By language:' "$PROFILE")
+# `|| true`, because a bare `footer=$(grep ...)` under `set -e` makes a DELETED
+# footer kill the script on this line — no message, no FAIL summary, checks 12
+# and the exit line never reached, and in CI an empty code fence. Deleting the
+# footer is drift; report it as drift.
+footer=$(grep -F 'By language:' "$PROFILE" || true)
 # The footer prints a display label; HCL renders as "Terraform (HCL)".
 label_to_lang() { if [[ $1 == "Terraform (HCL)" ]]; then echo HCL; else echo "$1"; fi; }
 
-named_total=0
-while IFS=$'\t' read -r count label; do
-  lang=$(label_to_lang "$label")
-  actual=$(awk -F'\t' -v l="$lang" '$2 == l' <<<"$page_tsv" | grep -c . || true)
-  named_total=$((named_total + count))
-  if [[ $count == "$actual" ]]; then ok "$label: $count"
-  else fail "footer says $count $label, the tables hold $actual"; fi
-done < <(grep -oE '\*\*[0-9]+\*\* [A-Za-z() ]+' <<<"$footer" \
-  | sed -E 's/^\*\*([0-9]+)\*\* /\1\t/' | sed -E 's/[[:space:]]+$//')
-
-others=$(grep -oE '\*\*\+[0-9]+\*\* others' <<<"$footer" | grep -oE '[0-9]+' || true)
-if [[ -z $others ]]; then
-  fail "profile/README.md's by-language footer has no '+<n> others'"
+if [[ -z $footer ]]; then
+  fail "profile/README.md has no 'By language:' footer"
 else
-  expected_others=$((page_total - named_total))
-  if [[ $others == "$expected_others" ]]; then ok "+$others others"
-  else fail "footer says +$others others; $page_total rows minus the $named_total named leaves $expected_others"; fi
+  named_total=0
+  # The label class carries digits, `+`, `#`, `.` and `-` as well as letters:
+  # the languages GitHub reports are not all alphabetic (C++, C#, Objective-C,
+  # F#), and a class that stopped at the first such character would silently
+  # truncate the label, look up a language nothing is written in, and report the
+  # footer as wrong against a table that is right. The separator is ` · `, whose
+  # middle dot is outside the class either way, so widening it cannot run two
+  # entries together.
+  while IFS=$'\t' read -r count label; do
+    lang=$(label_to_lang "$label")
+    actual=$(awk -F'\t' -v l="$lang" '$2 == l' <<<"$page_tsv" | grep -c . || true)
+    named_total=$((named_total + count))
+    if [[ $count == "$actual" ]]; then ok "$label: $count"
+    else fail "footer says $count $label, the tables hold $actual"; fi
+  done < <(grep -oE '\*\*[0-9]+\*\* [A-Za-z0-9()+#. -]+' <<<"$footer" \
+    | sed -E 's/^\*\*([0-9]+)\*\* /\1\t/' | sed -E 's/[[:space:]]+$//')
+
+  others=$(grep -oE '\*\*\+[0-9]+\*\* others' <<<"$footer" | grep -oE '[0-9]+' || true)
+  if [[ -z $others ]]; then
+    fail "profile/README.md's by-language footer has no '+<n> others'"
+  else
+    expected_others=$((page_total - named_total))
+    if [[ $others == "$expected_others" ]]; then ok "+$others others"
+    else fail "footer says +$others others; $page_total rows minus the $named_total named leaves $expected_others"; fi
+  fi
 fi
 
 # --- 12. the link allowlist tracks the rows -----------------------------------
