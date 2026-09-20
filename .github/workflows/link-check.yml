@@ -207,7 +207,18 @@ jobs:
           stale="$(mktemp)"
           malformed="$(mktemp)"
           while IFS= read -r line || [ -n "$line" ]; do
-            case "$line" in ''|'#'*) continue ;; esac
+            # Skip blanks and comments the way LYCHEE does, not some near-miss
+            # of it: lychee drops a line whose `trim_start()` begins with `#`,
+            # so an indented comment is a comment there and must be one here
+            # too. Reading it as a malformed entry instead would red the job
+            # over a line the checker itself ignores.
+            #
+            # The trim decides ONLY that question. The shape check below still
+            # sees the raw line, because lychee does NOT trim a pattern it
+            # keeps: an indented entry is a regex beginning with spaces, it
+            # matches no URL ever, and it has to be reported as malformed
+            # rather than quietly accepted by a guard that trimmed it first.
+            case "${line#"${line%%[![:space:]]*}"}" in ''|'#'*) continue ;; esac
             # Enforce the anchored-literal-URL shape .lycheeignore promises. A
             # cleverer regex is reported here rather than silently mis-parsed
             # into a URL that greps to nothing and reads as stale.
@@ -403,9 +414,13 @@ jobs:
       # unrelated work is how a gate earns a bypass.
       #
       # `continue-on-error` and the step timeout are what make "never a gate"
-      # true rather than intended: 55 sequential probes that all hang would
+      # true rather than intended: 60 sequential probes that all hang would
       # otherwise run past the JOB's timeout-minutes and red the check anyway,
-      # which is exactly the outcome the paragraph above rules out.
+      # which is exactly the outcome the paragraph above rules out. The step
+      # timeout is the shorter fuse and it bites first — 60 URLs at --max-time
+      # 10 is 10 minutes of worst case against a 3-minute budget — so on a bad
+      # day this audit covers a prefix of the list and no more. That is the
+      # right trade for a warning, but do not read a quiet run as a full sweep.
       - name: Warn on allowlist entries that have gone public
         if: always()
         continue-on-error: true

@@ -31,9 +31,11 @@
 # `mimir-automations`, and `stark-2nd-brain-cli` its `-hub` sibling.
 #
 # Measured 2026-09-20 against `gh repo list 21StarkCom`, after STARK-8035
-# merged: these pages link to 58 org repos, all 58 exist, and 3 of them are
-# public — `.github`, `bifrost`, `stark-skills`. The other 55 are below. There
-# is no dead link on the pages as this lands, which is exactly the state the
+# merged and STARK-8036 added the six rows it was missing: these pages link to
+# 63 org repos, all 63 exist, and 3 of them are public — `.github`, `bifrost`,
+# `stark-skills`. The other 60 are below, and
+# the two section counts underneath have to keep summing to that 60. There is
+# no dead link on the pages as this lands, which is exactly the state the
 # check is here to keep.
 #
 # KEEPING THIS LIST HONEST is two jobs, and the workflow only does one of them.

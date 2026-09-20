@@ -16,6 +16,19 @@
 # org-read PAT (metadata:read across the org) already used for the fleet catalog
 # sync; it is the same secret and rotates with it.
 #
+# WIRING IT IS A SEPARATE, MANUAL STEP, and nothing in this repo can do it.
+# That PAT is a REPO-level Actions secret on `21StarkCom/stark-workspace`, where
+# catalog-sync.yml consumes it — it is not an org secret, so it does not reach
+# this repo by being "already used" somewhere else. Checked 2026-09-20:
+# `21StarkCom/.github` had no repo secrets and no org secrets visible to it, so
+# as this lands every run takes the skip branch. One operator command fixes it,
+# reading the PAT out of its mimir item (see the fleet's PAT note for the id):
+#
+#   gh secret set CATALOG_READ_TOKEN --repo 21StarkCom/.github --body "<pat>"
+#
+# Until it reports a real count, read a green fleet-drift as "not checked", not
+# as "clean" — the skip warning on the run is what tells the two apart.
+#
 # Without that secret the job SKIPS and says so, rather than running blind. A
 # green check on three repos would assert something this workflow cannot know.
 
@@ -29,6 +42,14 @@ on:
       - scripts/fleet-check.sh
       - .lycheeignore
       - .github/workflows/fleet-drift.yml
+  # Answer for `main` itself, not only for the PR that proposed the change. A
+  # `paths`-filtered pull_request run reports on the merge commit, and after
+  # that nothing re-reads the merged page until the next cron — which the note
+  # below explains is the least reliable trigger here. Same reasoning as
+  # link-check.yml's push trigger, and it is also the precondition for ever
+  # requiring this context.
+  push:
+    branches: [main]
   # Weekly, because the org changes when this repo does not.
   #
   # KNOWN HOLE, stated rather than hidden: GitHub disables a repo's `schedule`
@@ -68,9 +89,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.CATALOG_READ_TOKEN }}
         run: |
-          set -eo pipefail
-          # shellcheck disable=SC2016  # the backticks below are Markdown fences
-          if [ -z "$GH_TOKEN" ]; then
+          set -euo pipefail
+          # shellcheck disable=SC2016  # the backticked names in the skip
+          # message are Markdown, not command substitution
+          if [ -z "${GH_TOKEN:-}" ]; then
             echo "::warning title=fleet-drift skipped::CATALOG_READ_TOKEN is not set on this repo. The default token cannot see the 65 private repos, so the check would pass on a 3-repo org and prove nothing. Wire the secret to switch this on."
             {
               echo '### fleet-drift skipped'
