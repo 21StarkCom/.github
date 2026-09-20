@@ -2,7 +2,7 @@
 
 > Terraform and GCP foundations — GitHub-as-code and the shared platform every service builds on.
 
-**4 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · 🤝 shared building block · ✏️ WIP · 🪦 retired
+**4 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |

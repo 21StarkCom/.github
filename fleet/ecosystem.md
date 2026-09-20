@@ -2,14 +2,15 @@
 
 > The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via **stark-skills**.
 
-**46 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · 🤝 shared building block · ✏️ WIP · 🪦 retired
+**47 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[stark-skills](https://github.com/21StarkCom/stark-skills)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill, slash command and agent for Claude Code and Codex. |
 | **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `Go` | The canonical multi-runtime marketplace and Go engine for stark bundles. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The stateless vendor-action CLI — one typed, gated surface over every third-party system in the fleet. |
-| **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
+| **[fenrir](https://github.com/21StarkCom/fenrir)** | `TypeScript` | The multi-vendor agent client for ClickUp and GitHub — a typed library + CLI driven by Claude Code, not by humans in a vendor UI. |
+| **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🔒 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
 | **[stark-workspace](https://github.com/21StarkCom/stark-workspace)** 🤝 | `Shell` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The fleet's automation plane and command-center — a long-lived Go service on GKE across the fleet. |
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The ticket tool — owns work-item creation and tracking for the fleet; sessions become ClickUp tickets. |
