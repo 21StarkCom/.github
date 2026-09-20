@@ -1,0 +1,453 @@
+# Fail CI on a dead link in the org's PUBLIC landing page (STARK-8037).
+#
+# This repo renders github.com/21StarkCom. Until now nothing checked the links
+# on it, and the cost was measured twice on 2026-09-20: `marketplace.21stark.com`
+# went dead the moment bifrost#294 merged and stayed advertised until a human
+# noticed it by hand (STARK-8005), and `github.com/21StarkCom/stark-clickup`
+# 404'd for anyone not signed in until STARK-8035 repointed the row. Neither
+# needed a change to this repo to break, which is why this job runs on a
+# schedule as well as on PRs.
+#
+# ---------------------------------------------------------------------------
+# THE PROBE IS ANONYMOUS, AND THAT IS THE DESIGN, NOT AN OVERSIGHT.
+#
+# Most rows in fleet/ point at PRIVATE repos, which answer 404 to a logged-out
+# visitor exactly as a deleted repo does. Two ways out, and they are not
+# equivalent:
+#
+#   - authenticate — no allowlist to maintain, but the check then passes on
+#     links the page's audience cannot open. It would have gone green on
+#     stark-clickup: the rename resolves, to a private repo.
+#   - probe anonymously and write the private repos down — the visitor's
+#     experience exactly, paid for with a list that has to be maintained.
+#
+# The second, because these pages are the org's public face. The list is
+# .lycheeignore; it says what it can and cannot catch. Nothing in this job
+# authenticates, and the "Refuse to run authenticated" step below enforces that
+# rather than assuming it — lychee silently picks a token up from GITHUB_TOKEN
+# in the environment, and no setting in lychee.toml can override an env var.
+# ---------------------------------------------------------------------------
+#
+# NOT REQUIRED ON `main`, AND DELIBERATELY SO FOR NOW. STARK-8037 asked for
+# this to land as a required check with the ruleset updated alongside it. It
+# lands advisory instead, for three reasons that all point the same way:
+#
+#   1. There is no ruleset on this repo to update — `gh api
+#      repos/21StarkCom/.github/rules/branches/main` returns `[]` — and the
+#      fleet's rulesets are Terraform in 21StarkCom/21stark, so "in the same
+#      change" is not something this PR can do.
+#   2. Required status checks were withdrawn fleet-wide on 2026-09-20 by
+#      operator decision (STARK-7967): repos/locals.tf sets
+#      `secret_scan_enforced = toset([])` and ADR-0005 is marked withdrawn.
+#      Requiring a new context here would cut against a decision taken the same
+#      day, org-wide.
+#   3. A required check that is red on `main` blocks EVERY pull request on this
+#      repo, and this one goes red on link rot in repos it does not control. So
+#      enforcing is only ever safe from a `main` that is link-clean — true as
+#      this lands, only because STARK-8035 merged first. Files before rulesets,
+#      the same ordering rulesets.tf spells out for the secret scan; confirm a
+#      green `push` run on `main` before naming the context anywhere.
+#
+# Read a green check here as advisory. STARK-8149 is the enforcement path, and
+# it carries the operator decision the third reason above turns on.
+# WHEN IT IS REQUIRED, the context string to name is `link-check`: this is a
+# normal workflow, not a reusable one, so the context is just this job's name,
+# with none of the `<caller> / <called>` folding that makes secret-scan's
+# context two halves. Do not rename the job without updating the ruleset.
+#
+# NO `paths:` FILTER, ON PURPOSE. Scoping the trigger to profile/** and fleet/**
+# would skip the job on every other PR, and a skipped job produces NO check run
+# — so the day this context becomes required, every PR that does not touch
+# those directories would sit for ever on "Expected — waiting for status". The
+# job is cheap (one pinned binary, ~70 URLs, seconds); running it always is the
+# cheaper mistake.
+#
+# NOT A REUSABLE WORKFLOW. secret-scan.yml is one because every repo in the
+# fleet needs it. This one checks two directories that exist only here, so
+# there is nothing to call it from and no context contract to keep stable
+# across callers.
+#
+# THE SELF-TEST IS NOT CEREMONY. A link checker on a healthy page is green, and
+# so is one whose glob matches no files, whose allowlist excludes everything, or
+# whose binary never ran. Those failures are indistinguishable from success
+# unless something proves otherwise, and it takes TWO assertions, because the
+# synthetic probe alone cannot see the other two:
+#
+#   - a synthetic dead URL, fed to the real configuration before the real run,
+#     failing the job if it comes back clean. That proves the binary ran and
+#     still catches a 404. Same reasoning as the self-test in secret-scan.yml.
+#   - the CHECKED-LINK COUNT, read back out of the report on a clean run and
+#     required to be non-zero. lychee exits 0 just as happily over an input
+#     that matched no files, or over pages whose every link .lycheeignore
+#     excludes — neither of which the probe's own file would notice.
+
+name: link-check
+
+on:
+  pull_request:
+  # Produce a check run on the default branch too. It is the precondition for
+  # ever requiring this context, and a push straight to `main` would otherwise
+  # skip the gate entirely.
+  push:
+    branches: [main]
+  # A merge queue builds each group on a temporary branch and waits for the
+  # required context to report ON THAT GROUP. Without this trigger the check
+  # never fires there and nothing in the queue ever merges.
+  merge_group:
+  # LINK ROT IS NOT A CODE CHANGE. Both failures this job exists to catch
+  # happened with no commit to this repo at all, so a PR-only check would have
+  # missed both. A daily run on `main` is the half that actually catches rot;
+  # it blocks nothing and shows up red in the Actions tab.
+  #
+  # Off the hour: scheduled workflows queue hardest at :00. GitHub also
+  # disables schedules on a repo with 60 days of no activity — if this stops
+  # running on a quiet repo, that is why, and a push re-enables it.
+  schedule:
+    - cron: "17 6 * * *"
+
+permissions:
+  contents: read
+
+# Pinned together, bumped together. The digest is the one published in the
+# release's `.sha256` asset for lychee-x86_64-unknown-linux-gnu.tar.gz.
+env:
+  LYCHEE_VERSION: "0.24.2"
+  LYCHEE_SHA256: "1f4e0ef7f6554a6ed33dd7ac144fb2e1bbed98598e7af973042fc5cd43951c9a"
+
+concurrency:
+  group: link-check-${{ github.event.pull_request.number || github.ref }}
+  # Supersede a PR's older run; let `main`'s runs finish. A cancelled push or
+  # scheduled run leaves that day with no answer about the public page at all.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  link-check:
+    # This name IS the status-check context. See the ruleset note at the top.
+    name: link-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Fail in seconds with a readable message rather than three minutes later
+      # on `sha256sum: command not found` or `Exec format error`. The install
+      # below is the x86_64 Linux build and nothing else.
+      - name: Check the runner platform
+        run: |
+          set -euo pipefail
+          os="$(uname -s)"
+          arch="$(uname -m)"
+          if [ "$os" != "Linux" ] || [ "$arch" != "x86_64" ]; then
+            echo "::error::this workflow installs the x86_64-unknown-linux-gnu lychee build; runs-on must name a Linux x86_64 runner (got ${os}/${arch})."
+            exit 1
+          fi
+
+      - name: Check out the pages
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # No history is needed: the check reads the working tree, not a diff.
+          # Unlike the secret scan there is no base to compare against — a link
+          # that was already dead before this PR is still dead on the page.
+          fetch-depth: 1
+          # This job downloads a third-party binary and runs it over the tree.
+          # It never pushes, so do not leave a repo-scoped token in .git/config
+          # for that binary to find.
+          persist-credentials: false
+
+      # The assertions that keep the probe honest. lychee reads
+      # `--github-token` from the GITHUB_TOKEN environment variable without
+      # announcing it, so a workflow- or job-level `env: GITHUB_TOKEN:` would
+      # quietly convert this into an authenticated check that goes green on
+      # links no visitor can open — the exact failure .lycheeignore exists to
+      # prevent, reintroduced invisibly. Neither variable is set by Actions on
+      # its own; the env check exists to notice the day one is.
+      #
+      # An env var is only ONE of the three ways in, and reading it here only
+      # covers the two levels that reach this step: a STEP-level `env:` on the
+      # lychee steps below is invisible from here, and so is lychee's own
+      # config key or its command-line flag. So the file is read as well as the
+      # environment — comment lines stripped first, since the prose above names
+      # every one of these on purpose.
+      - name: Refuse to run authenticated
+        run: |
+          set -euo pipefail
+          if [ -n "${GITHUB_TOKEN:-}" ] || [ -n "${GH_TOKEN:-}" ]; then # probe-guard
+            echo "::error::GITHUB_TOKEN or GH_TOKEN is set — lychee would authenticate and this check would pass on links the public cannot open. Remove it; the probe must be anonymous." # probe-guard
+            exit 1
+          fi
+          # Two things keep this scan from tripping over itself. The bracket in
+          # each alternative stops the pattern matching its own text — `[t]`
+          # matches a `t`, never a literal `[t]` — and the `probe-guard` marker
+          # blanks the one line above that legitimately names the variables.
+          # Comments are blanked rather than deleted so the line numbers grep
+          # prints are the real ones.
+          pat='gi[t]hub[_-]token|g[h][_-]token'
+          for f in lychee.toml .github/workflows/link-check.yml; do
+            if sed -e 's/.*probe-guard.*//' -e 's/^[[:space:]]*#.*$//' -e 's/[[:space:]]#.*$//' "$f" \
+                 | grep -niE -- "$pat"; then
+              echo "::error::${f} wires a token into the probe at the line above. The probe must be anonymous, or it goes green on links the public cannot open."
+              exit 1
+            fi
+          done
+          echo "probe is anonymous: no token in the environment, in lychee.toml, or in this workflow."
+
+      # OFFLINE, AND IT FAILS THE JOB. An allowlist entry suppresses a 404 for
+      # ever, so an entry no page links to any more is a silencer aimed at
+      # nothing — and the next link that happens to match it is silenced too.
+      # This is the half of allowlist rot that can be checked without the
+      # network, so it is checked as a gate rather than a warning. It runs here,
+      # ahead of the download, because it needs no lychee: a stale allowlist
+      # should cost seconds, not a binary install.
+      - name: Check the allowlist for stale entries
+        run: |
+          set -euo pipefail
+          # The plain URLs are reconstructed ONCE, here, and written down for
+          # the "gone public" audit at the end of the job to reuse. Parsing
+          # .lycheeignore twice is how the two readings drift apart.
+          urls="${RUNNER_TEMP}/allowlist-urls.txt"
+          : > "$urls"
+          stale="$(mktemp)"
+          malformed="$(mktemp)"
+          while IFS= read -r line || [ -n "$line" ]; do
+            case "$line" in ''|'#'*) continue ;; esac
+            # Enforce the anchored-literal-URL shape .lycheeignore promises. A
+            # cleverer regex is reported here rather than silently mis-parsed
+            # into a URL that greps to nothing and reads as stale.
+            case "$line" in
+              '^http'*'$') ;;
+              *) printf '  %s\n' "$line" >> "$malformed"; continue ;;
+            esac
+            re="$(printf '%s' "$line" | sed -e 's/^\^//' -e 's/\$$//')"
+            url="$(printf '%s' "$re" | sed -e 's/\\//g')"
+            printf '%s\n' "$url" >> "$urls"
+            # Match on a URL BOUNDARY, not a bare substring. A plain `grep -F`
+            # lets `…/mimir` keep matching `…/mimir-automations` long after the
+            # `mimir` row itself is deleted — the same prefix trap .lycheeignore
+            # anchors its own entries to avoid, and it is live today: both repos
+            # are on the pages. The entry is already a regex with its dots
+            # escaped, so it is reused as one, followed by a character that
+            # cannot continue a URL path (or end of line).
+            if ! grep -qrE -- "${re}([^A-Za-z0-9._~/%-]|\$)" profile fleet; then
+              printf '  %s\n' "$url" >> "$stale"
+            fi
+          done < .lycheeignore
+
+          if [ -s "$malformed" ]; then
+            echo "::error::.lycheeignore lines are not anchored literal URLs (^…\$, with dots escaped):"
+            cat "$malformed"
+            exit 1
+          fi
+          if [ -s "$stale" ]; then
+            echo "::error::.lycheeignore allowlists URLs that profile/ and fleet/ no longer link to. Delete these entries:"
+            cat "$stale"
+            exit 1
+          fi
+          echo "allowlist OK: all $(grep -c '' "$urls") entries are still linked from the pages."
+
+      # Cache the TARBALL, not the unpacked binary, so the checksum can be
+      # re-verified on every run. The key names the expected digest, but the
+      # cache service does not enforce it: any run that can write this repo's
+      # cache can store different bytes under the same key.
+      - name: Restore the cached lychee download
+        id: lychee-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: /tmp/lychee-dl
+          key: lychee-linux-x64-${{ env.LYCHEE_VERSION }}-${{ env.LYCHEE_SHA256 }}
+
+      - name: Download pinned lychee
+        if: steps.lychee-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          url="https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz"
+          mkdir -p /tmp/lychee-dl
+          # A single unretried curl means one transient 5xx or DNS blip fails
+          # the job. Worst case 5*60s of transfer plus 2+4+8+16s of backoff =
+          # 5m30s, comfortably inside timeout-minutes so the loop reports its
+          # own error instead of being killed mid-retry.
+          ok=""
+          delay=2
+          for attempt in 1 2 3 4 5; do
+            if curl -fsSL --connect-timeout 10 --max-time 60 "$url" -o /tmp/lychee-dl/lychee.tar.gz; then
+              ok=1
+              break
+            fi
+            if [ "$attempt" -lt 5 ]; then
+              echo "::warning::lychee download attempt ${attempt}/5 failed; retrying in ${delay}s"
+              sleep "$delay"
+              delay=$(( delay * 2 ))
+            fi
+          done
+          if [ -z "$ok" ]; then
+            echo "::error::could not download lychee ${LYCHEE_VERSION} after 5 attempts."
+            exit 1
+          fi
+
+      - name: Verify and install lychee
+        run: |
+          set -euo pipefail
+          # Verify on EVERY run, cache hit included: skipping the checksum for
+          # restored bytes would install an unverified binary as root whenever
+          # the cache happens to hit. The digest is pinned as a literal in the
+          # env block above — a checksum fetched over the same channel as the
+          # artifact proves nothing. A mismatch is a hard stop.
+          echo "${LYCHEE_SHA256}  /tmp/lychee-dl/lychee.tar.gz" | sha256sum -c -
+          # The tarball unpacks into a directory named after the target triple,
+          # not a bare binary at the root.
+          tar -xzf /tmp/lychee-dl/lychee.tar.gz -C /tmp lychee-x86_64-unknown-linux-gnu/lychee
+          sudo install -m 0755 /tmp/lychee-x86_64-unknown-linux-gnu/lychee /usr/local/bin/lychee
+          got="$(lychee --version)"
+          echo "$got"
+          # Fail loudly rather than check with an unexpected version: lychee
+          # rejects a config file outright if it does not know one of its keys,
+          # so the pin and lychee.toml are one unit. A bare `test` would exit
+          # non-zero with nothing to read, which is not "loudly".
+          if [ "$got" != "lychee ${LYCHEE_VERSION}" ]; then
+            echo "::error::installed lychee is '${got}', expected 'lychee ${LYCHEE_VERSION}'. The pin and lychee.toml are one unit — bump LYCHEE_VERSION and LYCHEE_SHA256 together, and re-read lychee.toml against the new release's keys."
+            exit 1
+          fi
+
+      # Prove the checker fires before trusting anything it says. The probe is
+      # a github.com URL under the org — the same host and the same 404 shape
+      # as the failure this job exists to catch — with a random suffix, so it
+      # can never accidentally exist and can never be served from a cache. It
+      # runs from the repo root with the real lychee.toml and the real
+      # .lycheeignore, so what it proves is THIS configuration, not lychee in
+      # the abstract.
+      - name: Self-test the checker
+        run: |
+          set -euo pipefail
+          probe="https://github.com/21StarkCom/link-check-selftest-$(openssl rand -hex 8)"
+          tmp="$(mktemp -d)"
+          printf '[self-test](%s)\n' "$probe" > "$tmp/selftest.md"
+          # Assert on the exit code AND the report. lychee's exits are
+          # distinct — 0 clean, 1 could not read an input, 2 links failed,
+          # 3 bad config — so "non-zero means it fired" would pass just as
+          # happily on a broken lychee.toml.
+          set +e
+          lychee --format markdown --output "$tmp/report.md" -- "$tmp/selftest.md"
+          rc=$?
+          set -e
+          case "$rc" in
+            2) ;;
+            0)
+              echo "::error::the self-test's dead URL came back clean — this checker is not catching 404s, and a green result from it means nothing."
+              cat "$tmp/report.md" || true
+              exit 1
+              ;;
+            *)
+              echo "::error::lychee could not run (exit ${rc}: 1=unreadable input, 3=bad lychee.toml). The checker is broken, not the links."
+              cat "$tmp/report.md" || true
+              exit 1
+              ;;
+          esac
+          if ! grep -qF -- "$probe" "$tmp/report.md"; then
+            echo "::error::lychee exited 2 but its report does not name the self-test URL — something other than the probe failed."
+            cat "$tmp/report.md" || true
+            exit 1
+          fi
+          echo "self-test OK: the checker still fails on a dead public link."
+
+      - name: Check the public links
+        run: |
+          set -euo pipefail
+          report="${RUNNER_TEMP}/link-check.md"
+          set +e
+          lychee --format markdown --output "$report" -- profile fleet
+          rc=$?
+          set -e
+          # The report is the readable half of the result; put it on the run's
+          # summary page so a failure does not have to be dug out of the log.
+          # lychee writes no report at all when it exits 1 or 3, so this `cat`
+          # must not be allowed to abort the step under `set -e` — that would
+          # kill it before the diagnosis below is ever printed.
+          {
+            echo "## Public link check"
+            echo
+            cat "$report" 2>/dev/null || echo "_lychee wrote no report; see the step log._"
+          } >> "$GITHUB_STEP_SUMMARY"
+          case "$rc" in
+            0)
+              # A CLEAN RUN IS NOT YET A MEANINGFUL ONE. lychee exits 0 just as
+              # happily when the inputs matched no files or .lycheeignore
+              # excluded every last link — the two silent failures the self-test
+              # cannot see, because it feeds lychee its own synthetic file
+              # instead of these pages. So read the count back out of the report
+              # and refuse a green built on nothing checked.
+              checked="$(awk -F'|' '/Successful/ { gsub(/[^0-9]/, "", $3); print $3; exit }' "$report")"
+              case "${checked:-}" in
+                ''|*[!0-9]*)
+                  echo "::error::could not read the checked-link count out of the lychee report — its format changed, and this gate can no longer tell a real pass from an empty one."
+                  exit 1
+                  ;;
+              esac
+              if [ "$checked" -eq 0 ]; then
+                echo "::error::lychee checked 0 links on profile/ and fleet/ and called it clean. Either the inputs matched no files or .lycheeignore now excludes everything — a green result from this run means nothing."
+                exit 1
+              fi
+              echo "every public link on profile/ and fleet/ resolves anonymously (${checked} checked)."
+              ;;
+            2)
+              echo "::error::a link on the org's public landing page is dead for a logged-out visitor. Fix the link, or — if it points at a repo that is private on purpose — add it to .lycheeignore with the rest."
+              exit 1
+              ;;
+            *)
+              echo "::error::lychee could not run (exit ${rc}: 1=unreadable input, 3=bad lychee.toml). No conclusion about the links was reached."
+              exit 1
+              ;;
+          esac
+
+      # The other half of allowlist rot, and the half that needs the network:
+      # an entry whose repo has since gone PUBLIC is no longer telling the truth
+      # and is suppressing a link that could now be checked for real. A warning
+      # rather than a gate, deliberately — a repo going public is not the fault
+      # of whatever PR happens to run next, and turning that into a red check on
+      # unrelated work is how a gate earns a bypass.
+      #
+      # `continue-on-error` and the step timeout are what make "never a gate"
+      # true rather than intended: 55 sequential probes that all hang would
+      # otherwise run past the JOB's timeout-minutes and red the check anyway,
+      # which is exactly the outcome the paragraph above rules out.
+      - name: Warn on allowlist entries that have gone public
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          set -euo pipefail
+          # The URL list the staleness gate already reconstructed. Its absence
+          # means that gate never ran (the checkout or an earlier assertion
+          # failed), and there is nothing here to audit.
+          urls="${RUNNER_TEMP}/allowlist-urls.txt"
+          if [ ! -s "$urls" ]; then
+            echo "no allowlist URLs were parsed — the job did not get that far. Nothing to audit."
+            exit 0
+          fi
+          ua="21StarkCom-link-check (+https://github.com/21StarkCom/.github)"
+          found="$(mktemp)"
+          while IFS= read -r url || [ -n "$url" ]; do
+            [ -n "$url" ] || continue
+            # Assign the code, THEN reset it on a curl failure. Writing
+            # `$(curl … || echo 000)` concatenates curl's own `%{http_code}`
+            # with the fallback — a request that times out after its headers
+            # arrive reads back as `200000` and the warning is lost.
+            code="$(curl -sL -o /dev/null -w '%{http_code}' --connect-timeout 5 --max-time 10 -A "$ua" "$url")" || code="000"
+            if [ "$code" = "200" ]; then
+              printf '  %s\n' "$url" >> "$found"
+            fi
+            # Pace it: these land on the same host the main run just finished
+            # with, and a 429 here would only ever hide a warning.
+            sleep 0.25
+          done < "$urls"
+
+          if [ -s "$found" ]; then
+            echo "::warning::.lycheeignore allowlists repos that are now PUBLIC. Remove these entries so the links get checked for real:"
+            cat "$found"
+          else
+            echo "allowlist OK: every allowlisted repo is still invisible anonymously."
+          fi
+
+      - name: Upload the link report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: link-check-report
+          path: ${{ runner.temp }}/link-check.md
+          if-no-files-found: warn

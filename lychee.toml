@@ -1,0 +1,58 @@
+# Settings for the public-link check (.github/workflows/link-check.yml).
+#
+# lychee picks this file up from the working directory on its own, so a bare
+# `lychee profile fleet` locally runs the CHECK CI RUNS — same accept codes,
+# same pacing, same .lycheeignore allowlist. That is the point of putting the
+# settings in a file rather than in the workflow's argument list: the gate is
+# reproducible off a laptop, with no YAML to re-read. The inputs stay on the
+# command line because lychee has no config key for them.
+#
+# A TYPO HERE IS A HARD FAILURE, not a silent default: lychee rejects an
+# unknown key outright ("unknown field `max_concurency`") rather than ignoring
+# it. Worth knowing, because the usual risk with a checker's config file is the
+# setting that quietly does nothing.
+#
+# NOTHING BELOW AUTHENTICATES, and that is the whole design. See .lycheeignore
+# for why the probe is anonymous and what that costs. lychee would pick a token
+# up from `GITHUB_TOKEN` in the environment without saying so, and no setting
+# here can override an environment variable — so the workflow asserts the
+# variable is empty instead of trusting this file to keep the probe honest.
+
+# CI reads logs, not progress bars. `plain` also keeps the output greppable,
+# which the self-test below relies on.
+no_progress = true
+mode = "plain"
+
+# Explicit rather than inherited, and NARROWER than the default, which is
+# `100..=103,200..=299`: a 1xx is an interim response, not a page a visitor can
+# read, and this is the line that decides what "the link works" means for the
+# org's public page. 3xx is absent on purpose: a redirect is followed
+# (max_redirects), and what matters is where it lands. 403 and 429 are absent
+# too — a visitor who is refused or throttled cannot read the page either.
+accept = ["200..=299"]
+
+# Pace github.com. Every one of these requests is anonymous, and while
+# .lycheeignore excludes the 55 private rows before any of them is sent, the
+# ~15 that remain still land on one host in one burst — the shape that earns a
+# 429. lychee's per-host limiter also backs off adaptively when a host pushes
+# back, so these are the floor, not the whole defence.
+max_concurrency = 8
+host_concurrency = 4
+host_request_interval = "250ms"
+
+# A transient blip must not red a gate. 3 retries with a 2s floor, on top of
+# the adaptive backoff, costs seconds on a healthy run and saves a spurious
+# failure on a bad one.
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+
+# Say who is knocking. An anonymous probe with a plausible UA is easier for the
+# far side to rate-limit deliberately than to mistake for an attack.
+user_agent = "21StarkCom-link-check (+https://github.com/21StarkCom/.github)"
+
+# Fragments are NOT checked (`none` is the default, written down because its
+# absence would look like an oversight). `profile/README.md#the-fleet` is
+# verified as far as the file; whether the anchor still exists is not something
+# this probe asserts, and a heading rename will not fail it.
+include_fragments = "none"
