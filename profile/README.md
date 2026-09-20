@@ -27,7 +27,7 @@ Multi-agent tooling, infra-as-code and `MCP` servers. `Claude` + `Codex` + `Gemi
 The public face of the fleet — the rest is private by default.
 
 - **[stark-skills](https://github.com/21StarkCom/stark-skills)** — the development workflow for `Claude Code` and `Codex`. Human-gated spec and plan, check-gated build, evidence-contract PR review, multi-agent IaC review, session ops. **The flagship.**
-- **[bifrost](https://github.com/21StarkCom/bifrost)** — the marketplace. One catalog of skills, prompts, commands, agents and `MCP` servers, rendered per runtime for `Claude Code`, `Codex` and `Gemini`, served at [marketplace.21stark.com](https://marketplace.21stark.com).
+- **[bifrost](https://github.com/21StarkCom/bifrost)** — the marketplace. One catalog of skills, prompts, commands, agents and `MCP` servers, rendered per runtime for `Claude Code` and `Codex`, installed straight from GitHub with `/plugin marketplace add 21StarkCom/bifrost`.
 
 ---
 

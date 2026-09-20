@@ -7,7 +7,7 @@
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[stark-skills](https://github.com/21StarkCom/stark-skills)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill, slash command and agent for Claude Code and Codex. |
-| **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `Go` | The canonical multi-runtime marketplace and Go engine for stark bundles, served at marketplace.21stark.com. |
+| **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `Go` | The canonical multi-runtime marketplace and Go engine for stark bundles. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The stateless vendor-action CLI — one typed, gated surface over every third-party system in the fleet. |
 | **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
 | **[stark-workspace](https://github.com/21StarkCom/stark-workspace)** 🤝 | `Shell` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
