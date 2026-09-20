@@ -57,4 +57,4 @@
 | **[stark-night-watch](https://github.com/21StarkCom/stark-night-watch)** | `Go` | The Go automation backend that meridian was forked from. |
 | **[stark-writing](https://github.com/21StarkCom/stark-writing)** | `MDX` | Long-form writing sources for 21stark.com (MDX). |
 | **[control-chrome](https://github.com/21StarkCom/control-chrome)** | `HTML` | A browser-control surface (HTML). |
-| **[.github](https://github.com/21StarkCom/.github)** ⭐ | `—` | The org profile, README and community-health defaults for the fleet. |
+| **[.github](https://github.com/21StarkCom/.github)** ⭐ | `Shell` | The org profile, README and community-health defaults for the fleet. |
