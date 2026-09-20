@@ -1,6 +1,6 @@
 # Does the org landing page still describe the real org?
 #
-# The page drifted to nine repos behind reality before anyone counted
+# The page drifted to ten repos behind reality before anyone counted
 # (STARK-8036): the tables summed correctly to 58 and the org held 68, so the
 # page was internally consistent and wrong. Nothing on a PR could have caught
 # that, because the drift does not arrive in a PR — it arrives when a repo is
@@ -30,6 +30,15 @@ on:
       - .lycheeignore
       - .github/workflows/fleet-drift.yml
   # Weekly, because the org changes when this repo does not.
+  #
+  # KNOWN HOLE, stated rather than hidden: GitHub disables a repo's `schedule`
+  # triggers after 60 days with no commit, and a quiet `.github` repo is exactly
+  # the case this cron exists to cover — so the schedule is weakest precisely
+  # where it matters most, and turns itself off silently. There is no in-repo
+  # fix: a keepalive commit is cruft, and the real answer is driving this from a
+  # repo that commits (21stark already reconciles the org in Terraform). Until
+  # then the PR trigger and `workflow_dispatch` are the reliable paths, and a
+  # cron that has gone quiet for two months should be read as off, not as clean.
   schedule:
     - cron: '17 6 * * 1'
   workflow_dispatch:
@@ -44,8 +53,16 @@ concurrency:
 jobs:
   fleet-drift:
     runs-on: ubuntu-latest
+    # One `gh` enumeration of a 68-repo org and some sed. If this has not
+    # finished in five minutes it is wedged on the network, not working.
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The step below runs with an org-wide PAT in its environment and
+          # never pushes; leaving a second, repo-scoped token in .git/config
+          # for it to find buys nothing.
+          persist-credentials: false
 
       - name: Check the page against the org
         env:
@@ -67,8 +84,12 @@ jobs:
           # pipefail (set above, and the Actions default) stops `tee` from
           # swallowing the script's exit code, and the drift report is the part
           # worth reading, so close the fence before failing the job.
+          #
+          # 2>&1 because the loud failures — a `gh` auth error, an unparsable
+          # fleet/exclusions.md — go to stderr, and a summary holding an empty
+          # code fence tells the reader nothing about why the job went red.
           echo '```' >> "$GITHUB_STEP_SUMMARY"
           status=0
-          bash scripts/fleet-check.sh | tee -a "$GITHUB_STEP_SUMMARY" || status=$?
+          bash scripts/fleet-check.sh 2>&1 | tee -a "$GITHUB_STEP_SUMMARY" || status=$?
           echo '```' >> "$GITHUB_STEP_SUMMARY"
           exit $status
