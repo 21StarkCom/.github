@@ -37,10 +37,10 @@ The public face of the fleet — the rest is private by default.
 
 | Section | Repos | What lives here |
 | :-- | :-- | :-- |
-| 🧭 **[Ecosystem](https://github.com/21StarkCom/.github/blob/main/fleet/ecosystem.md)** | 46 | The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via `stark-skills`. |
+| 🧭 **[Ecosystem](https://github.com/21StarkCom/.github/blob/main/fleet/ecosystem.md)** | 47 | The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via `stark-skills`. |
 | 🏗️ **[Infrastructure](https://github.com/21StarkCom/.github/blob/main/fleet/infrastructure.md)** | 4 | Terraform + GCP foundations — GitHub-as-code and the shared platform every service builds on. |
 | 🧠 **[Second brain](https://github.com/21StarkCom/.github/blob/main/fleet/second-brain.md)** | 3 | Atlas — the LLM-native knowledge engine and the `brain` CLI over the vaults. |
-| 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 5 | Terminated, decommissioned or superseded. Kept for history. |
+| 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 4 | Terminated, decommissioned or superseded. Kept for history. |
 
 <sub>By language: **22** Go · **14** TypeScript · **8** Python · **5** Terraform (HCL) · **2** Swift · **+5** others</sub>
 

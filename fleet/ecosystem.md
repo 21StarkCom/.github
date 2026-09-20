@@ -2,15 +2,16 @@
 
 > The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via **stark-skills**.
 
-**46 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · 🤝 shared building block · ✏️ WIP · 🪦 retired
+**47 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[stark-skills](https://github.com/21StarkCom/stark-skills)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill, slash command and agent for Claude Code and Codex. |
 | **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `Go` | The canonical multi-runtime marketplace and Go engine for stark bundles. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The stateless vendor-action CLI — one typed, gated surface over every third-party system in the fleet. |
-| **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
+| **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🔒 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
 | **[stark-workspace](https://github.com/21StarkCom/stark-workspace)** 🤝 | `Shell` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
+| **[fenrir](https://github.com/21StarkCom/fenrir)** | `TypeScript` | The multi-vendor agent client for ClickUp and GitHub — a typed library + CLI driven by Claude Code, not by humans in a vendor UI. |
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The fleet's automation plane and command-center — a long-lived Go service on GKE across the fleet. |
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The ticket tool — owns work-item creation and tracking for the fleet; sessions become ClickUp tickets. |
 | **[idun](https://github.com/21StarkCom/idun)** | `TypeScript` | Aryeh's personal-ops maintenance CLI — one zero-dependency Bun binary holding the fleet's keep-it-fresh chores. |
@@ -44,7 +45,7 @@
 | **[heimdall](https://github.com/21StarkCom/heimdall)** | `Go` | A personal cross-device notification relay for the Apple ecosystem, powered by your own APNs. |
 | **[stark-invoices-collector](https://github.com/21StarkCom/stark-invoices-collector)** | `TypeScript` | A Chrome extension that harvests, renames and files vendor invoice PDFs on your logged-in sessions. |
 | **[manual-auditor-project](https://github.com/21StarkCom/manual-auditor-project)** | `Python` | Data collection and harvesting orchestration for the Manual Auditor project. |
-| **[gjallarhorn](https://github.com/21StarkCom/gjallarhorn)** ✏️ | `Swift` | The horn that wakes the org — the bi-weekly AI talks: decks, data and speaker notes. |
+| **[gjallarhorn](https://github.com/21StarkCom/gjallarhorn)** ✏️ | `Swift` | The iOS app that harvests Plaud voice-recorder recordings over Bluetooth and syncs them to Google Drive. |
 | **[homebrew-tap](https://github.com/21StarkCom/homebrew-tap)** | `Ruby` | The private Homebrew tap distributing the stark fleet's installable CLIs. |
 | **[nastrond](https://github.com/21StarkCom/nastrond)** | `TypeScript` | The living code graveyard — retired repos and dead subsystems, sealed and kept to be remembered, never run. |
 | **[stark-night-watch](https://github.com/21StarkCom/stark-night-watch)** | `Go` | The Go automation backend that meridian was forked from. |
