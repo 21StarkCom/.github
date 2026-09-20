@@ -1,0 +1,103 @@
+# THE PRIVATE-REPO ALLOWLIST — links a public visitor CANNOT open, on purpose.
+#
+# lychee reads this file from the working directory automatically; every line
+# is a regex matched against the URL. The link check (.github/workflows/
+# link-check.yml) probes ANONYMOUSLY, exactly as a logged-out visitor does, so
+# a private or internal repo answers 404 and is indistinguishable from a repo
+# that was deleted or renamed away. This list is what tells the two apart, and
+# it is the whole cost of the anonymous probe: every private repo the fleet
+# pages link to has to be written down here, by hand, once.
+#
+# WHY ANONYMOUS AND NOT AUTHENTICATED. An authenticated probe would need no
+# list at all — it sees every repo in the org — but it goes green on links the
+# page's actual audience cannot open, which is the failure this check exists to
+# catch. The pages under profile/ and fleet/ are the org's PUBLIC landing page.
+# What a token can reach is not the question being asked.
+#
+# WHAT THIS LIST CANNOT DO, stated plainly: an entry below suppresses the 404
+# for that URL forever. If one of these repos is later DELETED or RENAMED, its
+# link is dead and this file hides it — the anonymous probe cannot tell a
+# deleted repo from a private one, because both answer 404. Nothing here closes
+# that hole; only reading the list against the org's real repos does. The
+# workflow does the two checks that ARE possible: it fails when an entry names
+# a URL no page links to any more, and it warns when an entry's repo has gone
+# public and should therefore be checked for real.
+#
+# LINE FORMAT IS ENFORCED, not conventional. Every non-comment line must be an
+# anchored literal URL — `^`, the URL with its dots escaped, `$` — because the
+# staleness guard reconstructs the plain URL from it to grep the pages. A
+# cleverer regex is rejected by that guard rather than silently mis-parsed.
+# Anchoring is also load-bearing on its own: unanchored, `mimir` would swallow
+# `mimir-automations`, and `stark-2nd-brain-cli` its `-hub` sibling.
+#
+# Measured 2026-09-20 against `gh repo list 21StarkCom`, after STARK-8035
+# merged: these pages link to 58 org repos, all 58 exist, and 3 of them are
+# public — `.github`, `bifrost`, `stark-skills`. The other 55 are below. There
+# is no dead link on the pages as this lands, which is exactly the state the
+# check is here to keep.
+#
+# KEEPING THIS LIST HONEST is two jobs, and the workflow only does one of them.
+# It fails on an entry no page links to any more and warns on one whose repo
+# has gone public. What it cannot do is notice a repo below being DELETED. That
+# one is caught by re-deriving the list — link the pages' repo names against
+# `gh repo list 21StarkCom` and look for a name the org does not have. That is
+# the check that found `stark-clickup`.
+
+# ── PRIVATE (53) — invisible to everyone outside the org.
+^https://github\.com/21StarkCom/21stark$
+^https://github\.com/21StarkCom/agent-native-gcp$
+^https://github\.com/21StarkCom/alfred$
+^https://github\.com/21StarkCom/apple-developer$
+^https://github\.com/21StarkCom/atlas$
+^https://github\.com/21StarkCom/control-chrome$
+^https://github\.com/21StarkCom/design-system-core$
+^https://github\.com/21StarkCom/devops-sandbox$
+^https://github\.com/21StarkCom/draupnir$
+^https://github\.com/21StarkCom/fenrir$
+^https://github\.com/21StarkCom/frigg$
+^https://github\.com/21StarkCom/gjallarhorn$
+^https://github\.com/21StarkCom/heimdall$
+^https://github\.com/21StarkCom/hermod$
+^https://github\.com/21StarkCom/homebrew-tap$
+^https://github\.com/21StarkCom/idun$
+^https://github\.com/21StarkCom/infra-pulse$
+^https://github\.com/21StarkCom/infra-sentinel$
+^https://github\.com/21StarkCom/kotodama$
+^https://github\.com/21StarkCom/lumiere$
+^https://github\.com/21StarkCom/manual-auditor-project$
+^https://github\.com/21StarkCom/meridian$
+^https://github\.com/21StarkCom/mimir$
+^https://github\.com/21StarkCom/mimir-automations$
+^https://github\.com/21StarkCom/nastrond$
+^https://github\.com/21StarkCom/plume$
+^https://github\.com/21StarkCom/slack-investigator$
+^https://github\.com/21StarkCom/sleipnir$
+^https://github\.com/21StarkCom/snyk-wiring-slice3-smoke$
+^https://github\.com/21StarkCom/stark-2nd-brain-cli$
+^https://github\.com/21StarkCom/stark-2nd-brain-hub$
+^https://github\.com/21StarkCom/stark-admin-agent$
+^https://github\.com/21StarkCom/stark-agents$
+^https://github\.com/21StarkCom/stark-automations$
+^https://github\.com/21StarkCom/stark-data-core$
+^https://github\.com/21StarkCom/stark-docs$
+^https://github\.com/21StarkCom/stark-engineering-labs$
+^https://github\.com/21StarkCom/stark-insights$
+^https://github\.com/21StarkCom/stark-invoices-collector$
+^https://github\.com/21StarkCom/stark-mcp$
+^https://github\.com/21StarkCom/stark-night-watch$
+^https://github\.com/21StarkCom/stark-personal$
+^https://github\.com/21StarkCom/stark-showcase$
+^https://github\.com/21StarkCom/stark-slack-indexer$
+^https://github\.com/21StarkCom/stark-stream-deck-sdk$
+^https://github\.com/21StarkCom/stark-team$
+^https://github\.com/21StarkCom/stark-workspace$
+^https://github\.com/21StarkCom/stark-writing$
+^https://github\.com/21StarkCom/transcript-optimizer$
+^https://github\.com/21StarkCom/tyr$
+^https://github\.com/21StarkCom/user-management-agent$
+^https://github\.com/21StarkCom/workplan-tools$
+^https://github\.com/21StarkCom/workspace-admin-toolkit$
+
+# ── INTERNAL (2) — visible to org members only, so still 404 anonymously.
+^https://github\.com/21StarkCom/ev-infra-group$
+^https://github\.com/21StarkCom/stark-tui$
