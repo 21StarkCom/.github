@@ -43,11 +43,12 @@
 # `gh repo list 21StarkCom` and look for a name the org does not have. That is
 # the check that found `stark-clickup`.
 
-# ── PRIVATE (53) — invisible to everyone outside the org.
+# ── PRIVATE (58) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/alfred$
 ^https://github\.com/21StarkCom/apple-developer$
+^https://github\.com/21StarkCom/assay$
 ^https://github\.com/21StarkCom/atlas$
 ^https://github\.com/21StarkCom/control-chrome$
 ^https://github\.com/21StarkCom/design-system-core$
@@ -59,20 +60,23 @@
 ^https://github\.com/21StarkCom/heimdall$
 ^https://github\.com/21StarkCom/hermod$
 ^https://github\.com/21StarkCom/homebrew-tap$
+^https://github\.com/21StarkCom/hygiea$
 ^https://github\.com/21StarkCom/idun$
 ^https://github\.com/21StarkCom/infra-pulse$
 ^https://github\.com/21StarkCom/infra-sentinel$
 ^https://github\.com/21StarkCom/kotodama$
+^https://github\.com/21StarkCom/lucius$
 ^https://github\.com/21StarkCom/lumiere$
 ^https://github\.com/21StarkCom/manual-auditor-project$
 ^https://github\.com/21StarkCom/meridian$
 ^https://github\.com/21StarkCom/mimir$
 ^https://github\.com/21StarkCom/mimir-automations$
+^https://github\.com/21StarkCom/muninn$
 ^https://github\.com/21StarkCom/nastrond$
 ^https://github\.com/21StarkCom/plume$
+^https://github\.com/21StarkCom/ratatoskr$
 ^https://github\.com/21StarkCom/slack-investigator$
 ^https://github\.com/21StarkCom/sleipnir$
-^https://github\.com/21StarkCom/snyk-wiring-slice3-smoke$
 ^https://github\.com/21StarkCom/stark-2nd-brain-cli$
 ^https://github\.com/21StarkCom/stark-2nd-brain-hub$
 ^https://github\.com/21StarkCom/stark-admin-agent$
@@ -95,6 +99,7 @@
 ^https://github\.com/21StarkCom/transcript-optimizer$
 ^https://github\.com/21StarkCom/tyr$
 ^https://github\.com/21StarkCom/user-management-agent$
+^https://github\.com/21StarkCom/vor$
 ^https://github\.com/21StarkCom/workplan-tools$
 ^https://github\.com/21StarkCom/workspace-admin-toolkit$
 
