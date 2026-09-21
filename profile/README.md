@@ -26,8 +26,7 @@ Multi-agent tooling, infra-as-code and `MCP` servers. `Claude` + `Codex` + `Gemi
 
 The public face of the fleet — the rest is private by default.
 
-- **[stark-skills](https://github.com/21StarkCom/stark-skills)** — the development workflow for `Claude Code` and `Codex`. Human-gated spec and plan, check-gated build, evidence-contract PR review, multi-agent IaC review, session ops. **The flagship.**
-- **[bifrost](https://github.com/21StarkCom/bifrost)** — the marketplace. One catalog of skills, prompts, commands, agents and `MCP` servers, rendered per runtime for `Claude Code` and `Codex`, installed straight from GitHub with `/plugin marketplace add 21StarkCom/bifrost`.
+- **[bifrost](https://github.com/21StarkCom/bifrost)** — the development workflow for `Claude Code`, served straight from source as its marketplace with `/plugin marketplace add 21StarkCom/bifrost`. Human-gated spec and plan, check-gated build, multi-agent IaC review, session ops, with `Codex` and `Gemini` as dispatched reviewers. **The flagship.**
 
 ---
 
@@ -37,12 +36,12 @@ The public face of the fleet — the rest is private by default.
 
 | Section | Repos | What lives here |
 | :-- | :-- | :-- |
-| 🧭 **[Ecosystem](https://github.com/21StarkCom/.github/blob/main/fleet/ecosystem.md)** | 52 | The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via `stark-skills`. |
+| 🧭 **[Ecosystem](https://github.com/21StarkCom/.github/blob/main/fleet/ecosystem.md)** | 51 | The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via `bifrost`. |
 | 🏗️ **[Infrastructure](https://github.com/21StarkCom/.github/blob/main/fleet/infrastructure.md)** | 4 | Terraform + GCP foundations — GitHub-as-code and the shared platform every service builds on. |
 | 🧠 **[Second brain](https://github.com/21StarkCom/.github/blob/main/fleet/second-brain.md)** | 3 | Atlas — the LLM-native knowledge engine and the `brain` CLI over the vaults. |
-| 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 4 | Terminated, decommissioned or superseded. Kept for history. |
+| 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 5 | Terminated, decommissioned or superseded. Kept for history. |
 
-<sub>By language: **26** Go · **15** TypeScript · **8** Python · **5** Terraform (HCL) · **3** Swift · **+6** others</sub>
+<sub>By language: **25** Go · **16** TypeScript · **8** Python · **5** Terraform (HCL) · **3** Swift · **+6** others</sub>
 
 <sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. Every index above links that list, with a reason for each.</sub>
 

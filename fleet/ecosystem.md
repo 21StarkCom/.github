@@ -1,13 +1,12 @@
 # 🧭 Ecosystem
 
-> The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via **stark-skills**.
+> The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via **bifrost**.
 
-**52 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**51 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
-| **[stark-skills](https://github.com/21StarkCom/stark-skills)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill, slash command and agent for Claude Code and Codex. |
-| **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `Go` | The canonical multi-runtime marketplace and Go engine for stark bundles. |
+| **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill, tool and agent for Claude Code, served straight from source as its marketplace. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The stateless vendor-action CLI — one typed, gated surface over every third-party system in the fleet. |
 | **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🔒 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
 | **[stark-workspace](https://github.com/21StarkCom/stark-workspace)** 🤝 | `Go` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
