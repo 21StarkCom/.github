@@ -26,7 +26,7 @@ Multi-agent tooling, infra-as-code and `MCP` servers. `Claude` + `Codex` + `Gemi
 
 The public face of the fleet — the rest is private by default.
 
-- **[bifrost](https://github.com/21StarkCom/bifrost)** — the development workflow for `Claude Code`, served straight from source as its marketplace with `/plugin marketplace add 21StarkCom/bifrost`. Human-gated spec and plan, check-gated build, multi-agent IaC review, session ops, with `Codex` and `Gemini` as dispatched reviewers. **The flagship.**
+- **[bifrost](https://github.com/21StarkCom/bifrost)** — the development workflow for `Claude Code`. Human-gated spec and plan, check-gated build, multi-agent IaC review, session ops, with `Codex` and `Gemini` as dispatched reviewers. Served straight from source as its own plugin marketplace: `/plugin marketplace add 21StarkCom/bifrost`. **The flagship.**
 
 ---
 
@@ -41,7 +41,7 @@ The public face of the fleet — the rest is private by default.
 | 🧠 **[Second brain](https://github.com/21StarkCom/.github/blob/main/fleet/second-brain.md)** | 3 | Atlas — the LLM-native knowledge engine and the `brain` CLI over the vaults. |
 | 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 5 | Terminated, decommissioned or superseded. Kept for history. |
 
-<sub>By language: **25** Go · **16** TypeScript · **8** Python · **5** Terraform (HCL) · **3** Swift · **+6** others</sub>
+<sub>By language: **24** Go · **16** TypeScript · **8** Python · **5** Terraform (HCL) · **3** Swift · **+7** others</sub>
 
 <sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. Every index above links that list, with a reason for each.</sub>
 

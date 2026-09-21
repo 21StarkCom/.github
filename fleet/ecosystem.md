@@ -6,10 +6,10 @@
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
-| **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill, tool and agent for Claude Code, served straight from source as its marketplace. |
+| **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill and tool for Claude Code, served straight from source as its own plugin marketplace. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The stateless vendor-action CLI — one typed, gated surface over every third-party system in the fleet. |
 | **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🔒 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
-| **[stark-workspace](https://github.com/21StarkCom/stark-workspace)** 🤝 | `Go` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
+| **[stark-workspace](https://github.com/21StarkCom/stark-workspace)** 🤝 | `Shell` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
 | **[fenrir](https://github.com/21StarkCom/fenrir)** | `TypeScript` | The multi-vendor agent client for ClickUp and GitHub — a typed library + CLI driven by Claude Code, not by humans in a vendor UI. |
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The fleet's automation plane and command-center — a long-lived Go service on GKE across the fleet. |
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The ticket tool — owns work-item creation and tracking for the fleet; sessions become ClickUp tickets. |
