@@ -59,8 +59,8 @@
 # would skip the job on every other PR, and a skipped job produces NO check run
 # — so the day this context becomes required, every PR that does not touch
 # those directories would sit for ever on "Expected — waiting for status". The
-# job is cheap (one pinned binary, ~70 URLs, seconds); running it always is the
-# cheaper mistake.
+# job is cheap (one pinned binary, under a hundred URLs, seconds); running it
+# always is the cheaper mistake.
 #
 # NOT A REUSABLE WORKFLOW. secret-scan.yml is one because every repo in the
 # fleet needs it. This one checks two directories that exist only here, so
@@ -414,11 +414,13 @@ jobs:
       # unrelated work is how a gate earns a bypass.
       #
       # `continue-on-error` and the step timeout are what make "never a gate"
-      # true rather than intended: 63 sequential probes that all hang would
-      # otherwise run past the JOB's timeout-minutes and red the check anyway,
-      # which is exactly the outcome the paragraph above rules out. The step
-      # timeout is the shorter fuse and it bites first — 63 URLs at --max-time
-      # 10 is 10.5 minutes of worst case against a 3-minute budget — so on a bad
+      # true rather than intended: one sequential probe per allowlist entry,
+      # each allowed --max-time 10 plus a 0.25s pause, has no ceiling but the
+      # list's length, and a day when they all hang would otherwise run past
+      # the JOB's timeout-minutes and red the check anyway, which is exactly the
+      # outcome the paragraph above rules out. The step timeout is the shorter
+      # fuse and it bites first — past 17 entries the worst case outruns a
+      # 3-minute budget, and the list holds several times that — so on a bad
       # day this audit covers a prefix of the list and no more. That is the
       # right trade for a warning, but do not read a quiet run as a full sweep.
       - name: Warn on allowlist entries that have gone public
