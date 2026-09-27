@@ -17,7 +17,7 @@
 # sync; it is the same secret and rotates with it.
 #
 # WIRING IT IS A SEPARATE, MANUAL STEP, and nothing in this repo can do it.
-# That PAT is a REPO-level Actions secret on `21StarkCom/stark-workspace`, where
+# That PAT is a REPO-level Actions secret on `21StarkCom/idavoll`, where
 # catalog-sync.yml consumes it — it is not an org secret, so it does not reach
 # this repo by being "already used" somewhere else. Checked 2026-09-20:
 # `21StarkCom/.github` had no repo secrets and no org secrets visible to it, so
