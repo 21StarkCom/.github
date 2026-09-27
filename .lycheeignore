@@ -63,6 +63,7 @@
 ^https://github\.com/21StarkCom/hermod$
 ^https://github\.com/21StarkCom/homebrew-tap$
 ^https://github\.com/21StarkCom/hygiea$
+^https://github\.com/21StarkCom/idavoll$
 ^https://github\.com/21StarkCom/idun$
 ^https://github\.com/21StarkCom/infra-pulse$
 ^https://github\.com/21StarkCom/infra-sentinel$
@@ -96,7 +97,6 @@
 ^https://github\.com/21StarkCom/stark-slack-indexer$
 ^https://github\.com/21StarkCom/stark-stream-deck-sdk$
 ^https://github\.com/21StarkCom/stark-team$
-^https://github\.com/21StarkCom/stark-workspace$
 ^https://github\.com/21StarkCom/stark-writing$
 ^https://github\.com/21StarkCom/transcript-optimizer$
 ^https://github\.com/21StarkCom/tyr$
