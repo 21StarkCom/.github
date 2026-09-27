@@ -414,11 +414,11 @@ jobs:
       # unrelated work is how a gate earns a bypass.
       #
       # `continue-on-error` and the step timeout are what make "never a gate"
-      # true rather than intended: 60 sequential probes that all hang would
+      # true rather than intended: 63 sequential probes that all hang would
       # otherwise run past the JOB's timeout-minutes and red the check anyway,
       # which is exactly the outcome the paragraph above rules out. The step
-      # timeout is the shorter fuse and it bites first — 60 URLs at --max-time
-      # 10 is 10 minutes of worst case against a 3-minute budget — so on a bad
+      # timeout is the shorter fuse and it bites first — 63 URLs at --max-time
+      # 10 is 10.5 minutes of worst case against a 3-minute budget — so on a bad
       # day this audit covers a prefix of the list and no more. That is the
       # right trade for a warning, but do not read a quiet run as a full sweep.
       - name: Warn on allowlist entries that have gone public

@@ -30,13 +30,12 @@
 # Anchoring is also load-bearing on its own: unanchored, `mimir` would swallow
 # `mimir-automations`, and `stark-2nd-brain-cli` its `-hub` sibling.
 #
-# Measured 2026-09-20 against `gh repo list 21StarkCom`, after STARK-8035
-# merged and STARK-8036 added the six rows it was missing: these pages link to
-# 63 org repos, all 63 exist, and 3 of them are public — `.github`, `bifrost`,
-# `stark-skills`. The other 60 are below, and
-# the two section counts underneath have to keep summing to that 60. There is
-# no dead link on the pages as this lands, which is exactly the state the
-# check is here to keep.
+# Measured 2026-09-27 against `gh repo list 21StarkCom`, after STARK-9721
+# added the three rows it was missing: these pages link to 66 org repos, all 66
+# exist, and 3 of them are public — `.github`, `bifrost`, `stark-skills`. The
+# other 63 are below, and the two section counts underneath have to keep
+# summing to that 63. There is no dead link on the pages as this lands, which
+# is exactly the state the check is here to keep.
 #
 # KEEPING THIS LIST HONEST is two jobs, and the workflow only does one of them.
 # It fails on an entry no page links to any more and warns on one whose repo
@@ -45,13 +44,14 @@
 # `gh repo list 21StarkCom` and look for a name the org does not have. That is
 # the check that found `stark-clickup`.
 
-# ── PRIVATE (58) — invisible to everyone outside the org.
+# ── PRIVATE (61) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/alfred$
 ^https://github\.com/21StarkCom/apple-developer$
 ^https://github\.com/21StarkCom/assay$
 ^https://github\.com/21StarkCom/atlas$
+^https://github\.com/21StarkCom/claude-seats$
 ^https://github\.com/21StarkCom/control-chrome$
 ^https://github\.com/21StarkCom/design-system-core$
 ^https://github\.com/21StarkCom/devops-sandbox$
@@ -59,9 +59,11 @@
 ^https://github\.com/21StarkCom/fenrir$
 ^https://github\.com/21StarkCom/frigg$
 ^https://github\.com/21StarkCom/gjallarhorn$
+^https://github\.com/21StarkCom/goldfinger$
 ^https://github\.com/21StarkCom/heimdall$
 ^https://github\.com/21StarkCom/hermod$
 ^https://github\.com/21StarkCom/homebrew-tap$
+^https://github\.com/21StarkCom/houston$
 ^https://github\.com/21StarkCom/hygiea$
 ^https://github\.com/21StarkCom/idavoll$
 ^https://github\.com/21StarkCom/idun$
