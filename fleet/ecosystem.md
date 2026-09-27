@@ -2,7 +2,7 @@
 
 > The Norse-named fleet — services, agents, tools, media and UI. Almost everything cross-cuts via **bifrost**.
 
-**51 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**54 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -14,9 +14,12 @@
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The fleet's automation plane and command-center — a long-lived Go service on GKE across the fleet. |
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The ticket tool — owns work-item creation and tracking for the fleet; sessions become ClickUp tickets. |
 | **[idun](https://github.com/21StarkCom/idun)** | `TypeScript` | Aryeh's personal-ops maintenance CLI — one zero-dependency Bun binary holding the fleet's keep-it-fresh chores. |
+| **[claude-seats](https://github.com/21StarkCom/claude-seats)** | `TypeScript` | A standalone copy of idun's Claude Code seat tools — seats, live usage and the rotation daemon — for someone without idun, sharing its on-disk state on purpose. |
 | **[hermod](https://github.com/21StarkCom/hermod)** | `TypeScript` | The client, porcelain and fleet-coordination toolkit for cmux — one typed surface over its terminal control API. |
+| **[houston](https://github.com/21StarkCom/houston)** | `TypeScript` | Epic progress overwatch — a local-first, push-only server that agents report gate transitions to, with one page of parallel tracks per epic. |
 | **[ratatoskr](https://github.com/21StarkCom/ratatoskr)** ✏️ | `TypeScript` | The squirrel carrying messages between agents — a Claude Code channel bridging Codex → Claude, and a relay for permission prompts. |
 | **[sleipnir](https://github.com/21StarkCom/sleipnir)** | `TypeScript` | A CLI driving dedicated, persistent Chrome profiles for ad-hoc agent browser tasks. |
+| **[goldfinger](https://github.com/21StarkCom/goldfinger)** ✏️ | `Swift` | Background computer use for AI agents — a helper-app daemon that holds the OS permissions, driven by a CLI, operating native apps without taking focus; macOS first. |
 | **[lucius](https://github.com/21StarkCom/lucius)** ✏️ | `TypeScript` | The interactive brainstorming partner — a terminal worker on the Claude Agent SDK that recalls, argues and digs, and ships nothing. |
 | **[hygiea](https://github.com/21StarkCom/hygiea)** | `Go` | The repo-hygiene agent — proves dead code, stale docs and unused deps before removing any of them, and never merges. |
 | **[user-management-agent](https://github.com/21StarkCom/user-management-agent)** | `Go` | uma — records how you onboard and offboard users across SaaS admin UIs and replays them. |

@@ -292,6 +292,17 @@ if [[ -f $ALLOWLIST ]]; then
   else fail "private rows with no .lycheeignore entry: ${missing% } -- their links 404 anonymously and will redden the link check"; fi
   if [[ -z $stale ]]; then ok "every allowlist entry still has a row"
   else fail "allowlist entries with no remaining row: ${stale% } -- prune them from .lycheeignore"; fi
+  # Each `# ── NAME (n)` section header counts the entries under it. Nothing
+  # else reads those figures, so without this they lag the list silently — as
+  # they already did once (55 -> 60, fixed in d97d8fc).
+  bad_hdr=$(awk '
+    function close_section() { if (name != "" && stated != held) print "    " name " says " stated ", holds " held }
+    /^# ── [A-Z]+ \([0-9]+\)/ { close_section(); name = $3; stated = $4; gsub(/[()]/, "", stated); held = 0; next }
+    /^[[:space:]]*#/ || /^[[:space:]]*$/ { next }
+    name != "" { held++ }
+    END { close_section() }' "$ALLOWLIST")
+  if [[ -z $bad_hdr ]]; then ok "every allowlist section header counts its entries"
+  else fail "allowlist section headers disagree with their entries:"; printf '%s\n' "$bad_hdr"; fi
 fi
 
 echo
