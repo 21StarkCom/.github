@@ -14,7 +14,7 @@ not both match a rule and hold a row — the check treats that as drift too.
 
 | Rule | Why it is not a fleet repo |
 | :-- | :-- |
-| `devops-cc-environments` | Evinced work, parked in this org. Self-hosted Claude Code runners for the day job, not the playground — the workspace map files it under Evinced, not the fleet. |
+| `devops-cc-environments` | A work carve-out parked in this org, not part of the playground fleet. |
 | `plaud-sdk-public` | Third-party code. An archive of Plaud's own SDK, kept because upstream pulled it and `gjallarhorn` needs it. Not ours to list or publish. |
 | `*-probe` | Ticket-scoped verification probes. Created to prove one behaviour, archived the same day. |
 | `*-smoke` | Throwaway smoke-test repos for wiring up a vendor or a pipeline. |
