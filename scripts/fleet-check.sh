@@ -256,20 +256,20 @@ fi
 
 # --- 12. the link allowlist tracks the rows -----------------------------------
 # Most of this org is private, so most row links 404 to an anonymous checker and
-# live in .lycheeignore (STARK-8037). That allowlist has to move with the rows or
+# live in .lycheeignore. That allowlist has to move with the rows or
 # the link check goes red on links that are fine: a new private row needs an
 # entry, and a removed row's entry has to go. Both directions are checked here so
 # neither can be forgotten. Entries are anchored literal URLs — never globs.
 #
-# The file does not exist yet (STARK-8037 adds it); until it does this block is
-# skipped, and the rest of the report still stands on its own.
+# If the file is ever missing this block is skipped, and the rest of the report
+# still stands on its own.
 ALLOWLIST=$ROOT/.lycheeignore
 if [[ -f $ALLOWLIST ]]; then
   echo
   echo "the link allowlist tracks the rows"
   public=$(awk -F'\t' '$2 == "public" { print $1 }' <<<"$org_vis")
   # Entries are anchored escaped regexes — `^https://github\.com/<org>/<name>$`.
-  # Reconstruct the plain URL the way STARK-8037's own staleness guard does,
+  # Reconstruct the plain URL the way link-check.yml's staleness guard does,
   # rather than matching the escaped text: which dots an entry escapes is that
   # file's business, and a check that guessed would silently miss every row.
   allow_urls=$(sed -e 's/^\^//' -e 's/\$$//' -e 's/\\//g' "$ALLOWLIST" \

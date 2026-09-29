@@ -15,17 +15,17 @@
 # here passes for the wrong reason — silently, which is worse than failing.
 # CATALOG_READ_TOKEN is the fine-grained org-read PAT (metadata:read across the
 # org) already used for the fleet catalog sync. Same PAT, SEPARATE COPY:
-# rotating it means setting it here as well as on the repo below, or this job
-# goes red on the stale copy.
+# rotating it means setting it here as well as where the catalog sync runs, or
+# this job goes red on the stale copy.
 #
 # WIRING IT IS A SEPARATE, MANUAL STEP, and nothing in this repo can do it.
-# That PAT is a REPO-level Actions secret on `21StarkCom/idavoll`, where
-# catalog-sync.yml consumes it — it is not an org secret, so it does not reach
-# this repo by being "already used" somewhere else. It was wired here on
-# 2026-09-20 by one operator command, reading the PAT out of its mimir item
-# (see the fleet's PAT note for the id), and the same command re-wires it:
+# That PAT is a repo-level Actions secret where the catalog sync runs, not an
+# org secret, so it does not reach this repo by being "already used" somewhere
+# else. It was wired here on 2026-09-20 by one operator command, and this
+# re-wires it. With no --body, gh prompts for the value, so the PAT stays out of
+# shell history and the process list:
 #
-#   gh secret set CATALOG_READ_TOKEN --repo 21StarkCom/.github --body "<pat>"
+#   gh secret set CATALOG_READ_TOKEN --repo 21StarkCom/.github
 #
 # Without that secret the job SKIPS and says so, rather than running blind. A
 # green check on the public handful would assert something this workflow cannot
