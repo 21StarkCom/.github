@@ -45,6 +45,8 @@ The public face of the fleet — the rest is private by default.
 
 <sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. Every index above links that list, with a reason for each.</sub>
 
+Read the fleet as one story: **[The Saga of House Stark](https://github.com/21StarkCom/.github/blob/main/fleet/saga.md)**.
+
 ---
 
 ### How it works here

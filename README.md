@@ -23,7 +23,7 @@ every public link as a logged-out visitor sees it.
 | Path | What it is |
 | :-- | :-- |
 | `README.md` | This file. |
-| `profile/README.md` | The org landing page: the open-source repo, the fleet section table, the two "N repositories" headlines and the by-language footer. |
+| `profile/README.md` | The org landing page: the open-source repo, the fleet section table, the two "N repositories" headlines, the by-language footer and a link to the saga. |
 | `fleet/ecosystem.md` | Fleet table: the working fleet (services, agents, tools, media and UI). |
 | `fleet/infrastructure.md` | Fleet table: Terraform and GCP foundations. |
 | `fleet/second-brain.md` | Fleet table: the second-brain code. |
