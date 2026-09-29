@@ -153,7 +153,7 @@ behind 404s once the entry is gone, and link-check goes red.
 **Saga chapters.** A private repo's chapter in `fleet/saga.md` shows its fleet-table line
 there word for word; bifrost's full chapter carries its legend instead. Change the row and
 the chapter in the same PR. When a repo's facts change, its legend changes with them.
-bifrost's chapter repeats the legend that closes bifrost's README word for word, except
+bifrost's chapter repeats the legend that opens bifrost's README word for word, except
 that its supporting cast is a bullet and its nav line links the saga by anchor; when that
 legend changes, change the chapter to match. Nothing checks the saga against the tables or
 against bifrost's README, so compare them by eye.
