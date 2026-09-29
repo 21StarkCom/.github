@@ -22,7 +22,7 @@
 | **[stark-automations](https://github.com/21StarkCom/stark-automations)** | `Python` | The GCP execution layer for an earlier automation fleet (Cloud Scheduler → Pub/Sub → Functions) — dormant for months, then retired in the fleet consolidation. |
 | **[stark-data-core](https://github.com/21StarkCom/stark-data-core)** | `Python` | The data-platform service (GraphQL with RBAC over PostgreSQL) — torn down, its role taken over by the tyr/frigg local cache and meridian's ingest. |
 | **[stark-docs](https://github.com/21StarkCom/stark-docs)** | `Go` | Go tools for documents, extracted from stark-visual — a doc toolbox with no consumers, retired in the fleet consolidation. |
-| **[stark-mcp](https://github.com/21StarkCom/stark-mcp)** | `Go` | A Go monorepo of MCP servers over the stark data platform — superseded when the fleet went CLI-only. |
+| **[stark-mcp](https://github.com/21StarkCom/stark-mcp)** | `Go` | A Go monorepo of MCP servers over the stark data platform — superseded when the fleet traded its remote MCP servers for CLIs. |
 | **[stark-night-watch](https://github.com/21StarkCom/stark-night-watch)** | `Go` | The Go automation backend meridian was forked from — superseded by meridian. |
 | **[stark-team](https://github.com/21StarkCom/stark-team)** | `TypeScript` | A team-dashboard and operational-analytics console (Next.js + GraphQL) — idle for months, then retired in the fleet consolidation. |
 | **[stark-writing](https://github.com/21StarkCom/stark-writing)** | `MDX` | Long-form writing sources for 21stark.com (MDX) — retired once a fleet scan found no live consumer. |

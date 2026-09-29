@@ -4,7 +4,7 @@ The public front door of the **21StarkCom** org. This repo holds four things:
 
 - **The org landing page.** GitHub renders [`profile/README.md`](profile/README.md) at
   github.com/21StarkCom.
-- **The fleet pages.** Four tables under [`fleet/`](fleet/) list every repo in the org,
+- **The fleet pages.** Four tables under [`fleet/`](fleet/) list every repo in the fleet,
   each with its language, its visibility and one line on what it is. A fifth page says
   which org repos hold no row, and why.
 - **The saga.** [`fleet/saga.md`](fleet/saga.md), *The Saga of House Stark*, tells the
@@ -70,8 +70,8 @@ jobs:
 
 - **The job id is part of the contract.** Call the job `secret-scan` and give it no
   `name:`. The check context is then exactly `secret-scan / secret-scan`, the caller's
-  half and the called half. A ruleset names that literal string, so renaming either half
-  breaks every ruleset that requires it.
+  half and the called half. A ruleset that requires the scan has to name that literal
+  string, so renaming either half breaks it.
 - **Pin a full commit SHA**, never a tag or a branch.
 - **Callers own concurrency.** The reusable workflow declares no `concurrency` group,
   because a group declared there would apply to every caller at once. Never cancel a push
@@ -92,7 +92,7 @@ Inputs, all optional:
 | :-- | :-- | :-- |
 | `config_path` | `.gitleaks.toml` | The scan refuses to run if the file is missing. |
 | `runs_on` | `ubuntu-latest` | Must be a Linux x86_64 runner; the job checks this and fails fast otherwise. |
-| `gitleaks_version` / `gitleaks_sha256` | `8.30.1` and its release checksum | Bump them together. |
+| `gitleaks_version` / `gitleaks_sha256` | A pinned gitleaks release (`8.30.1` today) and its checksum | Bump them together. The workflow's defaults are the source of truth. |
 | `selftest_rule_id` | `google-oauth-client-secret` | The custom rule the self-test asserts fires. `""` checks the stock rules only. |
 | `selftest_probe_prefix` / `selftest_probe_hex_bytes` | `GOCSPX-` / `14` | Must build a token that `selftest_rule_id` matches. The three inputs are one unit. |
 
@@ -106,7 +106,7 @@ A change reaches the fleet in three steps, and no other repo sees it before the 
    on such a PR, a green check means "the proposed scanner ran", not "the scanner still
    works". Read the diff.
 2. **Tag the merged commit** `secret-scan-v<n>`. The tags so far are `secret-scan-v1` and
-   `secret-scan-v1.1`.
+   `secret-scan-v1.1`; `git tag -l 'secret-scan-v*'` lists the current set.
 3. **Bump the pin in [21stark](https://github.com/21StarkCom/21stark)** to that tag's full
    commit SHA. Its next apply re-renders every caller. Until then, the fleet keeps running
    the old pin.
@@ -126,7 +126,7 @@ A row looks like this:
   writes it (`HCL`, not Terraform). When GitHub reports none, it is `—`.
 - **Badges.** ⭐ means public, 🔒 means internal, and no badge means private. They must
   match GitHub. 🤝 (shared building block) and ✏️ (WIP) are editorial.
-- **The prose** is one line. A private repo gets nothing on these pages beyond its name
+- **The prose** is one line. A private repo gets nothing in these tables beyond its name
   and that line.
 
 **Adding a row** means changing every figure that counts it:
@@ -136,7 +136,8 @@ A row looks like this:
 3. both "N repositories" headlines in `profile/README.md`;
 4. the by-language footer in `profile/README.md`: the language's own count, or `+N others`;
 5. for a repo that is not public, one anchored entry in `.lycheeignore`
-   (`^https://github\.com/21StarkCom/<name>$`) and the count in that section's header.
+   (`^https://github\.com/21StarkCom/<name>$`), and one more in the count of the
+   `# ── PRIVATE (n)` or `# ── INTERNAL (n)` header it sits under.
 
 **Moving a row** between tables changes only the two tables' `**N repos**` lines and their
 two section counts. The headlines and the footer stay as they are.
@@ -146,11 +147,13 @@ the past tense, with the reason or the successor. Say "archived" only of a repo 
 reports as archived; otherwise say "retired".
 
 **Deleting a repo** from the org removes its row and every figure above, including its
-`.lycheeignore` entry.
+`.lycheeignore` entry, and its saga chapter and every saga link to it. A saga link left
+behind 404s once the entry is gone, and link-check goes red.
 
-**Saga chapters.** A repo with a chapter in `fleet/saga.md` shows its fleet-table line
-there word for word. Change both in the same PR. When a repo's facts change, its legend
-changes with them.
+**Saga chapters.** A private repo's chapter in `fleet/saga.md` shows its fleet-table line
+there word for word; bifrost's full chapter carries its legend instead. Change the row and
+the chapter in the same PR. When a repo's facts change, its legend changes with them.
+Nothing checks the saga against the tables, so compare them by eye.
 
 ## Checks
 
@@ -170,10 +173,11 @@ lychee profile fleet                         # the link check CI runs, from the 
   profile's section counts, its two headlines and its by-language footer all match. It
   also checks that `.lycheeignore` tracks the non-public rows in both directions. It runs
   under macOS `/bin/bash` 3.2.
-- **`lychee profile fleet`** needs lychee 0.24.2, the version CI pins. It reads
-  `lychee.toml` and `.lycheeignore` from the repo root. Run it with `GITHUB_TOKEN` and
-  `GH_TOKEN` unset: lychee picks up a token from the environment without saying so, and an
-  authenticated probe passes on links a visitor cannot open.
+- **`lychee profile fleet`** needs the lychee version CI pins (`LYCHEE_VERSION` in
+  `link-check.yml`, 0.24.2 today). It reads `lychee.toml` and `.lycheeignore` from the
+  repo root. Run it with `GITHUB_TOKEN` and `GH_TOKEN` unset: lychee picks up a token from
+  the environment without saying so, and an authenticated probe passes on links a visitor
+  cannot open.
 
 ### In CI
 
@@ -192,8 +196,12 @@ Everything in this repo is public, and the pages speak for a mostly private flee
 line may carry a secret, an internal hostname or IP (21stark.com is the one public host),
 a cloud project ID or number, a bucket or cluster name, an email address, a port, a
 bundle ID, an Apple team ID, a credential-store item ID, a ticket number, a ClickUp or
-Slack ID, or the name of an employer, a customer or an employer's vendor. A private repo
-gets its name and one line, and nothing more.
+Slack ID, or the name of an employer, a customer or an employer's vendor. In the fleet
+tables a private repo gets its name and one line, and nothing more. In the saga it also
+gets the meaning of its name and a one-sentence hand-off to the next chapter; its full
+legend stays in its own README. Older comments in the workflows, `scripts/fleet-check.sh`
+and `.lycheeignore` still cite ticket numbers. Drop them when you next touch those lines,
+and add no new ones.
 
 ## Where it sits in the fleet
 
