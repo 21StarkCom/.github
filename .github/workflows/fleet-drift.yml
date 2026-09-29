@@ -19,11 +19,10 @@
 # goes red on the stale copy.
 #
 # WIRING IT IS A SEPARATE, MANUAL STEP, and nothing in this repo can do it.
-# That PAT is a REPO-level Actions secret on `21StarkCom/idavoll`, where
-# catalog-sync.yml consumes it — it is not an org secret, so it does not reach
-# this repo by being "already used" somewhere else. It was wired here on
-# 2026-09-20 by one operator command, reading the PAT out of its mimir item
-# (see the fleet's PAT note for the id), and the same command re-wires it:
+# That PAT is a repo-level Actions secret where the catalog sync runs, not an
+# org secret, so it does not reach this repo by being "already used" somewhere
+# else. It was wired here on 2026-09-20 by one operator command, and the same
+# command re-wires it:
 #
 #   gh secret set CATALOG_READ_TOKEN --repo 21StarkCom/.github --body "<pat>"
 #

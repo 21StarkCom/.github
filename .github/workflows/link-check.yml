@@ -37,10 +37,8 @@
 #      fleet's rulesets are Terraform in 21StarkCom/21stark, so "in the same
 #      change" is not something this PR can do.
 #   2. Required status checks were withdrawn fleet-wide on 2026-09-20 by
-#      operator decision (STARK-7967): repos/locals.tf sets
-#      `secret_scan_enforced = toset([])` and ADR-0005 is marked withdrawn.
-#      Requiring a new context here would cut against a decision taken the same
-#      day, org-wide.
+#      operator decision. Requiring a new context here would cut against a
+#      decision taken the same day, org-wide.
 #   3. A required check that is red on `main` blocks EVERY pull request on this
 #      repo, and this one goes red on link rot in repos it does not control. So
 #      enforcing is only ever safe from a `main` that is link-clean — true as

@@ -261,8 +261,8 @@ fi
 # entry, and a removed row's entry has to go. Both directions are checked here so
 # neither can be forgotten. Entries are anchored literal URLs — never globs.
 #
-# The file does not exist yet (STARK-8037 adds it); until it does this block is
-# skipped, and the rest of the report still stands on its own.
+# If the file is ever missing this block is skipped, and the rest of the report
+# still stands on its own.
 ALLOWLIST=$ROOT/.lycheeignore
 if [[ -f $ALLOWLIST ]]; then
   echo
