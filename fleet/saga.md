@@ -2,13 +2,13 @@
 
 The house is Stark, the name the operator works under; any echo of Tony Stark's workshop is incidental, a nod for readers to enjoy, not the source. 21Stark is one engineer's platform fleet, run as a playground, where Claude, Codex and Gemini agents work side by side on the same repos. When a big job comes in, the house launches Gru, and Gru leads his Minions.
 
-Twenty-nine of the fleet's names come from old stories, and most of those are Norse; each Norse name holds a place on the world-tree Yggdrasil: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
+Thirty of the fleet's names come from old stories, and most of those are Norse; each Norse name holds a place on the world-tree Yggdrasil: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
 
 This is the story of one quest crossing that world. A ticket is spoken, written down and thought through. A Minion carries it over the rainbow bridge, gathers powers and keys, forges the work, passes the gate and walks past the fallen, until a horn sounds in every world. Each chapter opens its repo's README, under a heading that begins **The legend of**. The meaning of each name is fact. The legend is the spin, and it never gives a repo a power it does not have. Follow the → link from README to README and you walk the whole road. Most of the fleet is private, so on this public page a private repo shows only its name, its meaning, its one line and the road onward. Its full legend waits behind its own door, which opens only for the house itself.
 
 ## The seven acts
 
-- **Act I, The Summons** (the quest is spoken, written down and thought through): [idavoll](https://github.com/21StarkCom/idavoll) · [kotodama](https://github.com/21StarkCom/kotodama) · [alfred](https://github.com/21StarkCom/alfred) · [lucius](https://github.com/21StarkCom/lucius) · [atlas](https://github.com/21StarkCom/atlas) · [muninn](https://github.com/21StarkCom/muninn)
+- **Act I, The Summons** (the quest is spoken, written down and thought through): [idavoll](https://github.com/21StarkCom/idavoll) · [kotodama](https://github.com/21StarkCom/kotodama) · [alfred](https://github.com/21StarkCom/alfred) · [lucius](https://github.com/21StarkCom/lucius) · [atlas](https://github.com/21StarkCom/atlas) · [muninn](https://github.com/21StarkCom/muninn) · [yggdrasil](https://github.com/21StarkCom/yggdrasil)
 - **Act II, The Crossing** (a Minion rides out over the bridge): [bifrost](https://github.com/21StarkCom/bifrost) · [hermod](https://github.com/21StarkCom/hermod) · [ratatoskr](https://github.com/21StarkCom/ratatoskr) · [houston](https://github.com/21StarkCom/houston)
 - **Act III, The Armory** (powers, laws and keys): [frigg](https://github.com/21StarkCom/frigg) · [tyr](https://github.com/21StarkCom/tyr) · [fenrir](https://github.com/21StarkCom/fenrir) · [mimir](https://github.com/21StarkCom/mimir) · [sleipnir](https://github.com/21StarkCom/sleipnir) · [assay](https://github.com/21StarkCom/assay) · [goldfinger](https://github.com/21StarkCom/goldfinger)
 - **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume)
@@ -80,7 +80,17 @@ But a Titan holds and does not gather, and for gathering Odin kept ravens.
 
 [muninn](https://github.com/21StarkCom/muninn): Odin's raven — the planned operator-triggered harvester that will read the fleet through frigg and accrete what it learns into durable entity notes; only its offline core is built. Its full legend opens its README.
 
-The quest could not wait for wings, so it went to the bridge.
+The quest could not wait for wings, so it climbed the tree that holds every world.
+
+## The legend of yggdrasil: The World-Tree
+
+*The Ash That Holds Every World*
+
+**The name.** Yggdrasill is the great ash at the centre of the Norse cosmos. In Völuspá st. 19 the seeress knows an ash standing, called Yggdrasill, a high tree sprinkled with white clay; in Gylfaginning ch. 15-16 its branches spread over all the world and stand above heaven, its three roots reach three wells, and the Norns water it. The name is usually read as 'Ygg's horse': Yggr, 'the terrible one', is a name of Odin, and 'horse' is a kenning for the gallows, the tree on which Odin hangs nine nights in Hávamál st. 138. Other readings take it as 'yew-pillar'.
+
+[yggdrasil](https://github.com/21StarkCom/yggdrasil): The world-tree for goals — the planned issue-tracker app that will show every goal as a tree of all its work, with one honest progress %; only its spec and a throwaway spike are built. Its full legend opens its README.
+
+The tree is planted, if not yet grown; from its trunk the quest went to the bridge.
 
 ## Act II, The Crossing
 
@@ -98,7 +108,7 @@ The rainbow bridge is how the gods reach the world, and bifrost is how the opera
 
 - Every crossing passes a sentry: [.github](https://github.com/21StarkCom/.github), the org's public front door and home of this saga, hosts the one reusable gitleaks workflow that more than forty fleet repos pin by SHA, scanning only the commits a change brings.
 
-← [muninn](https://github.com/21StarkCom/muninn) · [The saga](#the-saga-of-house-stark) · [hermod](https://github.com/21StarkCom/hermod) →
+← [yggdrasil](https://github.com/21StarkCom/yggdrasil) · [The saga](#the-saga-of-house-stark) · [hermod](https://github.com/21StarkCom/hermod) →
 
 ## The legend of hermod: The Bold Rider
 
@@ -345,6 +355,7 @@ One watch is still unkept: the watchman cannot yet warn anyone when he himself f
 The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and the horn has sounded. But the Eddas do not end at the shore, and neither does this saga. On the road the Minion passed unfinished work, and each piece is a quest waiting for its ticket:
 
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
+- [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
