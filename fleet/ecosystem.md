@@ -2,7 +2,7 @@
 
 > The working fleet — services, agents, tools, media and UI, many under Norse names. Almost everything cross-cuts via **bifrost**.
 
-**40 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**41 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -27,6 +27,7 @@
 | **[muninn](https://github.com/21StarkCom/muninn)** ✏️ | `Go` | Odin's raven — the planned operator-triggered harvester that will read the fleet through frigg and accrete what it learns into durable entity notes; only its offline core is built. |
 | **[apple-developer](https://github.com/21StarkCom/apple-developer)** | `Go` | The versioned text registry and audit trail of the Apple Developer / App Store Connect account. |
 | **[workplan-tools](https://github.com/21StarkCom/workplan-tools)** | `Go` | The plan-intent layer for the Infra group — a Go CLI that snapshots the WorkPlan into typed artifacts. |
+| **[yggdrasil](https://github.com/21StarkCom/yggdrasil)** ✏️ | `TypeScript` | The world-tree for goals — the planned issue-tracker app that will show every goal as a tree of all its work (epics, their items, linked items and the children of linked epics) with one honest progress %; only its spec and a throwaway spike are built. |
 | **[stark-slack-indexer](https://github.com/21StarkCom/stark-slack-indexer)** | `Go` | The Slack corpus search backend — a Go service on GCP with BigQuery hybrid search and an agentic ask layer. |
 | **[assay](https://github.com/21StarkCom/assay)** ✏️ | `Go` | The daily verified-trend newsletter — finds what is new in a field, scores each candidate against a rubric and publishes only what clears the bar. |
 | **[mimir](https://github.com/21StarkCom/mimir)** | `Swift` | The personal macOS encrypted secrets manager — a native SwiftUI app plus a mimir CLI, local-first. |

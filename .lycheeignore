@@ -30,12 +30,10 @@
 # Anchoring is also load-bearing on its own: unanchored, `mimir` would swallow
 # `mimir-automations`, and `stark-2nd-brain-cli` its `-hub` sibling.
 #
-# Measured 2026-09-27 against `gh repo list 21StarkCom`, after STARK-9721
-# added the three rows it was missing: these pages link to 66 org repos, all 66
-# exist, and 3 of them are public — `.github`, `bifrost`, `stark-skills`. The
-# other 63 are below, and the two section counts underneath have to keep
-# summing to that 63. There is no dead link on the pages as this lands, which
-# is exactly the state the check is here to keep.
+# Every org repo the pages link to has an entry below unless it is public (⭐ on
+# the pages), and each section header counts the entries under it.
+# scripts/fleet-check.sh checks both against the live org, so a new private row
+# with no entry here, or a header that miscounts, fails fleet-drift.
 #
 # KEEPING THIS LIST HONEST is two jobs, and the workflow only does one of them.
 # It fails on an entry no page links to any more and warns on one whose repo
@@ -44,7 +42,7 @@
 # `gh repo list 21StarkCom` and look for a name the org does not have. That is
 # the check that found `stark-clickup`.
 
-# ── PRIVATE (61) — invisible to everyone outside the org.
+# ── PRIVATE (62) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/alfred$
@@ -106,6 +104,7 @@
 ^https://github\.com/21StarkCom/vor$
 ^https://github\.com/21StarkCom/workplan-tools$
 ^https://github\.com/21StarkCom/workspace-admin-toolkit$
+^https://github\.com/21StarkCom/yggdrasil$
 
 # ── INTERNAL (2) — visible to org members only, so still 404 anonymously.
 ^https://github\.com/21StarkCom/ev-infra-group$
