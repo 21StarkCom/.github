@@ -137,7 +137,9 @@ A row looks like this:
 4. the by-language footer in `profile/README.md`: the language's own count, or `+N others`;
 5. for a repo that is not public, one anchored entry in `.lycheeignore`
    (`^https://github\.com/21StarkCom/<name>$`), and one more in the count of the
-   `# ── PRIVATE (n)` or `# ── INTERNAL (n)` header it sits under.
+   `# ── PRIVATE (n)` or `# ── INTERNAL (n)` header it sits under;
+6. for a repo whose name comes from an old story, a chapter in `fleet/saga.md` and one more
+   in its prologue's count of such names. Nothing checks this one.
 
 **Moving a row** between tables changes only the two tables' `**N repos**` lines and their
 two section counts. The headlines and the footer stay as they are.
