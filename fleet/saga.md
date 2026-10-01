@@ -254,7 +254,7 @@ The work was built and its pages written, but the house wanted it spoken too, an
 
 **The name.** Bragi is the Norse god of poetry. In Gylfaginning ch. 26 Snorri says he is famous for wisdom and above all for eloquence and command of words, that he knows most about poetry, and that poetry is called bragr after him; his wife is Iðunn. Sigrdrífumál names Bragi's tongue among the places where runes are cut, and in Hákonarmál Odin sends him out with Hermóðr to welcome a fallen king into Valhalla. The name is tied to bragr, 'poetry', a word that can also mean 'the foremost', and some scholars see behind the god the ninth-century skald Bragi Boddason, whose verse is among the oldest that survives.
 
-[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. Its full legend opens its README.
+[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; only its session protocol core is built. Its full legend opens its README.
 
 Bragi had his name, if not yet his voice, so the quest went on without his song, to the gate where his wife keeps the apples.
 
