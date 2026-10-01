@@ -256,7 +256,7 @@ The work was built and its pages written, but the house wanted it spoken too, an
 
 [bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. Its full legend opens its README.
 
-The skald has his name, if not yet his voice; he knew the road to the gate all the same, for his wife keeps the apples there.
+The skald had his name, if not yet his voice, and he led the quest on to the gate, where his wife keeps the apples.
 
 ## Act V, The Gate
 
@@ -366,8 +366,8 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
-- [bragi](https://github.com/21StarkCom/bragi) has his name, but not yet his voice.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
+- [bragi](https://github.com/21StarkCom/bragi) has a tongue, but no runes cut on it yet.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
