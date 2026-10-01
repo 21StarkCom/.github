@@ -367,7 +367,7 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
-- [bragi](https://github.com/21StarkCom/bragi) has a tongue, but no runes cut on it yet.
+- [bragi](https://github.com/21StarkCom/bragi) has its grammar, but not yet its voice.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
