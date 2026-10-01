@@ -256,7 +256,7 @@ The work was built and its pages written, but the house wanted it spoken too, an
 
 [bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. Its full legend opens its README.
 
-The skald had his name, if not yet his voice, and he led the quest on to the gate, where his wife keeps the apples.
+Bragi had his name, if not yet his voice, and he led the quest on to the gate, where his wife keeps the apples.
 
 ## Act V, The Gate
 
