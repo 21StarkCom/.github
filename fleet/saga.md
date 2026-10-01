@@ -254,7 +254,7 @@ The work was built and its pages written, but the house wanted it spoken too, an
 
 **The name.** Bragi is the Norse god of poetry. In Gylfaginning ch. 26 Snorri says he is famous for wisdom and above all for eloquence and command of words, that he knows most about poetry, and that poetry is called bragr after him; his wife is Iðunn. Sigrdrífumál names Bragi's tongue among the places where runes are cut, and in Hákonarmál Odin sends him out with Hermóðr to welcome a fallen king into Valhalla. The name is tied to bragr, 'poetry', a word that can also mean 'the foremost', and some scholars see behind the god the ninth-century skald Bragi Boddason, whose verse is among the oldest that survives.
 
-[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. Its full legend opens its README.
+[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; only its session protocol core is built. Its full legend opens its README.
 
 Bragi had his name, if not yet his voice, so the quest went on without his song, to the gate where his wife keeps the apples.
 
@@ -367,7 +367,7 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
-- [bragi](https://github.com/21StarkCom/bragi) has a tongue, but no runes cut on it yet.
+- [bragi](https://github.com/21StarkCom/bragi) has its grammar, but not yet its voice.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
