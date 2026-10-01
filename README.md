@@ -138,9 +138,9 @@ A row looks like this:
 5. for a repo that is not public, one anchored entry in `.lycheeignore`
    (`^https://github\.com/21StarkCom/<name>$`), and one more in the count of the
    `# ── PRIVATE (n)` or `# ── INTERNAL (n)` header it sits under;
-6. for a repo whose name comes from an old story, a chapter in `fleet/saga.md` and one more
-   in its prologue's count of such names. Nothing checks this one. No other repo's README
-   changes with it; see **Saga links** below.
+6. for a repo whose name comes from an old story, a chapter in `fleet/saga.md`, one more in
+   its prologue's count of such names, and its legend in its own README. Nothing checks
+   this one. No other repo's README changes with it; see **Saga links** below.
 
 **Moving a row** between tables changes only the two tables' `**N repos**` lines and their
 two section counts. The headlines and the footer stay as they are.
@@ -150,27 +150,31 @@ the past tense, with the reason or the successor. Say "archived" only of a repo 
 reports as archived; otherwise say "retired".
 
 **Deleting a repo** from the org removes its row and every figure above, including its
-`.lycheeignore` entry, and its saga chapter and every link to it in `fleet/saga.md`. A saga
-link left behind 404s once the entry is gone, and link-check goes red. Other repos' READMEs
-stay as they are.
+`.lycheeignore` entry, and its saga chapter, the hand-off into it and every link to it in
+`fleet/saga.md`. A saga link left behind 404s once the entry is gone, and link-check goes
+red. Links to it in other repos' READMEs stay; see **Saga links** below.
 
 **Saga chapters.** A private repo's chapter in `fleet/saga.md` shows its fleet-table line
 there word for word; bifrost's full chapter carries its legend instead. Change the row and
 the chapter in the same PR. When a repo's facts change, its legend changes with them.
-bifrost's chapter repeats the legend that opens bifrost's README word for word. Its
-supporting cast and its nav line belong to the saga and change with it; bifrost's README
-keeps the ones it has. When bifrost's legend changes, change the chapter to match, never the
-other way round. Nothing checks the saga against the tables or against bifrost's README, so
-compare them by eye.
+bifrost's chapter repeats the legend that opens bifrost's README word for word, except for
+the parts the saga owns. The hand-off that ends the legend, the supporting cast (a bullet
+here), the nav line (which links the saga by anchor) and any link to a since-deleted repo
+change with the saga, while bifrost's README keeps the ones it has. When the rest of its
+legend changes, change the chapter to match, never the other way round. Nothing checks the
+saga against the tables or against bifrost's README, so compare them by eye.
 
-**Saga links** live in `fleet/saga.md` alone. Only the saga ties one repo to another: the
-order of the chapters, the acts, the hand-offs, the nav lines and the supporting cast. A
-repo's README carries its own legend and one link to the saga, nothing more. Its legend
-names no other repo, and the README gets no `← prev · The saga · next →` nav line and no
-supporting cast or "In the saga" line that points at another repo or its chapter. Adding,
-changing or removing a chapter edits `fleet/saga.md`, never another repo's README. The nav
-lines and cameos already in READMEs, this one's included, stay as they are: add no new
-ones, and neither update nor remove the old ones.
+**Saga links** live in `fleet/saga.md` alone. Only the saga ties one repo to another in the
+story: the order of the chapters, the acts, the hand-offs, the nav lines and the supporting
+cast. A repo's README carries no more of the saga than its own legend and one link to the
+saga. That legend names no other repo and hands off to no next chapter, though the myth
+behind its name may mention a god another repo is named for. The README gets no
+`← prev · The saga · next →` nav line and no supporting cast or "In the saga" line that
+points at another repo or its chapter. Adding, changing or removing a chapter edits
+`fleet/saga.md`, never another repo's README. What READMEs already carry, this one's
+included, stays as it is: their nav lines, supporting casts and "In the saga" lines, and
+the repos their legends name and hand off to. Add no new ones, and neither update nor
+remove the old ones.
 
 ## Checks
 
