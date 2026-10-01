@@ -2,7 +2,7 @@
 
 The house is Stark, the name the operator works under; any echo of Tony Stark's workshop is incidental, a nod for readers to enjoy, not the source. 21Stark is one engineer's platform fleet, run as a playground, where Claude, Codex and Gemini agents work side by side on the same repos. When a big job comes in, the house launches Gru, and Gru leads his Minions.
 
-Thirty-one of the fleet's names come from old stories, and most of those are Norse; each Norse name holds a place on the world-tree Yggdrasil: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn, a shore of the dead and the tree itself. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
+Thirty-one of the fleet's names come from old stories, and most of those are Norse; each Norse name is the world-tree Yggdrasil or holds a place on it: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
 
 This is the story of one quest crossing that world. A ticket is spoken, written down and thought through. A Minion carries it over the rainbow bridge, gathers powers and keys, forges the work, passes the gate and walks past the fallen, until a horn sounds in every world. Each chapter opens its repo's README, under a heading that begins **The legend of**. The meaning of each name is fact. The legend is the spin, and it never gives a repo a power it does not have. Read the chapters here in order and you walk the whole road. Most of the fleet is private, so on this public page a private repo shows only its name, its meaning, its one line and the road onward. Its full legend waits behind its own door, which opens only for the house itself.
 
@@ -256,7 +256,7 @@ The work was built and its pages written, but the house wanted it spoken too, an
 
 [bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. Its full legend opens its README.
 
-Bragi had his name, if not yet his voice, and he led the quest on to the gate, where his wife keeps the apples.
+Bragi had his name, if not yet his voice, so the quest went on without his song, to the gate where his wife keeps the apples.
 
 ## Act V, The Gate
 
@@ -368,9 +368,9 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
 - [bragi](https://github.com/21StarkCom/bragi) has a tongue, but no runes cut on it yet.
-- [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
-- [vor](https://github.com/21StarkCom/vor) has never been signed.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
+- [vor](https://github.com/21StarkCom/vor) has never been signed.
+- [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
 
 The Völuspá says that after Ragnarök the surviving gods meet again on Iðavöllr and find the golden tafl pieces waiting in the grass. The house keeps that promise literally: a wiped Mac comes back through idavoll's installer, every living repo cloned and every tool poured back from the tap. The saga changes as the fleet does. When a repo's facts change, its legend changes in the same PR; a newcomer with a name worth telling earns a chapter, and plain-named craftsmen join the cast. The myths may grow taller. The facts may not.
 
