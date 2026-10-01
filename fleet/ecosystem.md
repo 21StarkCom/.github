@@ -2,7 +2,7 @@
 
 > The working fleet — services, agents, tools, media and UI, many under Norse names. Almost everything cross-cuts via **bifrost**.
 
-**41 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**42 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -35,6 +35,7 @@
 | **[kotodama](https://github.com/21StarkCom/kotodama)** | `Go` | The multi-user voice → faithful-record product, in Go with a Next.js web app. |
 | **[lumiere](https://github.com/21StarkCom/lumiere)** | `Go` | The Go workspace for making and manipulating visual media — image generation and editing and short video, as standalone CLIs and a library. |
 | **[plume](https://github.com/21StarkCom/plume)** | `Go` | The pure-Go Office/PDF document toolkit — data in, an Excel/Word/PowerPoint/PDF file out. |
+| **[bragi](https://github.com/21StarkCom/bragi)** ✏️ | `—` | The god of poetry — the planned Go toolkit for streaming voice, speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. |
 | **[draupnir](https://github.com/21StarkCom/draupnir)** | `TypeScript` | The fleet's shared design system — components, tokens, themes and the statement-fx effects engine. |
 | **[stark-personal](https://github.com/21StarkCom/stark-personal)** | `TypeScript` | Aryeh's personal brand site — the code behind 21stark.com (a dynamic Next.js app on Cloud Run, with an admin backoffice). |
 | **[stark-showcase](https://github.com/21StarkCom/stark-showcase)** | `Go` | The HTML page hosting and gallery service — upload, validate, index, serve. |

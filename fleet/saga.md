@@ -2,7 +2,7 @@
 
 The house is Stark, the name the operator works under; any echo of Tony Stark's workshop is incidental, a nod for readers to enjoy, not the source. 21Stark is one engineer's platform fleet, run as a playground, where Claude, Codex and Gemini agents work side by side on the same repos. When a big job comes in, the house launches Gru, and Gru leads his Minions.
 
-Thirty of the fleet's names come from old stories, and most of those are Norse; each Norse name holds a place on the world-tree Yggdrasil: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
+Thirty-one of the fleet's names come from old stories, and most of those are Norse; each Norse name holds a place on the world-tree Yggdrasil: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
 
 This is the story of one quest crossing that world. A ticket is spoken, written down and thought through. A Minion carries it over the rainbow bridge, gathers powers and keys, forges the work, passes the gate and walks past the fallen, until a horn sounds in every world. Each chapter opens its repo's README, under a heading that begins **The legend of**. The meaning of each name is fact. The legend is the spin, and it never gives a repo a power it does not have. Follow the → link from README to README and you walk the whole road. Most of the fleet is private, so on this public page a private repo shows only its name, its meaning, its one line and the road onward. Its full legend waits behind its own door, which opens only for the house itself.
 
@@ -11,7 +11,7 @@ This is the story of one quest crossing that world. A ticket is spoken, written 
 - **Act I, The Summons** (the quest is spoken, written down and thought through): [idavoll](https://github.com/21StarkCom/idavoll) · [kotodama](https://github.com/21StarkCom/kotodama) · [alfred](https://github.com/21StarkCom/alfred) · [lucius](https://github.com/21StarkCom/lucius) · [atlas](https://github.com/21StarkCom/atlas) · [muninn](https://github.com/21StarkCom/muninn) · [yggdrasil](https://github.com/21StarkCom/yggdrasil)
 - **Act II, The Crossing** (a Minion rides out over the bridge): [bifrost](https://github.com/21StarkCom/bifrost) · [hermod](https://github.com/21StarkCom/hermod) · [ratatoskr](https://github.com/21StarkCom/ratatoskr) · [houston](https://github.com/21StarkCom/houston)
 - **Act III, The Armory** (powers, laws and keys): [frigg](https://github.com/21StarkCom/frigg) · [tyr](https://github.com/21StarkCom/tyr) · [fenrir](https://github.com/21StarkCom/fenrir) · [mimir](https://github.com/21StarkCom/mimir) · [sleipnir](https://github.com/21StarkCom/sleipnir) · [assay](https://github.com/21StarkCom/assay) · [goldfinger](https://github.com/21StarkCom/goldfinger)
-- **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume)
+- **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume) · [bragi](https://github.com/21StarkCom/bragi)
 - **Act V, The Gate** (merge, and the health that follows): [idun](https://github.com/21StarkCom/idun) · [hygiea](https://github.com/21StarkCom/hygiea)
 - **Act VI, The Shore** (the fallen and the dead): [infra-sentinel](https://github.com/21StarkCom/infra-sentinel) · [mimir-automations](https://github.com/21StarkCom/mimir-automations) · [nastrond](https://github.com/21StarkCom/nastrond)
 - **Act VII, The Horn** (the reckoning and the call): [meridian](https://github.com/21StarkCom/meridian) · [vor](https://github.com/21StarkCom/vor) · [gjallarhorn](https://github.com/21StarkCom/gjallarhorn) · [heimdall](https://github.com/21StarkCom/heimdall)
@@ -246,7 +246,17 @@ Light makes the pictures, and for the pages the house reached for a feather.
 
 [plume](https://github.com/21StarkCom/plume): The pure-Go Office/PDF document toolkit — data in, an Excel/Word/PowerPoint/PDF file out. Its full legend opens its README.
 
-The work was built, and now it had to pass the gate where the apples are kept.
+The work was built and its pages written, but the house wanted it spoken too, and sent for the god of poetry.
+
+## The legend of bragi: The God of Poetry
+
+*Runes on His Tongue*
+
+**The name.** Bragi is the Norse god of poetry. In Gylfaginning ch. 26 Snorri says he is famous for wisdom and above all for eloquence and command of words, that he knows most about poetry, and that poetry is called bragr after him; his wife is Iðunn. Sigrdrífumál names Bragi's tongue among the places where runes are cut, and in Hákonarmál Odin sends him out with Hermóðr to welcome a fallen king into Valhalla. The name is tied to bragr, 'poetry', a word that can also mean 'the foremost', and some scholars see behind the god the ninth-century skald Bragi Boddason, whose verse is among the oldest that survives.
+
+[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice, speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; not yet built. Its full legend opens its README.
+
+The skald has his name, if not yet his voice; he knew the road to the gate all the same, for his wife keeps the apples there.
 
 ## Act V, The Gate
 
@@ -356,6 +366,7 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
+- [bragi](https://github.com/21StarkCom/bragi) has his name, but not yet his voice.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
