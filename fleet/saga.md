@@ -162,7 +162,7 @@ The quest needed a power, and the queen sent it first to her grandson's hall.
 
 [forseti](https://github.com/21StarkCom/forseti): The god of justice — the legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; v1 is built and run from source, with no release yet. Its full legend opens its README.
 
-The judge had his hall, but no case had yet been heard, so the quest rode on to the lawgiver.
+The judge had heard his first case, but had not yet learned the laws of the lands, so the quest rode on to the lawgiver.
 
 ## The legend of tyr: The One-Handed Lawgiver
 
