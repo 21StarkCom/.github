@@ -2,14 +2,14 @@
 
 > The working fleet — services, agents, tools, media and UI, many under Norse names. Almost everything cross-cuts via **bifrost**.
 
-**42 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**43 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `TypeScript` | The source-of-truth hub for the stark agent workflows — every skill and tool for Claude Code, served straight from source as its own plugin marketplace. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The vendor-integration capability library — one typed, gated surface over every third-party system in the fleet; library-only since its CLI moved to frigg. |
 | **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🔒 🤝 | `Go` | The fleet's own terminal-UI code — a zero-dependency toolkit, implemented twice (Go + Bun/TS). |
-| **[idavoll](https://github.com/21StarkCom/idavoll)** 🤝 | `Shell` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
+| **[idavoll](https://github.com/21StarkCom/idavoll)** 🤝 | `Go` | The private repo behind the workspace constitution, the fleet map and the Mac setup. |
 | **[fenrir](https://github.com/21StarkCom/fenrir)** | `TypeScript` | The multi-vendor agent client for ClickUp and GitHub — a typed library + CLI driven by Claude Code, not by humans in a vendor UI. |
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The fleet's automation plane and command-center — a long-lived Go service on GKE across the fleet. |
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The ticket tool — owns work-item creation and tracking for the fleet; sessions become ClickUp tickets. |
@@ -24,6 +24,7 @@
 | **[hygiea](https://github.com/21StarkCom/hygiea)** | `Go` | The repo-hygiene agent — proves dead code, stale docs and unused deps before removing any of them, and never merges. |
 | **[user-management-agent](https://github.com/21StarkCom/user-management-agent)** | `Go` | uma — records how you onboard and offboard users across SaaS admin UIs and replays them. |
 | **[frigg](https://github.com/21StarkCom/frigg)** | `Go` | The IT-ops housekeeping CLI + TUI, and owner of the local identity/infra cache. |
+| **[forseti](https://github.com/21StarkCom/forseti)** ✏️ | `—` | The god of justice — the planned legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; not built yet. |
 | **[muninn](https://github.com/21StarkCom/muninn)** ✏️ | `Go` | Odin's raven — the planned operator-triggered harvester that will read the fleet through frigg and accrete what it learns into durable entity notes; only its offline core is built. |
 | **[apple-developer](https://github.com/21StarkCom/apple-developer)** | `Go` | The versioned text registry and audit trail of the Apple Developer / App Store Connect account. |
 | **[workplan-tools](https://github.com/21StarkCom/workplan-tools)** | `Go` | The plan-intent layer for the Infra group — a Go CLI that snapshots the WorkPlan into typed artifacts. |

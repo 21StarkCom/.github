@@ -2,7 +2,7 @@
 
 The house is Stark, the name the operator works under; any echo of Tony Stark's workshop is incidental, a nod for readers to enjoy, not the source. 21Stark is one engineer's platform fleet, run as a playground, where Claude, Codex and Gemini agents work side by side on the same repos. When a big job comes in, the house launches Gru, and Gru leads his Minions.
 
-Thirty-one of the fleet's names come from old stories, and most of those are Norse; each Norse name is the world-tree Yggdrasil or holds a place on it: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
+Thirty-two of the fleet's names come from old stories, and most of those are Norse; each Norse name is the world-tree Yggdrasil or holds a place on it: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
 
 This is the story of one quest crossing that world. A ticket is spoken, written down and thought through. A Minion carries it over the rainbow bridge, gathers powers and keys, forges the work, passes the gate and walks past the fallen, until a horn sounds in every world. Each chapter opens its repo's README, under a heading that begins **The legend of**. The meaning of each name is fact. The legend is the spin, and it never gives a repo a power it does not have. Read the chapters here in order and you walk the whole road. Most of the fleet is private, so on this public page a private repo shows only its name, its meaning, its one line and the road onward. Its full legend waits behind its own door, which opens only for the house itself.
 
@@ -10,7 +10,7 @@ This is the story of one quest crossing that world. A ticket is spoken, written 
 
 - **Act I, The Summons** (the quest is spoken, written down and thought through): [idavoll](https://github.com/21StarkCom/idavoll) · [kotodama](https://github.com/21StarkCom/kotodama) · [alfred](https://github.com/21StarkCom/alfred) · [lucius](https://github.com/21StarkCom/lucius) · [atlas](https://github.com/21StarkCom/atlas) · [muninn](https://github.com/21StarkCom/muninn) · [yggdrasil](https://github.com/21StarkCom/yggdrasil)
 - **Act II, The Crossing** (a Minion rides out over the bridge): [bifrost](https://github.com/21StarkCom/bifrost) · [hermod](https://github.com/21StarkCom/hermod) · [ratatoskr](https://github.com/21StarkCom/ratatoskr) · [houston](https://github.com/21StarkCom/houston)
-- **Act III, The Armory** (powers, laws and keys): [frigg](https://github.com/21StarkCom/frigg) · [tyr](https://github.com/21StarkCom/tyr) · [fenrir](https://github.com/21StarkCom/fenrir) · [mimir](https://github.com/21StarkCom/mimir) · [sleipnir](https://github.com/21StarkCom/sleipnir) · [assay](https://github.com/21StarkCom/assay) · [goldfinger](https://github.com/21StarkCom/goldfinger)
+- **Act III, The Armory** (powers, laws and keys): [frigg](https://github.com/21StarkCom/frigg) · [forseti](https://github.com/21StarkCom/forseti) · [tyr](https://github.com/21StarkCom/tyr) · [fenrir](https://github.com/21StarkCom/fenrir) · [mimir](https://github.com/21StarkCom/mimir) · [sleipnir](https://github.com/21StarkCom/sleipnir) · [assay](https://github.com/21StarkCom/assay) · [goldfinger](https://github.com/21StarkCom/goldfinger)
 - **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume) · [bragi](https://github.com/21StarkCom/bragi)
 - **Act V, The Gate** (merge, and the health that follows): [idun](https://github.com/21StarkCom/idun) · [hygiea](https://github.com/21StarkCom/hygiea)
 - **Act VI, The Shore** (the fallen and the dead): [infra-sentinel](https://github.com/21StarkCom/infra-sentinel) · [mimir-automations](https://github.com/21StarkCom/mimir-automations) · [nastrond](https://github.com/21StarkCom/nastrond)
@@ -152,7 +152,17 @@ The console sat lit for the next crew, and the Minion flew on toward the queen w
 
 [frigg](https://github.com/21StarkCom/frigg): The IT-ops housekeeping CLI + TUI, and owner of the local identity/infra cache. Its full legend opens its README.
 
-The quest needed a power, and the queen sent it to the lawgiver.
+The quest needed a power, and the queen sent it first to her grandson's hall.
+
+## The legend of forseti: The Judge of Glitnir
+
+*Son of Baldr, Who Stills All Strife*
+
+**The name.** Forseti (Old Norse, 'the one who presides'; in modern Icelandic the word means 'president') is the Norse god of justice and reconciliation, the son of Baldr and Nanna. Grímnismál st. 15 names his hall Glitnir, propped on gold and roofed with silver, where he stills every strife, and in Gylfaginning ch. 32 Snorri calls it the best seat of judgment among gods and men: all who come to him with hard cases of law go away reconciled. He is often linked with Fosite, god of the Frisians, whose island Alcuin's Life of Willibrord describes with a holy spring whose water could be drawn only in silence.
+
+[forseti](https://github.com/21StarkCom/forseti): The god of justice — the planned legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; not built yet. Its full legend opens its README.
+
+The judge had his hall, but no case had yet been heard, so the quest rode on to the lawgiver.
 
 ## The legend of tyr: The One-Handed Lawgiver
 
@@ -162,7 +172,7 @@ The quest needed a power, and the queen sent it to the lawgiver.
 
 [tyr](https://github.com/21StarkCom/tyr): The vendor-integration capability library — one typed, gated surface over every third-party system in the fleet; library-only since its CLI moved to frigg. Its full legend opens its README.
 
-Every god of law has a wolf, and Týr's is written in TypeScript.
+This god of law has a wolf, and it is written in TypeScript.
 
 ## The legend of fenrir: The Wolf in the Silken Fetter
 
@@ -367,6 +377,7 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
+- [forseti](https://github.com/21StarkCom/forseti) has its hall, but no case has yet been heard.
 - [bragi](https://github.com/21StarkCom/bragi) has its grammar, but not yet its voice.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
