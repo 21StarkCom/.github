@@ -42,7 +42,7 @@
 # `gh repo list 21StarkCom` and look for a name the org does not have. That is
 # the check that found `stark-clickup`.
 
-# ── PRIVATE (63) — invisible to everyone outside the org.
+# ── PRIVATE (64) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/alfred$
@@ -56,6 +56,7 @@
 ^https://github\.com/21StarkCom/devops-sandbox$
 ^https://github\.com/21StarkCom/draupnir$
 ^https://github\.com/21StarkCom/fenrir$
+^https://github\.com/21StarkCom/forseti$
 ^https://github\.com/21StarkCom/frigg$
 ^https://github\.com/21StarkCom/gjallarhorn$
 ^https://github\.com/21StarkCom/goldfinger$
