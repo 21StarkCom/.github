@@ -160,7 +160,7 @@ The quest needed a power, and the queen sent it first to her grandson's hall.
 
 **The name.** Forseti (Old Norse, 'the one who presides'; in modern Icelandic the word means 'president') is the Norse god of justice and reconciliation, the son of Baldr and Nanna. Grímnismál st. 15 names his hall Glitnir, propped on gold and roofed with silver, where he stills every strife, and in Gylfaginning ch. 32 Snorri calls it the best seat of judgment among gods and men: all who come to him with hard cases of law go away reconciled. He is often linked with Fosite, god of the Frisians, whose island Alcuin's Life of Willibrord describes with a holy spring whose water could be drawn only in silence.
 
-[forseti](https://github.com/21StarkCom/forseti): The god of justice — the planned legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; only its vault and ingest are built. Its full legend opens its README.
+[forseti](https://github.com/21StarkCom/forseti): The god of justice — the legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; v1 is built and run from source, with no release yet. Its full legend opens its README.
 
 The judge had his hall, but no case had yet been heard, so the quest rode on to the lawgiver.
 
@@ -377,7 +377,7 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
-- [forseti](https://github.com/21StarkCom/forseti) has its hall and its first scrolls, but no case has yet been heard.
+- [forseti](https://github.com/21StarkCom/forseti) has heard its first case, but has not yet learned the laws of the lands.
 - [bragi](https://github.com/21StarkCom/bragi) has its grammar, but not yet its voice.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
