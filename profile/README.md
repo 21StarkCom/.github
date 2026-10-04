@@ -41,7 +41,7 @@ The public face of the fleet — the rest is private by default.
 | 🧠 **[Second brain](https://github.com/21StarkCom/.github/blob/main/fleet/second-brain.md)** | 1 | Atlas — the LLM-native knowledge engine and the `brain` CLI over the vaults. |
 | 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 22 | Terminated, decommissioned or superseded. Kept for history. |
 
-<sub>By language: **26** Go · **19** TypeScript · **8** Python · **5** Terraform (HCL) · **4** Swift · **+7** others</sub>
+<sub>By language: **26** Go · **20** TypeScript · **8** Python · **5** Terraform (HCL) · **4** Swift · **+6** others</sub>
 
 <sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. Every index above links that list, with a reason for each.</sub>
 

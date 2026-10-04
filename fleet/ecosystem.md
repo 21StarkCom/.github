@@ -24,7 +24,7 @@
 | **[hygiea](https://github.com/21StarkCom/hygiea)** | `Go` | The repo-hygiene agent — proves dead code, stale docs and unused deps before removing any of them, and never merges. |
 | **[user-management-agent](https://github.com/21StarkCom/user-management-agent)** | `Go` | uma — records how you onboard and offboard users across SaaS admin UIs and replays them. |
 | **[frigg](https://github.com/21StarkCom/frigg)** | `Go` | The IT-ops housekeeping CLI + TUI, and owner of the local identity/infra cache. |
-| **[forseti](https://github.com/21StarkCom/forseti)** ✏️ | `—` | The god of justice — the planned legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; not built yet. |
+| **[forseti](https://github.com/21StarkCom/forseti)** ✏️ | `TypeScript` | The god of justice — the planned legal counsel agent on the Claude Agent SDK: reads terms, policies and contracts into its own vault and answers questions with every claim cited; only its vault and ingest are built. |
 | **[muninn](https://github.com/21StarkCom/muninn)** ✏️ | `Go` | Odin's raven — the planned operator-triggered harvester that will read the fleet through frigg and accrete what it learns into durable entity notes; only its offline core is built. |
 | **[apple-developer](https://github.com/21StarkCom/apple-developer)** | `Go` | The versioned text registry and audit trail of the Apple Developer / App Store Connect account. |
 | **[workplan-tools](https://github.com/21StarkCom/workplan-tools)** | `Go` | The plan-intent layer for the Infra group — a Go CLI that snapshots the WorkPlan into typed artifacts. |
