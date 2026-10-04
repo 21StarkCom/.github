@@ -172,7 +172,7 @@ The judge had his hall, but no case had yet been heard, so the quest rode on to 
 
 [tyr](https://github.com/21StarkCom/tyr): The vendor-integration capability library — one typed, gated surface over every third-party system in the fleet; library-only since its CLI moved to frigg. Its full legend opens its README.
 
-Every god of law has a wolf, and Týr's is written in TypeScript.
+This god of law has a wolf, and it is written in TypeScript.
 
 ## The legend of fenrir: The Wolf in the Silken Fetter
 
