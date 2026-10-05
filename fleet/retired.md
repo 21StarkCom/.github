@@ -7,7 +7,7 @@
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[infra-sentinel](https://github.com/21StarkCom/infra-sentinel)** | `Go` | Retired self-hosted observability stack (Grafana/Loki/Prometheus) — both deployments torn down, the last on 2026-09-16; kept for history, nothing runs. |
-| **[stark-insights](https://github.com/21StarkCom/stark-insights)** | `Go` | A decommissioned activity-insights pipeline (Claude Code hooks → BigQuery); kept for history. |
+| **[stark-insights](https://github.com/21StarkCom/stark-insights)** | `Go` | An archived, decommissioned activity-insights pipeline (Claude Code hooks → BigQuery); kept for history. |
 | **[slack-investigator](https://github.com/21StarkCom/slack-investigator)** | `Python` | A retired Slack-export analysis CLI — superseded by stark-slack-indexer. |
 | **[agent-native-gcp](https://github.com/21StarkCom/agent-native-gcp)** | `HCL` | An archived early agent-native GCP Terraform experiment. |
 | **[stark-skills](https://github.com/21StarkCom/stark-skills)** ⭐ | `TypeScript` | The archived former hub for the stark agent workflows — absorbed by bifrost, buried in nastrond. |
