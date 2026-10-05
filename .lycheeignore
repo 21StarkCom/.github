@@ -20,11 +20,12 @@
 # deleted repo from a private one, because both answer 404. Nothing here closes
 # that hole; only reading the list against the org's real repos does.
 #
-# LINE FORMAT: every non-comment line is an anchored literal URL — `^`, the URL
-# with its dots escaped, `$` — because scripts/fleet-check.sh reconstructs the
-# plain URL from it to match the rows; a cleverer regex would be mis-parsed.
-# Anchoring is also load-bearing on its own: unanchored, `mimir` would swallow
-# `mimir-automations`, and `stark-2nd-brain-cli` its `-hub` sibling.
+# LINE FORMAT IS ENFORCED: every non-comment line is an anchored literal URL —
+# `^`, the URL with its dots escaped, `$` — because scripts/fleet-check.sh
+# reconstructs the plain URL from it to match the rows, and fails on a line of
+# any other shape rather than mis-parse it. Anchoring is also load-bearing on
+# its own: unanchored, `mimir` would swallow `mimir-automations`, and
+# `stark-2nd-brain-cli` its `-hub` sibling.
 #
 # Every org repo the pages link to has an entry below unless it is public (⭐ on
 # the pages), and each section header counts the entries under it.
@@ -32,10 +33,10 @@
 # with no entry here, or a header that miscounts, fails that script.
 #
 # KEEPING THIS LIST HONEST: fleet-check.sh fails on an entry with no remaining
-# row. What it cannot do is notice a repo below being DELETED. That
-# one is caught by re-deriving the list — link the pages' repo names against
-# `gh repo list 21StarkCom` and look for a name the org does not have. That is
-# the check that found `stark-clickup`.
+# row and on an entry whose repo has gone public. A repo below being DELETED or
+# RENAMED fails it too, because the script reads the rows against the live org
+# and the row then names a repo the org does not have; drop the row and its
+# entry together. Only the anonymous probe is blind to it.
 
 # ── PRIVATE (64) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$

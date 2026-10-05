@@ -14,8 +14,8 @@
 # NOTHING BELOW AUTHENTICATES, and that is the whole design. See .lycheeignore
 # for why the probe is anonymous and what that costs. lychee would pick a token
 # up from `GITHUB_TOKEN` in the environment without saying so, and no setting
-# here can override an environment variable — so run it with `GITHUB_TOKEN` and
-# `GH_TOKEN` unset.
+# here can override an environment variable — so run it as
+# `env -u GITHUB_TOKEN -u GH_TOKEN lychee profile fleet`, which unsets both.
 
 # Plain log lines, no progress bars, so the output stays greppable.
 no_progress = true
@@ -38,7 +38,7 @@ max_concurrency = 8
 host_concurrency = 4
 host_request_interval = "250ms"
 
-# A transient blip must not red a gate. 3 retries with a 2s floor, on top of
+# A transient blip must not fail the run. 3 retries with a 2s floor, on top of
 # the adaptive backoff, costs seconds on a healthy run and saves a spurious
 # failure on a bad one.
 max_retries = 3

@@ -13,8 +13,8 @@ The public front door of the **21StarkCom** org. This repo holds four things:
   is a gitleaks workflow the fleet's repos pin by commit SHA. It is the CI half of the
   org's replacement for GitHub Secret Protection, which is off org-wide on purpose.
 
-It also runs the checks that keep the pages true: the tables against the live org, and
-every public link as a logged-out visitor sees it.
+It also holds the checks that keep the pages true, run by hand: the tables against the
+live org, and every public link as a logged-out visitor sees it.
 
 **Status:** active. One operator maintains it, and every change lands by PR.
 
@@ -179,9 +179,9 @@ remove the old ones.
 ### Run them locally
 
 ```sh
-bash scripts/fleet-check.sh                  # the tables against the live org; exit 1 on drift
-bash scripts/fleet-check.sh --list-excluded  # what the exclusion rules match today
-lychee profile fleet                         # the link check, from the repo root
+bash scripts/fleet-check.sh                            # the tables against the live org; exit 1 on drift
+bash scripts/fleet-check.sh --list-excluded            # what the exclusion rules match today
+env -u GITHUB_TOKEN -u GH_TOKEN lychee profile fleet   # the anonymous link check, from the repo root
 ```
 
 - **`fleet-check.sh`** needs `gh` authenticated with org-wide metadata read. Most of the
@@ -190,12 +190,13 @@ lychee profile fleet                         # the link check, from the repo roo
   a row or an exclusion and never both, that no row names a repo that is gone, and that the
   Lang cells, the row links, the visibility badges, each table's `**N repos**`, the
   profile's section counts, its two headlines and its by-language footer all match. It
-  also checks that `.lycheeignore` tracks the non-public rows in both directions. It runs
-  under macOS `/bin/bash` 3.2.
-- **`lychee profile fleet`** needs lychee 0.24.2. It reads `lychee.toml` and `.lycheeignore` from the
-  repo root. Run it with `GITHUB_TOKEN` and `GH_TOKEN` unset: lychee picks up a token from
-  the environment without saying so, and an authenticated probe passes on links a visitor
-  cannot open.
+  also checks that `.lycheeignore` tracks the non-public rows in both directions, names
+  no repo that has gone public, and holds only anchored literal URLs. It runs under macOS
+  `/bin/bash` 3.2.
+- **`lychee profile fleet`** needs lychee 0.24.2. It reads `lychee.toml` and
+  `.lycheeignore` from the repo root. The `env -u` keeps it anonymous: lychee picks up a
+  token from the environment without saying so, and an authenticated probe passes on
+  links a visitor cannot open.
 
 ### In CI
 
@@ -215,9 +216,8 @@ bundle ID, an Apple team ID, a credential-store item ID, a ticket number, a Clic
 Slack ID, or the name of an employer, a customer or an employer's vendor. In the fleet
 tables a private repo gets its name and one line, and nothing more. In the saga it also
 gets the meaning of its name and a one-sentence hand-off to the next chapter; its full
-legend stays in its own README. Older comments in the workflows, `scripts/fleet-check.sh`
-and `.lycheeignore` still cite ticket numbers. Drop them when you next touch those lines,
-and add no new ones.
+legend stays in its own README. One older comment, in `secret-scan-self.yml`, still cites
+a ticket number. Drop it when you next touch that line, and add no new ones.
 
 ## Where it sits in the fleet
 
