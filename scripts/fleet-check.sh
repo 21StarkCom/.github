@@ -269,9 +269,9 @@ if [[ -f $ALLOWLIST ]]; then
   echo "the link allowlist tracks the rows"
   public=$(awk -F'\t' '$2 == "public" { print $1 }' <<<"$org_vis")
   # Entries are anchored escaped regexes — `^https://github\.com/<org>/<name>$`.
-  # Reconstruct the plain URL the way link-check.yml's staleness guard does,
-  # rather than matching the escaped text: which dots an entry escapes is that
-  # file's business, and a check that guessed would silently miss every row.
+  # Reconstruct the plain URL rather than matching the escaped text: which dots
+  # an entry escapes is that file's business, and a check that guessed would
+  # silently miss every row.
   allow_urls=$(sed -e 's/^\^//' -e 's/\$$//' -e 's/\\//g' "$ALLOWLIST" \
     | grep -v '^[[:space:]]*#' | grep . || true)
   missing="" stale=""

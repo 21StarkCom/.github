@@ -33,11 +33,9 @@ every public link as a logged-out visitor sees it.
 | `scripts/fleet-check.sh` | Checks the profile and the four fleet tables against the live org. |
 | `.github/workflows/secret-scan.yml` | The reusable gitleaks scan the fleet pins. |
 | `.github/workflows/secret-scan-self.yml` | This repo's own caller of that scan, kept by hand. |
-| `.github/workflows/fleet-drift.yml` | Runs `scripts/fleet-check.sh` in CI. |
-| `.github/workflows/link-check.yml` | Checks every link on `profile/` and `fleet/` anonymously with lychee. |
 | `.gitleaks.toml` | This repo's gitleaks rules, and how to handle a false positive. |
 | `.lycheeignore` | The allowlist of non-public repo links, which answer 404 to an anonymous visitor on purpose. |
-| `lychee.toml` | Link-check settings: accepted codes, pacing and retries. It is shared by CI and a local run. |
+| `lychee.toml` | Link-check settings: accepted codes, pacing and retries. |
 
 ## The reusable secret scan
 
@@ -151,8 +149,8 @@ reports as archived; otherwise say "retired".
 
 **Deleting a repo** from the org removes its row and every figure above, including its
 `.lycheeignore` entry, and its saga chapter, the hand-off into it and every link to it in
-`fleet/saga.md`. A saga link left behind 404s once the entry is gone, and link-check goes
-red. Links to it in other repos' READMEs stay; see **Saga links** below.
+`fleet/saga.md`. A saga link left behind 404s once the entry is gone, and the link check
+fails. Links to it in other repos' READMEs stay; see **Saga links** below.
 
 **Saga chapters.** A private repo's chapter in `fleet/saga.md` shows its fleet-table line
 there word for word; bifrost's full chapter carries its legend instead. Change the row and
@@ -183,7 +181,7 @@ remove the old ones.
 ```sh
 bash scripts/fleet-check.sh                  # the tables against the live org; exit 1 on drift
 bash scripts/fleet-check.sh --list-excluded  # what the exclusion rules match today
-lychee profile fleet                         # the link check CI runs, from the repo root
+lychee profile fleet                         # the link check, from the repo root
 ```
 
 - **`fleet-check.sh`** needs `gh` authenticated with org-wide metadata read. Most of the
@@ -194,8 +192,7 @@ lychee profile fleet                         # the link check CI runs, from the 
   profile's section counts, its two headlines and its by-language footer all match. It
   also checks that `.lycheeignore` tracks the non-public rows in both directions. It runs
   under macOS `/bin/bash` 3.2.
-- **`lychee profile fleet`** needs the lychee version CI pins (`LYCHEE_VERSION` in
-  `link-check.yml`, 0.24.2 today). It reads `lychee.toml` and `.lycheeignore` from the
+- **`lychee profile fleet`** needs lychee 0.24.2. It reads `lychee.toml` and `.lycheeignore` from the
   repo root. Run it with `GITHUB_TOKEN` and `GH_TOKEN` unset: lychee picks up a token from
   the environment without saying so, and an authenticated probe passes on links a visitor
   cannot open.
@@ -204,8 +201,6 @@ lychee profile fleet                         # the link check CI runs, from the 
 
 | Workflow | Check | Runs on | What it does |
 | :-- | :-- | :-- | :-- |
-| `fleet-drift.yml` | `fleet-drift` | PRs touching `fleet/**`, `profile/README.md`, `scripts/fleet-check.sh`, `.lycheeignore` or itself; push to `main`; weekly; on demand | Runs `bash scripts/fleet-check.sh` with the `CATALOG_READ_TOKEN` secret, an org-read token. Without the secret, it skips with a warning rather than check blind. |
-| `link-check.yml` | `link-check` | every PR; push to `main`; merge queue; daily | Runs lychee anonymously over `profile/` and `fleet/`. It refuses to run with a token set, fails on a stale or malformed `.lycheeignore` entry, proves it still catches a 404, and refuses a clean run that checked zero links. |
 | `secret-scan-self.yml` | `secret-scan / secret-scan` | PRs; push to `main`; merge queue | Scans this repo's incoming commits with the reusable workflow from the same tree. |
 
 **No check is required.** The repo has no ruleset on `main`, so read every check here as
