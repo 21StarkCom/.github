@@ -217,9 +217,9 @@ fi
 echo
 echo "the by-language footer reconciles"
 # `|| true`, because a bare `footer=$(grep ...)` under `set -e` makes a DELETED
-# footer kill the script on this line — no message, no FAIL summary, checks 12
-# and the exit line never reached, and in CI an empty code fence. Deleting the
-# footer is drift; report it as drift.
+# footer kill the script on this line — no message, no FAIL summary, and check
+# 12 and the exit line never reached. Deleting the footer is drift; report it as
+# drift.
 footer=$(grep -F 'By language:' "$PROFILE" || true)
 # The footer prints a display label; HCL renders as "Terraform (HCL)".
 label_to_lang() { if [[ $1 == "Terraform (HCL)" ]]; then echo HCL; else echo "$1"; fi; }
@@ -259,7 +259,9 @@ fi
 # live in .lycheeignore. That allowlist has to move with the rows or
 # the link check goes red on links that are fine: a new private row needs an
 # entry, and a removed row's entry has to go. Both directions are checked here so
-# neither can be forgotten. Entries are anchored literal URLs — never globs.
+# neither can be forgotten, and so is an entry whose repo has gone public: it
+# suppresses a link that can now be checked for real. Entries are anchored
+# literal URLs — never globs — and a line of any other shape fails here too.
 #
 # If the file is ever missing this block is skipped, and the rest of the report
 # still stands on its own.
@@ -268,13 +270,21 @@ if [[ -f $ALLOWLIST ]]; then
   echo
   echo "the link allowlist tracks the rows"
   public=$(awk -F'\t' '$2 == "public" { print $1 }' <<<"$org_vis")
+  # The shape is checked on the raw lines, before the reconstruction below can
+  # make a near-miss look clean: lychee matches an entry as an unanchored regex,
+  # so `^https://github\.com/<org>/mimir` with no `$` also silences
+  # `mimir-automations`, and an indented entry matches no URL at all.
+  malformed=$(grep -v -e '^[[:space:]]*#' -e '^[[:space:]]*$' "$ALLOWLIST" \
+    | grep -vE '^\^https?://[^[:space:]]+\$$' || true)
+  if [[ -z $malformed ]]; then ok "every allowlist entry is an anchored literal URL"
+  else fail "allowlist entries that are not an anchored literal URL (^<url>\$):"; sed 's/^/    /' <<<"$malformed"; fi
   # Entries are anchored escaped regexes — `^https://github\.com/<org>/<name>$`.
-  # Reconstruct the plain URL the way link-check.yml's staleness guard does,
-  # rather than matching the escaped text: which dots an entry escapes is that
-  # file's business, and a check that guessed would silently miss every row.
+  # Reconstruct the plain URL rather than matching the escaped text: which dots
+  # an entry escapes is that file's business, and a check that guessed would
+  # silently miss every row.
   allow_urls=$(sed -e 's/^\^//' -e 's/\$$//' -e 's/\\//g' "$ALLOWLIST" \
     | grep -v '^[[:space:]]*#' | grep . || true)
-  missing="" stale=""
+  missing="" stale="" gone_public=""
   while read -r name; do
     grep -qxF "$name" <<<"$public" && continue
     grep -qxF "https://github.com/$ORG/$name" <<<"$allow_urls" || missing+="$name "
@@ -282,16 +292,19 @@ if [[ -f $ALLOWLIST ]]; then
   while read -r url; do
     # Only entries naming a repo in THIS org are rows to reconcile. A
     # .lycheeignore also holds unrelated rules; reporting those as stale fleet
-    # rows would fail the job over links this check knows nothing about.
+    # rows would fail the check over links it knows nothing about.
     [[ $url == "https://github.com/$ORG/"* ]] || continue
     name=${url#"https://github.com/$ORG/"}
     [[ $name == */* ]] && continue   # a deep link, not a repo row
+    if grep -qxF "$name" <<<"$public"; then gone_public+="$name "; fi
     grep -qxF "$name" <<<"$page_uniq" || stale+="$name "
   done <<<"$allow_urls"
   if [[ -z $missing ]]; then ok "every private row has an allowlist entry"
   else fail "private rows with no .lycheeignore entry: ${missing% } -- their links 404 anonymously and will redden the link check"; fi
   if [[ -z $stale ]]; then ok "every allowlist entry still has a row"
   else fail "allowlist entries with no remaining row: ${stale% } -- prune them from .lycheeignore"; fi
+  if [[ -z $gone_public ]]; then ok "no allowlist entry names a public repo"
+  else fail "allowlist entries for repos that are now public: ${gone_public% } -- remove them so the link check probes those links for real"; fi
   # Each `# ── NAME (n)` section header counts the entries under it. Nothing
   # else reads those figures, so without this they lag the list silently — as
   # they already did once (55 -> 60, fixed in d97d8fc).

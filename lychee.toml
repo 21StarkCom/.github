@@ -1,11 +1,10 @@
-# Settings for the public-link check (.github/workflows/link-check.yml).
+# Settings for the public-link check, `lychee profile fleet` run from the repo
+# root.
 #
 # lychee picks this file up from the working directory on its own, so a bare
-# `lychee profile fleet` locally runs the CHECK CI RUNS — same accept codes,
-# same pacing, same .lycheeignore allowlist. That is the point of putting the
-# settings in a file rather than in the workflow's argument list: the gate is
-# reproducible off a laptop, with no YAML to re-read. The inputs stay on the
-# command line because lychee has no config key for them.
+# `lychee profile fleet` gets these accept codes, this pacing and the
+# .lycheeignore allowlist. The inputs stay on the command line because lychee
+# has no config key for them.
 #
 # A TYPO HERE IS A HARD FAILURE, not a silent default: lychee rejects an
 # unknown key outright ("unknown field `max_concurency`") rather than ignoring
@@ -15,11 +14,10 @@
 # NOTHING BELOW AUTHENTICATES, and that is the whole design. See .lycheeignore
 # for why the probe is anonymous and what that costs. lychee would pick a token
 # up from `GITHUB_TOKEN` in the environment without saying so, and no setting
-# here can override an environment variable — so the workflow asserts the
-# variable is empty instead of trusting this file to keep the probe honest.
+# here can override an environment variable — so run it as
+# `env -u GITHUB_TOKEN -u GH_TOKEN lychee profile fleet`, which unsets both.
 
-# CI reads logs, not progress bars. `plain` also keeps the output greppable,
-# which the self-test below relies on.
+# Plain log lines, no progress bars, so the output stays greppable.
 no_progress = true
 mode = "plain"
 
@@ -40,7 +38,7 @@ max_concurrency = 8
 host_concurrency = 4
 host_request_interval = "250ms"
 
-# A transient blip must not red a gate. 3 retries with a 2s floor, on top of
+# A transient blip must not fail the run. 3 retries with a 2s floor, on top of
 # the adaptive backoff, costs seconds on a healthy run and saves a spurious
 # failure on a bad one.
 max_retries = 3
