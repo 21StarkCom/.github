@@ -18,6 +18,7 @@ not both match a rule and hold a row — the check treats that as drift too.
 | `plaud-sdk-public` | Third-party code. An archive of Plaud's own SDK, kept because upstream pulled it and `gjallarhorn` needs it. Not ours to list or publish. |
 | `*-probe` | Ticket-scoped verification probes. Created to prove one behaviour, archived the same day. |
 | `*-smoke` | Throwaway smoke-test repos for wiring up a vendor or a pipeline. |
+| `*-scratch` | Ticket-scoped scratch targets for a live write round trip, such as a capability's create-and-delete test. |
 | `*-evaluation-*` | Disposable agent-evaluation repos, usually dated and named after the ticket that spawned them. |
 
 To see what the rules match right now:

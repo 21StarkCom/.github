@@ -38,7 +38,7 @@ The field was set and the law was known; now someone had to speak the quest alou
 
 **The name.** 言霊 (kotodama) is Japanese for 'word-spirit' or 'soul of language': the Shinto-rooted belief that words carry a spiritual power of their own, so that speaking something can help bring it about, which is why auspicious words are chosen for ceremonies and ill-omened ones avoided. The repo took the name by decision record when it was renamed from stark-voice-to-text, as a sanctioned exception to the fleet's Norse naming.
 
-[kotodama](https://github.com/21StarkCom/kotodama): The multi-user voice → faithful-record product, in Go with a Next.js web app. Its full legend opens its README.
+[kotodama](https://github.com/21StarkCom/kotodama): The multi-user meeting-recording and transcription service — audio in from uploads, Drive, Zoom and Meet; named speakers, summaries, action items and a searchable record out; Go with a Next.js console on GKE. Its full legend opens its README.
 
 The quest had been spoken, and now it had to be written down.
 
@@ -48,7 +48,7 @@ The quest had been spoken, and now it had to be written down.
 
 **The name.** Alfred Pennyworth is Bruce Wayne's loyal butler and confidant in DC Comics' Batman mythos, first appearing in Batman #16 (1943). He runs Wayne Manor and keeps Batman's operations in order behind the scenes: logistics, schedules, messages, patching him up. He serves one master.
 
-[alfred](https://github.com/21StarkCom/alfred): The ticket tool — owns work-item creation and tracking for the fleet; sessions become ClickUp tickets. Its full legend opens its README.
+[alfred](https://github.com/21StarkCom/alfred): The always-on ops butler — a CLI and a daemon that own the operator's tickets, todos and reminders, keep ClickUp current and run a Slack agent over the fleet. Its full legend opens its README.
 
 The quest had a number now, and across the manor the armourer was already clearing a workbench.
 
@@ -58,7 +58,7 @@ The quest had a number now, and across the manor the armourer was already cleari
 
 **The name.** Lucius Fox is a Batman supporting character created by Len Wein and John Calnan (first appearance Batman #307, January 1979). He runs Wayne Enterprises, quietly designs and supplies Batman's gadgets, armour and vehicles, and gives candid expert advice, but never goes into the field himself. The Latin praenomen Lucius is traditionally derived from lux, 'light'.
 
-[lucius](https://github.com/21StarkCom/lucius): The interactive brainstorming partner — a terminal worker on the Claude Agent SDK that recalls, argues and digs, and ships nothing. Its full legend opens its README.
+[lucius](https://github.com/21StarkCom/lucius): The interactive brainstorming partner — a terminal worker on the Claude Agent SDK (OpenAI and Gemini selectable) that recalls, argues and digs, and ships nothing; released through the tap. Its full legend opens its README.
 
 A plan is only as good as what you remember, so lucius turned to the Titan.
 
@@ -88,7 +88,7 @@ The quest could not wait for wings, so it climbed the tree that holds every worl
 
 **The name.** Yggdrasill is the great ash at the centre of the Norse cosmos. In Völuspá st. 19 the seeress knows an ash standing, called Yggdrasill, a high tree sprinkled with white clay; in Gylfaginning ch. 15-16 its branches spread over all the world and stand above heaven, its three roots reach three wells, and the Norns water it. The name is usually read as 'Ygg's horse': Yggr, 'the terrible one', is a name of Odin, and 'horse' is a kenning for the gallows, the tree on which Odin hangs nine nights in Hávamál st. 138. Other readings take it as 'yew-pillar'.
 
-[yggdrasil](https://github.com/21StarkCom/yggdrasil): The world-tree for goals — the planned issue-tracker app that will show every goal as a tree of all its work (epics, their items, linked items and the children of linked epics) with one honest progress %; only its spec and a throwaway spike are built. Its full legend opens its README.
+[yggdrasil](https://github.com/21StarkCom/yggdrasil): The world-tree for goals — the planned Forge app for Evinced Jira that will show every goal as a tree of all its work (epics, their items, linked items and the children of linked epics) with one honest progress %; only its spec and a throwaway spike are built. Its full legend opens its README.
 
 The tree is planted, if not yet grown; from its trunk the quest went to the bridge.
 
@@ -116,7 +116,7 @@ The rainbow bridge is how the gods reach the world, and bifrost is how the opera
 
 **The name.** Hermóðr inn hvati, 'the bold', is Odin's son or servant in Snorri's Gylfaginning and in the poem Hákonarmál; the name glosses as 'war-spirit'. After Baldr's death he rides Sleipnir nine nights through dark valleys to Hel to beg for Baldr's return, and brings back the ring Draupnir. Modern retellings call him the messenger of the gods.
 
-[hermod](https://github.com/21StarkCom/hermod): The client, porcelain and fleet-coordination toolkit for cmux — one typed surface over its terminal control API. Its full legend opens its README.
+[hermod](https://github.com/21StarkCom/hermod): The client, porcelain and fleet-coordination toolkit for cmux — two coequal clients over its terminal control API, one TypeScript and one Go. Its full legend opens its README.
 
 The Minion was in the saddle, but words had to flow, and not every messenger rides a horse.
 
@@ -220,7 +220,7 @@ Knowing what was real, the Minion went to touch the world unseen.
 
 **The name.** Auric Goldfinger ('Auric' means 'of gold') is the gold-smuggling villain of Ian Fleming's 1959 James Bond novel and the 1964 Eon film, where Gert Fröbe plays him. He is introduced cheating at cards while an accomplice reads his opponent's hand through binoculars and radios it to his earpiece. The repo adds a literal pun: its icon is the golden finger of Michelangelo's Creation of Adam.
 
-[goldfinger](https://github.com/21StarkCom/goldfinger): Background computer use for AI agents — a helper-app daemon that holds the OS permissions, driven by a CLI, operating native apps without taking focus; macOS first. Its full legend opens its README.
+[goldfinger](https://github.com/21StarkCom/goldfinger): Background computer use for AI agents — a signed helper-app daemon that holds the OS permissions, driven by a CLI and an MCP server, operating native apps without taking focus; released for macOS, Linux not started. Its full legend opens its README.
 
 The Minion had to build something beautiful now, and it knew where the gold was forged.
 
@@ -264,9 +264,9 @@ The work was built and its pages written, but the house wanted it spoken too, an
 
 **The name.** Bragi is the Norse god of poetry. In Gylfaginning ch. 26 Snorri says he is famous for wisdom and above all for eloquence and command of words, that he knows most about poetry, and that poetry is called bragr after him; his wife is Iðunn. Sigrdrífumál names Bragi's tongue among the places where runes are cut, and in Hákonarmál Odin sends him out with Hermóðr to welcome a fallen king into Valhalla. The name is tied to bragr, 'poetry', a word that can also mean 'the foremost', and some scholars see behind the god the ninth-century skald Bragi Boddason, whose verse is among the oldest that survives.
 
-[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the planned Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; only its session protocol core is built. Its full legend opens its README.
+[bragi](https://github.com/21StarkCom/bragi): The god of poetry — the Go toolkit for streaming voice: speech-to-text and text-to-speech as streams, a library plus thin CLIs so the fleet's agents can listen and speak; macOS only, released through the tap. Its full legend opens its README.
 
-Bragi had his name, if not yet his voice, so the quest went on without his song, to the gate where his wife keeps the apples.
+Bragi found his voice, and the quest went on with his song to the gate where his wife keeps the apples.
 
 ## Act V, The Gate
 
@@ -336,7 +336,7 @@ The dead stay dead, and from the shore the Minion climbed toward noon.
 
 **The name.** From Latin meridianus, 'of midday', from meridies, 'midday; the south' (medius + dies). In geography a meridian is a line of longitude from pole to pole, with the prime meridian at Greenwich as the zero of longitude and time; in astronomy it is the great circle the sun crosses at local noon, so figuratively the word means a peak or zenith.
 
-[meridian](https://github.com/21StarkCom/meridian): The fleet's automation plane and command-center — a long-lived Go service on GKE across the fleet. Its full legend opens its README.
+[meridian](https://github.com/21StarkCom/meridian): The fleet's engineering-operations platform — a Go service and a Next.js console on GKE that turn GitHub, Slack, billing, security and on-call data into delivery, capacity, FinOps and security views; the live successor of stark-night-watch and stark-team. Its full legend opens its README.
 
 The sun stood at its height, and beneath it one goddess saw everything nearby.
 
@@ -378,7 +378,6 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
 - [forseti](https://github.com/21StarkCom/forseti) has heard its first case, but has not yet learned the laws of the lands.
-- [bragi](https://github.com/21StarkCom/bragi) has its grammar, but not yet its voice.
 - The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
