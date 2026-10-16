@@ -41,12 +41,12 @@
 # ── PRIVATE (64) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
+^https://github\.com/21StarkCom/agent-seats$
 ^https://github\.com/21StarkCom/alfred$
 ^https://github\.com/21StarkCom/apple-developer$
 ^https://github\.com/21StarkCom/assay$
 ^https://github\.com/21StarkCom/atlas$
 ^https://github\.com/21StarkCom/bragi$
-^https://github\.com/21StarkCom/claude-seats$
 ^https://github\.com/21StarkCom/control-chrome$
 ^https://github\.com/21StarkCom/design-system-core$
 ^https://github\.com/21StarkCom/devops-sandbox$
