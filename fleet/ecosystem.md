@@ -2,7 +2,7 @@
 
 > The working fleet — services, agents, tools, media and UI, many under Norse names. Almost everything cross-cuts via **bifrost**.
 
-**43 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**42 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -32,7 +32,6 @@
 | **[stark-slack-indexer](https://github.com/21StarkCom/stark-slack-indexer)** | `Go` | The Slack corpus search backend — a Go service on GCP with BigQuery hybrid search and an agentic ask layer. |
 | **[assay](https://github.com/21StarkCom/assay)** ✏️ | `Go` | The daily verified-trend newsletter — finds what is new in a field, scores each candidate against a rubric and publishes only what clears the bar. |
 | **[mimir](https://github.com/21StarkCom/mimir)** | `Swift` | The personal macOS encrypted secrets manager — a native SwiftUI app plus a mimir CLI, local-first. |
-| **[mimir-automations](https://github.com/21StarkCom/mimir-automations)** | `JavaScript` | The JavaScript automations Mímir once ran to validate, rotate and discover — orphaned since Mímir retired its automation engine on 2026-09-21; kept, no secrets, ever. |
 | **[kotodama](https://github.com/21StarkCom/kotodama)** | `Go` | The multi-user meeting-recording and transcription service — audio in from uploads, Drive, Zoom and Meet; named speakers, summaries, action items and a searchable record out; Go with a Next.js console on GKE. |
 | **[lumiere](https://github.com/21StarkCom/lumiere)** | `Go` | The Go workspace for making and manipulating visual media — image generation and editing and short video, as standalone CLIs and a library. |
 | **[plume](https://github.com/21StarkCom/plume)** | `Go` | The pure-Go Office/PDF document toolkit — data in, an Excel/Word/PowerPoint/PDF file out. |
