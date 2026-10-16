@@ -2,7 +2,7 @@
 
 > Terminated, decommissioned or superseded. Kept for history — not for use.
 
-**22 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**23 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -11,6 +11,7 @@
 | **[slack-investigator](https://github.com/21StarkCom/slack-investigator)** | `Python` | A retired Slack-export analysis CLI — superseded by stark-slack-indexer. |
 | **[agent-native-gcp](https://github.com/21StarkCom/agent-native-gcp)** | `HCL` | An archived early agent-native GCP Terraform experiment. |
 | **[stark-skills](https://github.com/21StarkCom/stark-skills)** ⭐ | `TypeScript` | The archived former hub for the stark agent workflows — absorbed by bifrost, buried in nastrond. |
+| **[mimir-automations](https://github.com/21StarkCom/mimir-automations)** | `JavaScript` | The archived JavaScript automations Mímir once ran to validate, rotate and discover — orphaned when Mímir retired its automation engine on 2026-09-21, buried in nastrond. |
 | **[control-chrome](https://github.com/21StarkCom/control-chrome)** | `HTML` | A one-shot roadmap-snapshot analysis — it ran once, had no consumers and was retired. |
 | **[design-system-core](https://github.com/21StarkCom/design-system-core)** | `TypeScript` | A code-first design-system POC with a browser playground — the POC finished, the playground was decommissioned and nothing consumed it. |
 | **[devops-sandbox](https://github.com/21StarkCom/devops-sandbox)** | `HCL` | Terraform for per-team GCP sandbox projects — a devops experiment that never went into production. |

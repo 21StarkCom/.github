@@ -312,9 +312,9 @@ The tower is down but not yet buried; the Minion saluted and walked on.
 
 **The name.** The repo is named for its parent, the mimir vault, and so for Mímir, the wise one whose preserved head keeps and speaks hidden knowledge and who guards the well of wisdom under Yggdrasil. The suffix is a plain English descriptor: 'the automations belonging to the Mímir vault'.
 
-[mimir-automations](https://github.com/21StarkCom/mimir-automations): The JavaScript automations Mímir once ran to validate, rotate and discover — orphaned since Mímir retired its automation engine on 2026-09-21; kept, no secrets, ever. Its full legend opens its README.
+[mimir-automations](https://github.com/21StarkCom/mimir-automations): The archived JavaScript automations Mímir once ran to validate, rotate and discover — orphaned when Mímir retired its automation engine on 2026-09-21, buried in nastrond. Its full legend opens its README.
 
-The Minion bowed to the idle hands and walked down to the shore where the dead are kept.
+The idle hands got their last rite on 2026-10-16: sealed whole in nastrond and archived, never deleted. The Minion bowed to them and walked down to the shore where the dead are kept.
 
 ## The legend of nastrond: The Shore of Corpses
 
@@ -378,7 +378,6 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
 - [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
 - [forseti](https://github.com/21StarkCom/forseti) has heard its first case, but has not yet learned the laws of the lands.
-- The idle hands of [mimir-automations](https://github.com/21StarkCom/mimir-automations) wait for a new master or a last rite.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
 
