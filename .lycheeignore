@@ -38,7 +38,7 @@
 # and the row then names a repo the org does not have; drop the row and its
 # entry together. Only the anonymous probe is blind to it.
 
-# ── PRIVATE (64) — invisible to everyone outside the org.
+# ── PRIVATE (69) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/agent-seats$
@@ -46,6 +46,7 @@
 ^https://github\.com/21StarkCom/apple-developer$
 ^https://github\.com/21StarkCom/assay$
 ^https://github\.com/21StarkCom/atlas$
+^https://github\.com/21StarkCom/atlassian-management$
 ^https://github\.com/21StarkCom/bragi$
 ^https://github\.com/21StarkCom/control-chrome$
 ^https://github\.com/21StarkCom/design-system-core$
@@ -72,8 +73,10 @@
 ^https://github\.com/21StarkCom/meridian$
 ^https://github\.com/21StarkCom/mimir$
 ^https://github\.com/21StarkCom/mimir-automations$
+^https://github\.com/21StarkCom/mimir-linux$
 ^https://github\.com/21StarkCom/muninn$
 ^https://github\.com/21StarkCom/nastrond$
+^https://github\.com/21StarkCom/odin$
 ^https://github\.com/21StarkCom/plume$
 ^https://github\.com/21StarkCom/ratatoskr$
 ^https://github\.com/21StarkCom/slack-investigator$
@@ -96,9 +99,11 @@
 ^https://github\.com/21StarkCom/stark-stream-deck-sdk$
 ^https://github\.com/21StarkCom/stark-team$
 ^https://github\.com/21StarkCom/stark-writing$
+^https://github\.com/21StarkCom/syn$
 ^https://github\.com/21StarkCom/transcript-optimizer$
 ^https://github\.com/21StarkCom/tyr$
 ^https://github\.com/21StarkCom/user-management-agent$
+^https://github\.com/21StarkCom/vault-docs$
 ^https://github\.com/21StarkCom/vor$
 ^https://github\.com/21StarkCom/workplan-tools$
 ^https://github\.com/21StarkCom/workspace-admin-toolkit$

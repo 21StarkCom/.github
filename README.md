@@ -4,9 +4,9 @@ The public front door of the **21StarkCom** org. This repo holds four things:
 
 - **The org landing page.** GitHub renders [`profile/README.md`](profile/README.md) at
   github.com/21StarkCom.
-- **The fleet pages.** Four tables under [`fleet/`](fleet/) list every repo in the fleet,
-  each with its language, its visibility and one line on what it is. A fifth page says
-  which org repos hold no row, and why.
+- **The fleet pages.** Four pages under [`fleet/`](fleet/) list every repo in the fleet
+  in tables, each row with its language, its visibility and one line on what it is. A
+  fifth page says which org repos hold no row, and why.
 - **The saga.** [`fleet/saga.md`](fleet/saga.md), *The Saga of House Stark*, tells the
   fleet as one quest, a chapter for each repo whose name comes from an old story.
 - **The fleet's reusable secret scan.** [`secret-scan.yml`](.github/workflows/secret-scan.yml)
@@ -24,13 +24,13 @@ live org, and every public link as a logged-out visitor sees it.
 | :-- | :-- |
 | `README.md` | This file. |
 | `profile/README.md` | The org landing page: the open-source repo, the fleet section table, the two "N repositories" headlines, the by-language footer and a link to the saga. |
-| `fleet/ecosystem.md` | Fleet table: the working fleet (services, agents, tools, media and UI). |
+| `fleet/ecosystem.md` | Fleet page: the working fleet in groups (agents, tools, services, media and UI), one table each, under a map of how the groups fit. |
 | `fleet/infrastructure.md` | Fleet table: Terraform and GCP foundations. |
 | `fleet/second-brain.md` | Fleet table: the second-brain code. |
 | `fleet/retired.md` | Fleet table: repos that were retired, decommissioned or superseded, kept for history. |
 | `fleet/exclusions.md` | The org repos that hold no row on purpose, one shell-glob rule each, with a reason. |
 | `fleet/saga.md` | The Saga of House Stark, the fleet told as one story. It is not a fleet table, and nothing counts it. |
-| `scripts/fleet-check.sh` | Checks the profile and the four fleet tables against the live org. |
+| `scripts/fleet-check.sh` | Checks the profile and the four fleet pages against the live org. |
 | `.github/workflows/secret-scan.yml` | The reusable gitleaks scan the fleet pins. |
 | `.github/workflows/secret-scan-self.yml` | This repo's own caller of that scan, kept by hand. |
 | `.gitleaks.toml` | This repo's gitleaks rules, and how to handle a false positive. |
@@ -111,7 +111,7 @@ A change reaches the fleet in three steps, and no other repo sees it before the 
 
 ## Editing the fleet pages
 
-Every repo in the org is exactly one row in one of the four tables, or it matches one
+Every repo in the org is exactly one row on one of the four fleet pages, or it matches one
 rule in `fleet/exclusions.md`. `scripts/fleet-check.sh` enforces this.
 
 A row looks like this:
@@ -126,11 +126,15 @@ A row looks like this:
   match GitHub. 🤝 (shared building block) and ✏️ (WIP) are editorial.
 - **The prose** is one line. A private repo gets nothing in these tables beyond its name
   and that line.
+- **Groups.** `fleet/ecosystem.md` holds one table per group. Put a row in the group that
+  fits its job. The group table near the top of the page lists each group and links its
+  heading; it holds no counts, so a row that moves between groups changes no figure. Use
+  a heading emoji with no U+FE0F variation selector, so the heading's anchor stays plain.
 
 **Adding a row** means changing every figure that counts it:
 
-1. the table's `**N repos**` line (`**1 repo**` when there is one);
-2. that table's count in the section table in `profile/README.md`;
+1. the page's `**N repos**` line (`**1 repo**` when there is one);
+2. that page's count in the section table in `profile/README.md`;
 3. both "N repositories" headlines in `profile/README.md`;
 4. the by-language footer in `profile/README.md`: the language's own count, or `+N others`;
 5. for a repo that is not public, one anchored entry in `.lycheeignore`
@@ -140,7 +144,7 @@ A row looks like this:
    its prologue's count of such names, and its legend in its own README. Nothing checks
    this one. No other repo's README changes with it; see **Saga links** below.
 
-**Moving a row** between tables changes only the two tables' `**N repos**` lines and their
+**Moving a row** between pages changes only the two pages' `**N repos**` lines and their
 two section counts. The headlines and the footer stay as they are.
 
 **Retiring a repo** is a move to `fleet/retired.md`, not an exclusion. Rewrite its line in
