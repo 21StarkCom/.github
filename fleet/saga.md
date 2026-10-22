@@ -88,7 +88,7 @@ The quest could not wait for wings, so it climbed the tree that holds every worl
 
 **The name.** Yggdrasill is the great ash at the centre of the Norse cosmos. In Völuspá st. 19 the seeress knows an ash standing, called Yggdrasill, a high tree sprinkled with white clay; in Gylfaginning ch. 15-16 its branches spread over all the world and stand above heaven, its three roots reach three wells, and the Norns water it. The name is usually read as 'Ygg's horse': Yggr, 'the terrible one', is a name of Odin, and 'horse' is a kenning for the gallows, the tree on which Odin hangs nine nights in Hávamál st. 138. Other readings take it as 'yew-pillar'.
 
-[yggdrasil](https://github.com/21StarkCom/yggdrasil): The world-tree for goals — a planned Jira Forge app that shows each goal as a tree of all its work with one honest progress %; only its spec and a throwaway spike are built. Its full legend opens its README.
+[yggdrasil](https://github.com/21StarkCom/yggdrasil): The world-tree for goals — a planned Forge app for Evinced Jira that shows each goal as a tree of all its work with one honest progress %; only its spec and a throwaway spike are built. Its full legend opens its README.
 
 The tree is planted, if not yet grown; from its trunk the quest went to the bridge.
 
@@ -278,7 +278,7 @@ Bragi found his voice, and the quest went on with his song to the gate where his
 
 **The name.** Iðunn is an Ásynja, wife of Bragi, god of poetry, who keeps the apples the gods eat to stay young; her name is usually glossed 'the rejuvenating one'. In Skáldskaparmál and Haustlöng the giant Þjazi makes Loki lure her out of Asgard, and the gods grow old and grey until Loki flies her home as a nut in Freyja's falcon cloak.
 
-[idun](https://github.com/21StarkCom/idun): The operator's personal-ops CLI — one compiled Bun binary that launches Claude and Codex agents, carries PRs through merge and cleanup, and keeps the machine clean. Its full legend opens its README.
+[idun](https://github.com/21StarkCom/idun): Aryeh's personal-ops CLI — one compiled Bun binary that launches Claude and Codex agents, carries PRs through merge and cleanup, and keeps the machine clean. Its full legend opens its README.
 
 The PR merged, but victory always leaves a mess, and the goddess of health was already at the door.
 

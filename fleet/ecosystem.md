@@ -88,7 +88,7 @@ flowchart LR
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The always-on ops butler — a CLI and a daemon that own the operator's tickets, todos and reminders, run a Slack agent and give every agent session an MCP surface. |
-| **[idun](https://github.com/21StarkCom/idun)** | `TypeScript` | The operator's personal-ops CLI — one compiled Bun binary that launches Claude and Codex agents, carries PRs through merge and cleanup, and keeps the machine clean. |
+| **[idun](https://github.com/21StarkCom/idun)** | `TypeScript` | Aryeh's personal-ops CLI — one compiled Bun binary that launches Claude and Codex agents, carries PRs through merge and cleanup, and keeps the machine clean. |
 | **[frigg](https://github.com/21StarkCom/frigg)** | `Go` | The IT-ops CLI and TUI cockpit — Google Workspace and the fleet's vendor connectors behind gated, dry-run-first writes, plus the local identity cache; released through the tap. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The vendor-integration capability library — typed, gated Go capabilities over the fleet's third-party systems, split into per-vendor modules; library-only, with frigg as its CLI. |
 | **[fenrir](https://github.com/21StarkCom/fenrir)** | `TypeScript` | The TypeScript twin of tyr — a multi-vendor SDK and CLI built for agents (ClickUp, GitHub, Google Workspace and more), with compact output, typed errors and gated writes. |
@@ -118,7 +118,7 @@ flowchart LR
 | **[stark-showcase](https://github.com/21StarkCom/stark-showcase)** | `Go` | The HTML page hosting and gallery service — upload, validate, index and serve pages behind sign-in, with revocable share links and an MCP server that publishes from Claude. |
 | **[assay](https://github.com/21StarkCom/assay)** ✏️ | `Go` | The daily verified-trend newsletter for AI — a GKE pipeline scores each candidate against a rubric and keeps only what clears the bar; its reader site is not built yet. |
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The GCP FinOps service and its GKE platform — a Go service that tracks GCP cost, BigQuery usage and resource inventory; the original engineering-ops console is decommissioned. |
-| **[yggdrasil](https://github.com/21StarkCom/yggdrasil)** ✏️ | `TypeScript` | The world-tree for goals — a planned Jira Forge app that shows each goal as a tree of all its work with one honest progress %; only its spec and a throwaway spike are built. |
+| **[yggdrasil](https://github.com/21StarkCom/yggdrasil)** ✏️ | `TypeScript` | The world-tree for goals — a planned Forge app for Evinced Jira that shows each goal as a tree of all its work with one honest progress %; only its spec and a throwaway spike are built. |
 
 ## 🎨 Design, media and docs
 
@@ -140,7 +140,7 @@ flowchart LR
 | :-- | :-- | :-- |
 | **[apple-developer](https://github.com/21StarkCom/apple-developer)** | `Go` | The versioned text registry of the Apple Developer / App Store Connect account — an appledev CLI reconciles it with Apple and logs each notarization the fleet's releases make. |
 | **[atlassian-management](https://github.com/21StarkCom/atlassian-management)** | `Python` | The operator's Jira admin record — a read-only Python audit of what the operator's account and its agents changed on a Jira site, plus a decision register and how-tos. |
-| **[workplan-tools](https://github.com/21StarkCom/workplan-tools)** | `Go` | The plan-intent layer — a pre-1.0 Go CLI that snapshots a work-plan sheet into immutable, typed, diffable plans, with a weekly capture on Cloud Run. |
+| **[workplan-tools](https://github.com/21StarkCom/workplan-tools)** | `Go` | The plan-intent layer for the Infra group — a pre-1.0 Go CLI that snapshots a work-plan sheet into immutable, typed, diffable plans, with a weekly capture on Cloud Run. |
 | **[vault-docs](https://github.com/21StarkCom/vault-docs)** | `—` | The vendor-docs vaults — vendor documentation sites harvested into clean Markdown that atlas indexes for agents, starting with the Jira Cloud docs. |
 | **[manual-auditor-project](https://github.com/21StarkCom/manual-auditor-project)** | `Python` | The Manual Auditor project's research knowledge base — read-only harvests of its sources, distilled into cited pages, findings and entities in an Obsidian vault. |
 
@@ -151,7 +151,7 @@ flowchart LR
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[21stark-site](https://github.com/21StarkCom/21stark-site)** ⭐ | `MDX` | The fleet's public website — an Astro Starlight site on GitHub Pages for product policies and guides, starting with the privacy policies of the Huginn extensions. |
-| **[stark-personal](https://github.com/21StarkCom/stark-personal)** | `TypeScript` | The operator's personal site and blog — the code behind 21stark.com: a dynamic Next.js app on Cloud Run, content in Firestore, edited live in an admin backoffice. |
+| **[stark-personal](https://github.com/21StarkCom/stark-personal)** | `TypeScript` | Aryeh's personal site and blog — the code behind 21stark.com: a dynamic Next.js app on Cloud Run, content in Firestore, edited live in an admin backoffice. |
 | **[stark-invoices-collector](https://github.com/21StarkCom/stark-invoices-collector)** | `JavaScript` | Playwright receipt connectors — find card charges with no receipt, fetch each one from the vendor's billing page and mail it to the card that paid; no server, no stored credential. |
 
 ---
