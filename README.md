@@ -128,8 +128,7 @@ A row looks like this:
   and that line.
 - **Groups.** `fleet/ecosystem.md` holds one table per group. Put a row in the group that
   fits its job. The group table near the top of the page lists each group and links its
-  heading; it holds no counts, so a row that moves between groups changes no figure. Use
-  a heading emoji with no U+FE0F variation selector, so the heading's anchor stays plain.
+  heading; it holds no counts, so a row that moves between groups changes no figure.
 
 **Adding a row** means changing every figure that counts it:
 
@@ -210,18 +209,6 @@ env -u GITHUB_TOKEN -u GH_TOKEN lychee profile fleet   # the anonymous link chec
 
 **No check is required.** The repo has no ruleset on `main`, so read every check here as
 advisory. A red check never blocks a merge, and it still means something is wrong.
-
-## The public rule
-
-Everything in this repo is public, and the pages speak for a mostly private fleet. No
-line may carry a secret, an internal hostname or IP (21stark.com is the one public host),
-a cloud project ID or number, a bucket or cluster name, an email address, a port, a
-bundle ID, an Apple team ID, a credential-store item ID, a ticket number, a ClickUp or
-Slack ID, or the name of an employer, a customer or an employer's vendor. In the fleet
-tables a private repo gets its name and one line, and nothing more. In the saga it also
-gets the meaning of its name and a one-sentence hand-off to the next chapter; its full
-legend stays in its own README. One older comment, in `secret-scan-self.yml`, still cites
-a ticket number. Drop it when you next touch that line, and add no new ones.
 
 ## Where it sits in the fleet
 
