@@ -16,6 +16,7 @@ not both match a rule and hold a row — the check treats that as drift too.
 | :-- | :-- |
 | `devops-cc-environments` | A work carve-out parked in this org, not part of the playground fleet. |
 | `plaud-sdk-public` | Third-party code. An archive of Plaud's own SDK, kept because upstream pulled it and `gjallarhorn` needs it. Not ours to list or publish. |
+| `var` | A collaborator's playground, forked from `sleipnir`. Not fleet work. |
 | `*-probe` | Ticket-scoped verification probes. Created to prove one behaviour, archived the same day. |
 | `*-smoke` | Throwaway smoke-test repos for wiring up a vendor or a pipeline. |
 | `*-scratch` | Ticket-scoped scratch targets for a live write round trip, such as a capability's create-and-delete test. |
