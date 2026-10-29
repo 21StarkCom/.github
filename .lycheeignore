@@ -38,7 +38,7 @@
 # and the row then names a repo the org does not have; drop the row and its
 # entry together. Only the anonymous probe is blind to it.
 
-# ── PRIVATE (69) — invisible to everyone outside the org.
+# ── PRIVATE (72) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/agent-seats$
@@ -74,6 +74,7 @@
 ^https://github\.com/21StarkCom/mimir$
 ^https://github\.com/21StarkCom/mimir-automations$
 ^https://github\.com/21StarkCom/mimir-linux$
+^https://github\.com/21StarkCom/mimir-windows$
 ^https://github\.com/21StarkCom/muninn$
 ^https://github\.com/21StarkCom/nastrond$
 ^https://github\.com/21StarkCom/odin$
@@ -95,9 +96,11 @@
 ^https://github\.com/21StarkCom/stark-night-watch$
 ^https://github\.com/21StarkCom/stark-personal$
 ^https://github\.com/21StarkCom/stark-showcase$
+^https://github\.com/21StarkCom/stark-skills$
 ^https://github\.com/21StarkCom/stark-slack-indexer$
 ^https://github\.com/21StarkCom/stark-stream-deck-sdk$
 ^https://github\.com/21StarkCom/stark-team$
+^https://github\.com/21StarkCom/stark-tui$
 ^https://github\.com/21StarkCom/stark-writing$
 ^https://github\.com/21StarkCom/syn$
 ^https://github\.com/21StarkCom/transcript-optimizer$
@@ -109,6 +112,5 @@
 ^https://github\.com/21StarkCom/workspace-admin-toolkit$
 ^https://github\.com/21StarkCom/yggdrasil$
 
-# ── INTERNAL (2) — visible to org members only, so still 404 anonymously.
+# ── INTERNAL (1) — visible to org members only, so still 404 anonymously.
 ^https://github\.com/21StarkCom/ev-infra-group$
-^https://github\.com/21StarkCom/stark-tui$
