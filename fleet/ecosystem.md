@@ -12,7 +12,7 @@ Many carry Norse names. Almost everything cross-cuts via **[bifrost](https://git
 ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
 
-**48 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · [the saga](saga.md) · [not in the fleet](exclusions.md)
+**49 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · [the saga](saga.md) · [not in the fleet](exclusions.md)
 
 <sub>⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP</sub>
 
@@ -52,7 +52,7 @@ flowchart LR
 | **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `TypeScript` | The stark workflow hub — runtime-neutral agent skills and the tools they call, served straight from source as a seven-plugin Claude Code marketplace; Codex runs them too. |
 | **[idavoll](https://github.com/21StarkCom/idavoll)** 🤝 | `Go` | The workspace constitution and bootstrap — the fleet's root operator rules and repo map, plus installers that rebuild a Mac, a Linux devbox or a Windows box from zero. |
 | **[.github](https://github.com/21StarkCom/.github)** ⭐ | `Shell` | The org's public front door — the org profile, the fleet pages and their saga, and the reusable gitleaks secret scan that the fleet pins by commit. |
-| **[homebrew-tap](https://github.com/21StarkCom/homebrew-tap)** | `Ruby` | The fleet's private Homebrew tap — formulae for its CLIs and casks for its Mac apps, each pinned to a release that its source repo re-pins. |
+| **[homebrew-tap](https://github.com/21StarkCom/homebrew-tap)** | `Shell` | The fleet's private Homebrew tap — formulae for its CLIs and casks for its Mac apps, each pinned to a release that its source repo re-pins. |
 | **[nastrond](https://github.com/21StarkCom/nastrond)** | `TypeScript` | The fleet's code graveyard — dead subsystems buried as source and retired repos sealed as encrypted bundles, each under a tombstone; kept to be remembered, never run. |
 
 ## 🤖 Agents
@@ -97,12 +97,13 @@ flowchart LR
 
 ## 🔐 Secrets and devices
 
-*The vault, its Linux mirror, and the phones, watches and radios around the Mac.*
+*The vault, its Linux and Windows mirrors, and the phones, watches and radios around the Mac.*
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[mimir](https://github.com/21StarkCom/mimir)** | `Swift` | The personal macOS credential vault — one encrypted, Touch ID-locked vault that the app, the mimir CLI and an opt-in MCP server read, with Drive backup; a cask on the tap. |
 | **[mimir-linux](https://github.com/21StarkCom/mimir-linux)** | `Go` | The headless Linux mirror of the Mímir vault — a Go daemon and client that serve it read-only from signed bundles the Mac publishes; shipped as signed releases. |
+| **[mimir-windows](https://github.com/21StarkCom/mimir-windows)** | `Rust` | The Windows port of the Mímir vault, in Rust — a read-only mirror of the vault first, then two-way sync with the Mac and a desktop app; early work. |
 | **[heimdall](https://github.com/21StarkCom/heimdall)** | `Go` | The personal cross-device notification relay — one heimdall send raises a Mac banner and pushes to iPhone and Watch through your own APNs key, via a Go server on GKE. |
 | **[vor](https://github.com/21StarkCom/vor)** | `Swift` | The Mac radio sensor — a zero-dependency Swift CLI that ranks nearby Bluetooth devices by signal and reads WiFi, with an iOS app on the same core; unsigned, run from source. |
 | **[gjallarhorn](https://github.com/21StarkCom/gjallarhorn)** ✏️ | `Swift` | The side-loaded iPhone app that copies Plaud voice-recorder recordings over Bluetooth into Google Drive; pre-1.0, and its upload has not yet run end to end on a device. |
@@ -127,7 +128,7 @@ flowchart LR
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[draupnir](https://github.com/21StarkCom/draupnir)** | `TypeScript` | The fleet's shared design system — tokens, themes, house UI, the statement-fx effects engine and icon, logo and font corpora, published as restricted npm packages. |
-| **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🔒 🤝 | `Go` | The fleet's terminal-UI code — a zero-dependency toolkit written twice (Go and TypeScript) for colors, spinners and prompts, plus a Charm-based library for interactive TUIs. |
+| **[stark-tui](https://github.com/21StarkCom/stark-tui)** 🤝 | `Go` | The fleet's terminal-UI code — a zero-dependency toolkit written twice (Go and TypeScript) for colors, spinners and prompts, plus a Charm-based library for interactive TUIs. |
 | **[lumiere](https://github.com/21StarkCom/lumiere)** | `Go` | The Go toolkit for visual media — image generation and editing and short video, as CLIs behind one lumiere dispatcher plus a library; released through the tap. |
 | **[plume](https://github.com/21StarkCom/plume)** | `Go` | The pure-Go Office/PDF toolkit — a dependency-free library and CLIs that read and write Excel, Word, PowerPoint and PDF, and fill and sign PDFs; released through the tap. |
 | **[bragi](https://github.com/21StarkCom/bragi)** | `Go` | The Go toolkit for streaming voice — speech-to-text and text-to-speech as streams, a library plus thin CLIs so agents can listen and speak; macOS only, released through the tap. |
