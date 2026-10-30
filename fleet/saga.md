@@ -2,7 +2,7 @@
 
 The house is Stark, the name the operator works under; any echo of Tony Stark's workshop is incidental, a nod for readers to enjoy, not the source. 21Stark is one engineer's platform fleet, run as a playground, where Claude, Codex and Gemini agents work side by side on the same repos. When a big job comes in, the house launches Gru, and Gru leads his Minions.
 
-Thirty-two of the fleet's names come from old stories, and most of those are Norse; each Norse name is the world-tree Yggdrasil or holds a place on it: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
+Thirty-three of the fleet's names come from old stories, and most of those are Norse; each Norse name is the world-tree Yggdrasil or holds a place on it: gods, a raven, a horse, a wolf, a ring, a squirrel, a bridge, a field, a well, a horn and a shore of the dead. The rest are travellers from other realms: a butler and an armourer from Gotham, a Titan and the goddess of health from Greece, a Bond villain, NASA's Mission Control, a Japanese word-spirit, the French brothers of cinema and a French quill, a posted sentinel, the assayer's trade and the prime meridian. The remaining repos wear plain working names and join the saga as supporting cast.
 
 This is the story of one quest crossing that world. A ticket is spoken, written down and thought through. A Minion carries it over the rainbow bridge, gathers powers and keys, forges the work, passes the gate and walks past the fallen, until a horn sounds in every world. Each chapter opens its repo's README, under a heading that begins **The legend of**. The meaning of each name is fact. The legend is the spin, and it never gives a repo a power it does not have. Read the chapters here in order and you walk the whole road. Most of the fleet is private, so on this public page a private repo shows only its name, its meaning, its one line and the road onward. Its full legend waits behind its own door, which opens only for the house itself.
 
@@ -11,7 +11,7 @@ This is the story of one quest crossing that world. A ticket is spoken, written 
 - **Act I, The Summons** (the quest is spoken, written down and thought through): [idavoll](https://github.com/21StarkCom/idavoll) · [kotodama](https://github.com/21StarkCom/kotodama) · [alfred](https://github.com/21StarkCom/alfred) · [lucius](https://github.com/21StarkCom/lucius) · [atlas](https://github.com/21StarkCom/atlas) · [muninn](https://github.com/21StarkCom/muninn) · [yggdrasil](https://github.com/21StarkCom/yggdrasil)
 - **Act II, The Crossing** (a Minion rides out over the bridge): [bifrost](https://github.com/21StarkCom/bifrost) · [hermod](https://github.com/21StarkCom/hermod) · [ratatoskr](https://github.com/21StarkCom/ratatoskr) · [houston](https://github.com/21StarkCom/houston)
 - **Act III, The Armory** (powers, laws and keys): [frigg](https://github.com/21StarkCom/frigg) · [forseti](https://github.com/21StarkCom/forseti) · [tyr](https://github.com/21StarkCom/tyr) · [fenrir](https://github.com/21StarkCom/fenrir) · [mimir](https://github.com/21StarkCom/mimir) · [sleipnir](https://github.com/21StarkCom/sleipnir) · [assay](https://github.com/21StarkCom/assay) · [goldfinger](https://github.com/21StarkCom/goldfinger)
-- **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume) · [bragi](https://github.com/21StarkCom/bragi)
+- **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume) · [folkvang](https://github.com/21StarkCom/folkvang) · [bragi](https://github.com/21StarkCom/bragi)
 - **Act V, The Gate** (merge, and the health that follows): [idun](https://github.com/21StarkCom/idun) · [hygiea](https://github.com/21StarkCom/hygiea)
 - **Act VI, The Shore** (the fallen and the dead): [infra-sentinel](https://github.com/21StarkCom/infra-sentinel) · [mimir-automations](https://github.com/21StarkCom/mimir-automations) · [nastrond](https://github.com/21StarkCom/nastrond)
 - **Act VII, The Horn** (the reckoning and the call): [meridian](https://github.com/21StarkCom/meridian) · [vor](https://github.com/21StarkCom/vor) · [gjallarhorn](https://github.com/21StarkCom/gjallarhorn) · [heimdall](https://github.com/21StarkCom/heimdall)
@@ -256,7 +256,17 @@ Light makes the pictures, and for the pages the house reached for a feather.
 
 [plume](https://github.com/21StarkCom/plume): The pure-Go Office/PDF toolkit — a dependency-free library and CLIs that read and write Excel, Word, PowerPoint and PDF, and fill and sign PDFs; released through the tap. Its full legend opens its README.
 
-The work was built and its pages written, but the house wanted it spoken too, and sent for the god of poetry.
+The pages were written, but they lay in local files that no one else could open, so the house took them to Freyja's field.
+
+## The legend of folkvang: The Field of the Host
+
+*Where Freyja Decides Who Sits in the Hall*
+
+**The name.** Fólkvangr (Old Norse, 'field of the host' or 'field of the people', from *fólk* and *vangr*) is the field of Freyja. Grímnismál st. 14 names it the ninth of the gods' dwellings and says that there Freyja decides the choice of seats in the hall; half the slain she chooses each day, and half are Odin's. In Gylfaginning ch. 24 Snorri gives her hall on that field, Sessrúmnir, 'the room of seats', and calls it great and fair.
+
+[folkvang](https://github.com/21StarkCom/folkvang): HTML page hosting and gallery with a draupnir UI; started from the stark-showcase history. Its full legend opens its README.
+
+Every page had its seat in the hall, but the house wanted the work spoken too, and sent for the god of poetry.
 
 ## The legend of bragi: The God of Poetry
 
