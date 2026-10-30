@@ -12,7 +12,7 @@ Many carry Norse names. Almost everything cross-cuts via **[bifrost](https://git
 ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
 
-**49 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · [the saga](saga.md) · [not in the fleet](exclusions.md)
+**51 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · [the saga](saga.md) · [not in the fleet](exclusions.md)
 
 <sub>⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP</sub>
 
@@ -34,7 +34,7 @@ flowchart LR
 | | Group | What lives here |
 | :-: | :-- | :-- |
 | 🌈 | **[Hub and house](#-hub-and-house)** | The skills hub, the house rules, the front door, the tap and the graveyard. Everything else leans on these. |
-| 🤖 | **[Agents](#-agents)** | Workers with a job of their own: counsel, review, hygiene, memory and admin chores. |
+| 🤖 | **[Agents](#-agents)** | Workers with a job of their own: counsel, review, accessibility, hygiene, memory and admin chores. |
 | 📡 | **[Agent plumbing](#-agent-plumbing)** | Seats, tabs, messages and progress reports: what keeps many agents working side by side. |
 | 🧰 | **[Operator tools](#-operator-tools)** | The CLIs that the operator and the agents reach for every day: tickets, vendors, the browser and the desktop. |
 | 🔐 | **[Secrets and devices](#-secrets-and-devices)** | The vault, its Linux mirror, and the phones, watches and radios around the Mac. |
@@ -57,11 +57,12 @@ flowchart LR
 
 ## 🤖 Agents
 
-*Workers with a job of their own: counsel, review, hygiene, memory and admin chores.*
+*Workers with a job of their own: counsel, review, accessibility, hygiene, memory and admin chores.*
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
 | **[odin](https://github.com/21StarkCom/odin)** ✏️ | `TypeScript` | The fleet's agent kernel — a Claude Agent SDK call loop with a default-deny tool guard that turns a playbook file into a named agent; first slice built, not yet published. |
+| **[daredevil](https://github.com/21StarkCom/daredevil)** ✏️ | `—` | A robot that reads web pages and Mac apps only through the real VoiceOver, by goldfinger, and proves each accessibility finding; it runs as an odin playbook, and only its spec is written. |
 | **[lucius](https://github.com/21StarkCom/lucius)** | `TypeScript` | The interactive brainstorming partner — a terminal and local-web app on the Claude Agent SDK (OpenAI and Gemini selectable) that recalls, argues and digs, and ships nothing; released through the tap. |
 | **[forseti](https://github.com/21StarkCom/forseti)** ✏️ | `TypeScript` | The legal counsel agent — reads terms, policies and contracts into its own vault and answers questions with every claim cited; v1 runs from source, with no release yet. |
 | **[syn](https://github.com/21StarkCom/syn)** | `TypeScript` | The PR review bot — a Claude agent with read-only tools reviews new PRs in chosen repos, posts one review and sends a Slack notice; live as a background service. |
@@ -117,6 +118,7 @@ flowchart LR
 | **[kotodama](https://github.com/21StarkCom/kotodama)** | `Go` | The multi-user meeting-recording and transcription service — audio in from uploads, Drive, Zoom, Meet and a recorder bot; named speakers, summaries and action items out; Go and Next.js on GKE. |
 | **[stark-slack-indexer](https://github.com/21StarkCom/stark-slack-indexer)** | `Go` | The Slack corpus search backend — Cloud Run jobs index exports into BigQuery for hybrid search, and a local MCP server and the slackctl CLI query it, with an agentic ask. |
 | **[stark-showcase](https://github.com/21StarkCom/stark-showcase)** | `Go` | The HTML page hosting and gallery service — upload, validate, index and serve pages behind sign-in, with revocable share links and an MCP server that publishes from Claude. |
+| **[folkvang](https://github.com/21StarkCom/folkvang)** ✏️ | `Go` | HTML page hosting and gallery with a draupnir UI; started from the stark-showcase history. |
 | **[assay](https://github.com/21StarkCom/assay)** ✏️ | `Go` | The daily verified-trend newsletter for AI — a GKE pipeline scores each candidate against a rubric and keeps only what clears the bar; its reader site is not built yet. |
 | **[meridian](https://github.com/21StarkCom/meridian)** | `Go` | The GCP FinOps service and its GKE platform — a Go service that tracks GCP cost, BigQuery usage and resource inventory; the original engineering-ops console is decommissioned. |
 | **[yggdrasil](https://github.com/21StarkCom/yggdrasil)** ✏️ | `TypeScript` | The world-tree for goals — a planned Forge app for Evinced Jira that shows each goal as a tree of all its work with one honest progress %; only its spec and a throwaway spike are built. |

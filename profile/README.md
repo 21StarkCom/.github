@@ -14,7 +14,7 @@ Multi-agent tooling, infra-as-code and `MCP` servers. `Claude` + `Codex` + `Gemi
 ![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
 
-`76 repositories` · `Go` + `TypeScript` first · `one operator` · `ships to main`
+`78 repositories` · `Go` + `TypeScript` first · `one operator` · `ships to main`
 
 [**Aryeh Kiovetsky**](https://21stark.com) · [**Writing**](https://21stark.com/blog)
 
@@ -32,16 +32,16 @@ The public face of the fleet — the rest is private by default.
 
 ### The fleet
 
-**76 repositories, run solo.** Grouped the way the workspace itself is — each row opens a full index with every repo and what it is.
+**78 repositories, run solo.** Grouped the way the workspace itself is — each row opens a full index with every repo and what it is.
 
 | Section | Repos | What lives here |
 | :-- | :-- | :-- |
-| 🧭 **[Ecosystem](https://github.com/21StarkCom/.github/blob/main/fleet/ecosystem.md)** | 49 | The working fleet — services, agents, tools, media and UI, many under Norse names. Almost everything cross-cuts via `bifrost`. |
+| 🧭 **[Ecosystem](https://github.com/21StarkCom/.github/blob/main/fleet/ecosystem.md)** | 51 | The working fleet — services, agents, tools, media and UI, many under Norse names. Almost everything cross-cuts via `bifrost`. |
 | 🏗️ **[Infrastructure](https://github.com/21StarkCom/.github/blob/main/fleet/infrastructure.md)** | 3 | Terraform + GCP foundations — GitHub-as-code and the shared platform that fleet services run on. |
 | 🧠 **[Second brain](https://github.com/21StarkCom/.github/blob/main/fleet/second-brain.md)** | 1 | Atlas — the LLM-native knowledge engine and the `brain` CLI over the vaults. |
 | 🪦 **[Retired](https://github.com/21StarkCom/.github/blob/main/fleet/retired.md)** | 23 | Terminated, decommissioned or superseded. Kept for history. |
 
-<sub>By language: **27** Go · **22** TypeScript · **9** Python · **5** Terraform (HCL) · **4** Swift · **+9** others</sub>
+<sub>By language: **28** Go · **22** TypeScript · **9** Python · **5** Terraform (HCL) · **4** Swift · **+10** others</sub>
 
 <sub>A handful of org repos hold no row on purpose — work carve-outs, vendor archives and throwaways. Every index above links that list, with a reason for each.</sub>
 
