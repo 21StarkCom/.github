@@ -2,7 +2,7 @@
 
 > Terminated, decommissioned or superseded. Kept for history — not for use.
 
-**23 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
+**24 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · ⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP · 🪦 retired · [not in the fleet](exclusions.md)
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -28,4 +28,5 @@
 | **[stark-team](https://github.com/21StarkCom/stark-team)** | `TypeScript` | An archived team-dashboard and operational-analytics console (Next.js + GraphQL) — idle for months, then retired in the fleet consolidation. |
 | **[stark-writing](https://github.com/21StarkCom/stark-writing)** | `MDX` | Long-form writing sources for 21stark.com (MDX) — retired once a fleet scan found no live consumer. |
 | **[transcript-optimizer](https://github.com/21StarkCom/transcript-optimizer)** | `Python` | A transcription and intelligence service (recordings → Chirp 3 → multi-stage LLM enhancement) — dormant, with no users, and never worth a Go rewrite. |
+| **[user-management-agent](https://github.com/21StarkCom/user-management-agent)** | `Go` | uma, the archived SaaS-admin agent that recorded onboarding and offboarding flows in Chrome and replayed them per user — superseded by tyr's capabilities through frigg and by sleipnir's Gungnir, the browser route for admin consoles with no API. |
 | **[workspace-admin-toolkit](https://github.com/21StarkCom/workspace-admin-toolkit)** | `Python` | A Python CLI for workspace admin across SaaS vendors — superseded by tyr's connectors. |
