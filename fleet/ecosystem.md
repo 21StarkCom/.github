@@ -12,7 +12,7 @@ Many carry Norse names. Almost everything cross-cuts via **[bifrost](https://git
 ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
 
-**51 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · [the saga](saga.md) · [not in the fleet](exclusions.md)
+**52 repos** · [← the fleet](https://github.com/21StarkCom/.github/blob/main/profile/README.md#the-fleet) · [the saga](saga.md) · [not in the fleet](exclusions.md)
 
 <sub>⭐ public · 🔒 internal · everything else private · 🤝 shared building block · ✏️ WIP</sub>
 
@@ -34,7 +34,7 @@ flowchart LR
 | | Group | What lives here |
 | :-: | :-- | :-- |
 | 🌈 | **[Hub and house](#-hub-and-house)** | The skills hub, the house rules, the front door, the tap and the graveyard. Everything else leans on these. |
-| 🤖 | **[Agents](#-agents)** | Workers with a job of their own: counsel, review, accessibility, hygiene, memory and admin chores. |
+| 🤖 | **[Agents](#-agents)** | Workers with a job of their own: counsel, review, accessibility, hygiene and memory. |
 | 📡 | **[Agent plumbing](#-agent-plumbing)** | Seats, tabs, messages and progress reports: what keeps many agents working side by side. |
 | 🧰 | **[Operator tools](#-operator-tools)** | The CLIs that the operator and the agents reach for every day: tickets, vendors, the browser and the desktop. |
 | 🔐 | **[Secrets and devices](#-secrets-and-devices)** | The vault, its Linux mirror, and the phones, watches and radios around the Mac. |
@@ -51,13 +51,14 @@ flowchart LR
 | :-- | :-- | :-- |
 | **[bifrost](https://github.com/21StarkCom/bifrost)** ⭐ 🤝 | `TypeScript` | The stark workflow hub — runtime-neutral agent skills and the tools they call, served straight from source as a seven-plugin Claude Code marketplace; Codex runs them too. |
 | **[idavoll](https://github.com/21StarkCom/idavoll)** 🤝 | `Go` | The workspace constitution and bootstrap — the fleet's root operator rules and repo map, plus installers that rebuild a Mac, a Linux devbox or a Windows box from zero. |
+| **[stark-kit](https://github.com/21StarkCom/stark-kit)** ✏️ | `Shell` | The operator's idavoll kit — the areas, presets, agent settings, shell files and items that idavoll installs on the operator's Macs; so far it holds only the fleet's secret-scan files. |
 | **[.github](https://github.com/21StarkCom/.github)** ⭐ | `Shell` | The org's public front door — the org profile, the fleet pages and their saga, and the reusable gitleaks secret scan that the fleet pins by commit. |
 | **[homebrew-tap](https://github.com/21StarkCom/homebrew-tap)** | `Shell` | The fleet's private Homebrew tap — formulae for its CLIs and casks for its Mac apps, each pinned to a release that its source repo re-pins. |
 | **[nastrond](https://github.com/21StarkCom/nastrond)** | `TypeScript` | The fleet's code graveyard — dead subsystems buried as source and retired repos sealed as encrypted bundles, each under a tombstone; kept to be remembered, never run. |
 
 ## 🤖 Agents
 
-*Workers with a job of their own: counsel, review, accessibility, hygiene, memory and admin chores.*
+*Workers with a job of their own: counsel, review, accessibility, hygiene and memory.*
 
 | Repo | Lang | What it is |
 | :-- | :-- | :-- |
@@ -68,7 +69,6 @@ flowchart LR
 | **[syn](https://github.com/21StarkCom/syn)** | `TypeScript` | The PR review bot — a Claude agent with read-only tools reviews new PRs in chosen repos, posts one review and sends a Slack notice; live as a background service. |
 | **[hygiea](https://github.com/21StarkCom/hygiea)** | `Go` | The repo-hygiene agent — a Claude Code subagent that proves dead code, stale docs and unused deps before it removes any of them, and never merges. |
 | **[muninn](https://github.com/21StarkCom/muninn)** ✏️ | `Go` | The planned fleet harvester — will read the fleet through frigg and slackctl and accrete what it learns into durable entity notes; only its offline core is built. |
-| **[user-management-agent](https://github.com/21StarkCom/user-management-agent)** | `Go` | uma — records SaaS admin onboarding and offboarding flows in Chrome, distills them with Claude into reviewed playbooks and replays them per user; a Go CLI plus a macOS app. |
 
 ## 📡 Agent plumbing
 
@@ -91,6 +91,7 @@ flowchart LR
 | **[alfred](https://github.com/21StarkCom/alfred)** | `Go` | The always-on ops butler — a CLI and a daemon that own the operator's tickets, todos and reminders, run a Slack agent and give every agent session an MCP surface. |
 | **[idun](https://github.com/21StarkCom/idun)** | `TypeScript` | Aryeh's personal-ops CLI — one compiled Bun binary that launches Claude and Codex agents, carries PRs through merge and cleanup, and keeps the machine clean. |
 | **[frigg](https://github.com/21StarkCom/frigg)** | `Go` | The IT-ops CLI and TUI cockpit — Google Workspace and the fleet's vendor connectors behind gated, dry-run-first writes, plus the local identity cache; released through the tap. |
+| **[urd](https://github.com/21StarkCom/urd)** ✏️ | `Go` | The local identity cache's new home — a CLI that will sync people, accounts and GCP inventory from the vendor fleet into one SQLite file and answer who-is-who; the code still lives in frigg. |
 | **[tyr](https://github.com/21StarkCom/tyr)** 🤝 | `Go` | The vendor-integration capability library — typed, gated Go capabilities over the fleet's third-party systems, split into per-vendor modules; library-only, with frigg as its CLI. |
 | **[fenrir](https://github.com/21StarkCom/fenrir)** | `TypeScript` | The TypeScript twin of tyr — a multi-vendor SDK and CLI built for agents (ClickUp, GitHub, Google Workspace and more), with compact output, typed errors and gated writes. |
 | **[sleipnir](https://github.com/21StarkCom/sleipnir)** | `TypeScript` | Two sibling browser products — Sleipnir runs caps and an MCP server on persistent, allowlisted Chrome profiles, and Huginn's extensions act in the operator's own Chrome; released through the tap. |

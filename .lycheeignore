@@ -38,7 +38,7 @@
 # and the row then names a repo the org does not have; drop the row and its
 # entry together. Only the anonymous probe is blind to it.
 
-# ── PRIVATE (74) — invisible to everyone outside the org.
+# ── PRIVATE (76) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/agent-seats$
@@ -94,6 +94,7 @@
 ^https://github\.com/21StarkCom/stark-engineering-labs$
 ^https://github\.com/21StarkCom/stark-insights$
 ^https://github\.com/21StarkCom/stark-invoices-collector$
+^https://github\.com/21StarkCom/stark-kit$
 ^https://github\.com/21StarkCom/stark-mcp$
 ^https://github\.com/21StarkCom/stark-night-watch$
 ^https://github\.com/21StarkCom/stark-personal$
@@ -107,6 +108,7 @@
 ^https://github\.com/21StarkCom/syn$
 ^https://github\.com/21StarkCom/transcript-optimizer$
 ^https://github\.com/21StarkCom/tyr$
+^https://github\.com/21StarkCom/urd$
 ^https://github\.com/21StarkCom/user-management-agent$
 ^https://github\.com/21StarkCom/vault-docs$
 ^https://github\.com/21StarkCom/vor$
