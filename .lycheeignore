@@ -38,7 +38,7 @@
 # and the row then names a repo the org does not have; drop the row and its
 # entry together. Only the anonymous probe is blind to it.
 
-# ── PRIVATE (76) — invisible to everyone outside the org.
+# ── PRIVATE (79) — invisible to everyone outside the org.
 ^https://github\.com/21StarkCom/21stark$
 ^https://github\.com/21StarkCom/agent-native-gcp$
 ^https://github\.com/21StarkCom/agent-seats$
@@ -53,7 +53,9 @@
 ^https://github\.com/21StarkCom/design-system-core$
 ^https://github\.com/21StarkCom/devops-sandbox$
 ^https://github\.com/21StarkCom/draupnir$
+^https://github\.com/21StarkCom/feedback-collector$
 ^https://github\.com/21StarkCom/fenrir$
+^https://github\.com/21StarkCom/floorplan$
 ^https://github\.com/21StarkCom/folkvang$
 ^https://github\.com/21StarkCom/forseti$
 ^https://github\.com/21StarkCom/frigg$
@@ -62,7 +64,7 @@
 ^https://github\.com/21StarkCom/heimdall$
 ^https://github\.com/21StarkCom/hermod$
 ^https://github\.com/21StarkCom/homebrew-tap$
-^https://github\.com/21StarkCom/houston$
+^https://github\.com/21StarkCom/house$
 ^https://github\.com/21StarkCom/hygiea$
 ^https://github\.com/21StarkCom/idavoll$
 ^https://github\.com/21StarkCom/idun$
@@ -82,8 +84,10 @@
 ^https://github\.com/21StarkCom/odin$
 ^https://github\.com/21StarkCom/plume$
 ^https://github\.com/21StarkCom/ratatoskr$
+^https://github\.com/21StarkCom/seat-pool$
 ^https://github\.com/21StarkCom/slack-investigator$
 ^https://github\.com/21StarkCom/sleipnir$
+^https://github\.com/21StarkCom/sonar$
 ^https://github\.com/21StarkCom/stark-2nd-brain-cli$
 ^https://github\.com/21StarkCom/stark-2nd-brain-hub$
 ^https://github\.com/21StarkCom/stark-admin-agent$
@@ -110,7 +114,6 @@
 ^https://github\.com/21StarkCom/tyr$
 ^https://github\.com/21StarkCom/urd$
 ^https://github\.com/21StarkCom/user-management-agent$
-^https://github\.com/21StarkCom/vault-docs$
 ^https://github\.com/21StarkCom/vor$
 ^https://github\.com/21StarkCom/workplan-tools$
 ^https://github\.com/21StarkCom/workspace-admin-toolkit$
