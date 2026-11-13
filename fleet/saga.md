@@ -9,7 +9,7 @@ This is the story of one quest crossing that world. A ticket is spoken, written 
 ## The seven acts
 
 - **Act I, The Summons** (the quest is spoken, written down and thought through): [idavoll](https://github.com/21StarkCom/idavoll) · [kotodama](https://github.com/21StarkCom/kotodama) · [alfred](https://github.com/21StarkCom/alfred) · [lucius](https://github.com/21StarkCom/lucius) · [atlas](https://github.com/21StarkCom/atlas) · [muninn](https://github.com/21StarkCom/muninn) · [yggdrasil](https://github.com/21StarkCom/yggdrasil)
-- **Act II, The Crossing** (a Minion rides out over the bridge): [bifrost](https://github.com/21StarkCom/bifrost) · [hermod](https://github.com/21StarkCom/hermod) · [ratatoskr](https://github.com/21StarkCom/ratatoskr) · [houston](https://github.com/21StarkCom/houston)
+- **Act II, The Crossing** (a Minion rides out over the bridge): [bifrost](https://github.com/21StarkCom/bifrost) · [hermod](https://github.com/21StarkCom/hermod) · [ratatoskr](https://github.com/21StarkCom/ratatoskr) · houston (gone)
 - **Act III, The Armory** (powers, laws and keys): [frigg](https://github.com/21StarkCom/frigg) · [forseti](https://github.com/21StarkCom/forseti) · [tyr](https://github.com/21StarkCom/tyr) · [fenrir](https://github.com/21StarkCom/fenrir) · [mimir](https://github.com/21StarkCom/mimir) · [sleipnir](https://github.com/21StarkCom/sleipnir) · [assay](https://github.com/21StarkCom/assay) · [goldfinger](https://github.com/21StarkCom/goldfinger)
 - **Act IV, The Forge** (the work is made): [draupnir](https://github.com/21StarkCom/draupnir) · [lumiere](https://github.com/21StarkCom/lumiere) · [plume](https://github.com/21StarkCom/plume) · [folkvang](https://github.com/21StarkCom/folkvang) · [bragi](https://github.com/21StarkCom/bragi)
 - **Act V, The Gate** (merge, and the health that follows): [idun](https://github.com/21StarkCom/idun) · [hygiea](https://github.com/21StarkCom/hygiea)
@@ -78,7 +78,7 @@ But a Titan holds and does not gather, and for gathering Odin kept ravens.
 
 **The name.** Muninn, usually glossed 'memory' or 'mind', is one of Odin's two ravens; the other is Huginn, 'thought'. In Gylfaginning they fly out over the world every morning and return to speak into Odin's ears all they saw, which is why he is called Hrafnaguð, 'raven-god'. In Grímnismál Odin says he fears Huginn may not come back, but fears more for Muninn.
 
-[muninn](https://github.com/21StarkCom/muninn): The planned fleet harvester — will read the fleet through frigg and slackctl and accrete what it learns into durable entity notes; only its offline core is built. Its full legend opens its README.
+[muninn](https://github.com/21StarkCom/muninn): The fleet's copy of agmsg — cross-agent messaging for CLI agents over local SQLite, so Claude, Codex and Gemini sessions can speak to each other. Its full legend opens its README.
 
 The quest could not wait for wings, so it climbed the tree that holds every world.
 
@@ -136,7 +136,7 @@ With word flowing, the Minion looked for mission control.
 
 **The name.** 'Houston' is the callsign crews use for NASA's Mission Control Center at the Johnson Space Center in Houston, Texas, as in Apollo 11's 'Houston, Tranquility Base here. The Eagle has landed.' (1969) and Apollo 13's 'Houston, we've had a problem.' (1970). Mission Control watches every flight phase through telemetry and is first to notice loss of signal; the city itself is named after Sam Houston.
 
-[houston](https://github.com/21StarkCom/houston): Epic progress overwatch — a local, push-only server where agents report gate transitions, with one page of parallel tracks per epic; built, but no agent reports to it yet. Its full legend opens its README.
+houston: Epic progress overwatch — a local, push-only server where agents report gate transitions, with one page of parallel tracks per epic. No agent ever reported to it, and its repo was deleted in November 2026.
 
 The console sat lit for the next crew, and the Minion flew on toward the queen who knows every name.
 
@@ -386,7 +386,6 @@ The ticket is closed. alfred has marked it done, the CHANGELOG has its line, and
 
 - [muninn](https://github.com/21StarkCom/muninn) has its heart, but not yet its wings.
 - [yggdrasil](https://github.com/21StarkCom/yggdrasil) has its roots, but not yet its branches.
-- [houston](https://github.com/21StarkCom/houston) is lit, but no crew calls it.
 - [forseti](https://github.com/21StarkCom/forseti) has heard its first case, but has not yet learned the laws of the lands.
 - [vor](https://github.com/21StarkCom/vor) has never been signed.
 - [heimdall](https://github.com/21StarkCom/heimdall) cannot yet sound an alarm about itself.
